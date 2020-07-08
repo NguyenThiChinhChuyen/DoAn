@@ -28,18 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDoiMatKhau));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtMKC = new System.Windows.Forms.TextBox();
             this.txtMKM = new System.Windows.Forms.TextBox();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnCapNhat = new DevExpress.XtraEditors.SimpleButton();
+            this.btnHuy = new DevExpress.XtraEditors.SimpleButton();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(40, 35);
+            this.label1.Location = new System.Drawing.Point(105, 91);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(72, 13);
             this.label1.TabIndex = 0;
@@ -48,7 +52,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(41, 78);
+            this.label2.Location = new System.Drawing.Point(105, 48);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(79, 13);
             this.label2.TabIndex = 1;
@@ -56,39 +60,56 @@
             // 
             // txtMKC
             // 
-            this.txtMKC.Location = new System.Drawing.Point(147, 28);
+            this.txtMKC.Location = new System.Drawing.Point(205, 88);
             this.txtMKC.Name = "txtMKC";
             this.txtMKC.Size = new System.Drawing.Size(158, 20);
             this.txtMKC.TabIndex = 2;
             // 
             // txtMKM
             // 
-            this.txtMKM.Location = new System.Drawing.Point(148, 71);
+            this.txtMKM.Location = new System.Drawing.Point(205, 45);
             this.txtMKM.Name = "txtMKM";
             this.txtMKM.Size = new System.Drawing.Size(157, 20);
             this.txtMKM.TabIndex = 3;
             // 
-            // simpleButton1
+            // btnCapNhat
             // 
-            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(148, 141);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(103, 35);
-            this.simpleButton1.TabIndex = 4;
-            this.simpleButton1.Text = "Hoàn Thành";
+            this.btnCapNhat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCapNhat.ImageOptions.Image")));
+            this.btnCapNhat.Location = new System.Drawing.Point(112, 133);
+            this.btnCapNhat.Name = "btnCapNhat";
+            this.btnCapNhat.Size = new System.Drawing.Size(103, 35);
+            this.btnCapNhat.TabIndex = 4;
+            this.btnCapNhat.Text = "Cập Nhật";
+            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
+            // 
+            // btnHuy
+            // 
+            this.btnHuy.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnHuy.ImageOptions.Image")));
+            this.btnHuy.Location = new System.Drawing.Point(259, 133);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(103, 35);
+            this.btnHuy.TabIndex = 4;
+            this.btnHuy.Text = "Hủy";
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // frmDoiMatKhau
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(392, 193);
-            this.Controls.Add(this.simpleButton1);
+            this.ClientSize = new System.Drawing.Size(462, 226);
+            this.Controls.Add(this.btnHuy);
+            this.Controls.Add(this.btnCapNhat);
             this.Controls.Add(this.txtMKM);
             this.Controls.Add(this.txtMKC);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "frmDoiMatKhau";
             this.Text = "Đổi Mật Khẩu ";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -100,6 +121,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtMKC;
         private System.Windows.Forms.TextBox txtMKM;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton btnCapNhat;
+        private DevExpress.XtraEditors.SimpleButton btnHuy;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

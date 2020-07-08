@@ -20,7 +20,7 @@ namespace DACK_QLCH
             Application.SetCompatibleTextRenderingDefault(false);
 
             BonusSkins.Register();
-            Application.Run(new frmGiaoDien());
+            Application.Run(new frmMain());
         }
     }
 }

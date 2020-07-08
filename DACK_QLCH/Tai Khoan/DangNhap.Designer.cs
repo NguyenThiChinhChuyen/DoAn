@@ -81,7 +81,7 @@
             // 
             // btnThoat
             // 
-            this.btnThoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnThoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.Image")));
             this.btnThoat.Location = new System.Drawing.Point(248, 136);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(104, 34);
@@ -100,6 +100,7 @@
             this.Controls.Add(this.txtDangNhap);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.KeyPreview = true;
             this.Name = "frmDangNhap";
             this.Text = "Đăng Nhập ";
             this.Enter += new System.EventHandler(this.frmDangNhap_Enter);
