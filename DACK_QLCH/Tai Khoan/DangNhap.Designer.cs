@@ -34,13 +34,13 @@
             this.txtDangNhap = new System.Windows.Forms.TextBox();
             this.txtMatKhau = new System.Windows.Forms.TextBox();
             this.btnDangNhap = new DevExpress.XtraEditors.SimpleButton();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.btnThoat = new DevExpress.XtraEditors.SimpleButton();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 45);
+            this.label1.Location = new System.Drawing.Point(92, 46);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(93, 13);
             this.label1.TabIndex = 0;
@@ -49,7 +49,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(26, 94);
+            this.label2.Location = new System.Drawing.Point(96, 95);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 13);
             this.label2.TabIndex = 1;
@@ -57,14 +57,14 @@
             // 
             // txtDangNhap
             // 
-            this.txtDangNhap.Location = new System.Drawing.Point(125, 41);
+            this.txtDangNhap.Location = new System.Drawing.Point(196, 43);
             this.txtDangNhap.Name = "txtDangNhap";
             this.txtDangNhap.Size = new System.Drawing.Size(157, 20);
             this.txtDangNhap.TabIndex = 2;
             // 
             // txtMatKhau
             // 
-            this.txtMatKhau.Location = new System.Drawing.Point(126, 89);
+            this.txtMatKhau.Location = new System.Drawing.Point(196, 92);
             this.txtMatKhau.Name = "txtMatKhau";
             this.txtMatKhau.Size = new System.Drawing.Size(156, 20);
             this.txtMatKhau.TabIndex = 3;
@@ -72,28 +72,27 @@
             // btnDangNhap
             // 
             this.btnDangNhap.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDangNhap.ImageOptions.Image")));
-            this.btnDangNhap.Location = new System.Drawing.Point(126, 153);
+            this.btnDangNhap.Location = new System.Drawing.Point(99, 136);
             this.btnDangNhap.Name = "btnDangNhap";
             this.btnDangNhap.Size = new System.Drawing.Size(104, 34);
             this.btnDangNhap.TabIndex = 5;
             this.btnDangNhap.Text = "Đăng Nhập ";
             // 
-            // linkLabel1
+            // btnThoat
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(292, 171);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(75, 13);
-            this.linkLabel1.TabIndex = 6;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Đổi Mật Khẩu ";
+            this.btnThoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnThoat.Location = new System.Drawing.Point(248, 136);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(104, 34);
+            this.btnThoat.TabIndex = 5;
+            this.btnThoat.Text = "Thoát";
             // 
             // frmDangNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(390, 206);
-            this.Controls.Add(this.linkLabel1);
+            this.ClientSize = new System.Drawing.Size(451, 237);
+            this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnDangNhap);
             this.Controls.Add(this.txtMatKhau);
             this.Controls.Add(this.txtDangNhap);
@@ -113,6 +112,6 @@
         private System.Windows.Forms.TextBox txtDangNhap;
         private System.Windows.Forms.TextBox txtMatKhau;
         private DevExpress.XtraEditors.SimpleButton btnDangNhap;
-        private System.Windows.Forms.LinkLabel linkLabel1;
+        private DevExpress.XtraEditors.SimpleButton btnThoat;
     }
 }
