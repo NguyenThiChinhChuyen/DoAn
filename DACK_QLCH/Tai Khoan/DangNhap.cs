@@ -21,7 +21,11 @@ namespace DACK_QLCH
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            if (MessageBox.Show("Bạn đã chắc chắn thoát!", "QLCH", MessageBoxButtons.YesNo, MessageBoxIcon.Stop) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            //Application.Exit();
         }
 
         private void frmDangNhap_Enter(object sender, EventArgs e)
