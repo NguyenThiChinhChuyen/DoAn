@@ -12,6 +12,21 @@
     <AssemblyName>DACK_QLCH</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,11 +47,19 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.BonusSkins.v19.2" />
     <Reference Include="DevExpress.Data.v19.2" />
     <Reference Include="DevExpress.Utils.v19.2" />
     <Reference Include="DevExpress.Sparkline.v19.2.Core" />
+    <Reference Include="DevExpress.Xpo.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraBars.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v19.2" />
     <Reference Include="DevExpress.Printing.v19.2.Core" />
@@ -52,94 +75,124 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DangNhap.cs">
+    <Compile Include="QL Hoa Don\DonDatHang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DangNhap.Designer.cs">
+    <Compile Include="QL Hoa Don\DonDatHang.Designer.cs">
+      <DependentUpon>DonDatHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QL Hoa Don\DonGiaoHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QL Hoa Don\DonGiaoHang.Designer.cs">
+      <DependentUpon>DonGiaoHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QL Hoa Don\HoaDonBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QL Hoa Don\HoaDonBan.Designer.cs">
+      <DependentUpon>HoaDonBan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QL Nha Cung Cap\NhaCungCap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QL Nha Cung Cap\NhaCungCap.Designer.cs">
+      <DependentUpon>NhaCungCap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QL San Pham\SanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QL San Pham\SanPham.Designer.cs">
+      <DependentUpon>SanPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tai Khoan\DangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tai Khoan\DangNhap.Designer.cs">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="DoiMatKhau.cs">
+    <Compile Include="Tai Khoan\DoiMatKhau.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DoiMatKhau.Designer.cs">
+    <Compile Include="Tai Khoan\DoiMatKhau.Designer.cs">
       <DependentUpon>DoiMatKhau.cs</DependentUpon>
     </Compile>
-    <Compile Include="GiaoDien.cs">
+    <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GiaoDien.Designer.cs">
-      <DependentUpon>GiaoDien.cs</DependentUpon>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="NhaHang.cs">
+    <Compile Include="QL Kho\NhaHang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NhaHang.Designer.cs">
+    <Compile Include="QL Kho\NhaHang.Designer.cs">
       <DependentUpon>NhaHang.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TimKiemBaoCao.cs">
+    <Compile Include="Thong Ke\TimKiemBaoCao.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TimKiemBaoCao.Designer.cs">
+    <Compile Include="Thong Ke\TimKiemBaoCao.Designer.cs">
       <DependentUpon>TimKiemBaoCao.cs</DependentUpon>
     </Compile>
-    <Compile Include="TimKiemDonDaLap.cs">
+    <Compile Include="QL Hoa Don\TimKiemDonDaLap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TimKiemDonDaLap.Designer.cs">
+    <Compile Include="QL Hoa Don\TimKiemDonDaLap.Designer.cs">
       <DependentUpon>TimKiemDonDaLap.cs</DependentUpon>
     </Compile>
-    <Compile Include="TimKiemDonDatHang.cs">
+    <Compile Include="QL Hoa Don\TimKiemDonDatHang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TimKiemDonDatHang.Designer.cs">
+    <Compile Include="QL Hoa Don\TimKiemDonDatHang.Designer.cs">
       <DependentUpon>TimKiemDonDatHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="TimKiemDonGiaoHang.cs">
+    <Compile Include="QL Hoa Don\TimKiemDonGiaoHang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TimKiemDonGiaoHang.Designer.cs">
+    <Compile Include="QL Hoa Don\TimKiemDonGiaoHang.Designer.cs">
       <DependentUpon>TimKiemDonGiaoHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="TimKiemNhaCungCap.cs">
+    <Compile Include="QL Nha Cung Cap\TimKiemNhaCungCap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TimKiemNhaCungCap.Designer.cs">
+    <Compile Include="QL Nha Cung Cap\TimKiemNhaCungCap.Designer.cs">
       <DependentUpon>TimKiemNhaCungCap.cs</DependentUpon>
     </Compile>
-    <Compile Include="TimKiemNhapHang.cs">
+    <Compile Include="QL Kho\TimKiemNhapHang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TimKiemNhapHang.Designer.cs">
+    <Compile Include="QL Kho\TimKiemNhapHang.Designer.cs">
       <DependentUpon>TimKiemNhapHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="TimKiemSanPham.cs">
+    <Compile Include="QL San Pham\TimKiemSanPham.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TimKiemSanPham.Designer.cs">
+    <Compile Include="QL San Pham\TimKiemSanPham.Designer.cs">
       <DependentUpon>TimKiemSanPham.cs</DependentUpon>
     </Compile>
-    <Compile Include="TimKiemXuatHang.cs">
+    <Compile Include="QL Kho\TimKiemXuatHang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TimKiemXuatHang.Designer.cs">
+    <Compile Include="QL Kho\TimKiemXuatHang.Designer.cs">
       <DependentUpon>TimKiemXuatHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="XuatHang.cs">
+    <Compile Include="QL Kho\XuatHang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="XuatHang.Designer.cs">
+    <Compile Include="QL Kho\XuatHang.Designer.cs">
       <DependentUpon>XuatHang.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="DangNhap.resx">
+    <EmbeddedResource Include="Tai Khoan\DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DoiMatKhau.resx">
+    <EmbeddedResource Include="Tai Khoan\DoiMatKhau.resx">
       <DependentUpon>DoiMatKhau.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GiaoDien.resx">
-      <DependentUpon>GiaoDien.cs</DependentUpon>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -151,28 +204,28 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="TimKiemBaoCao.resx">
+    <EmbeddedResource Include="Thong Ke\TimKiemBaoCao.resx">
       <DependentUpon>TimKiemBaoCao.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TimKiemDonDaLap.resx">
+    <EmbeddedResource Include="QL Hoa Don\TimKiemDonDaLap.resx">
       <DependentUpon>TimKiemDonDaLap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TimKiemDonDatHang.resx">
+    <EmbeddedResource Include="QL Hoa Don\TimKiemDonDatHang.resx">
       <DependentUpon>TimKiemDonDatHang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TimKiemDonGiaoHang.resx">
+    <EmbeddedResource Include="QL Hoa Don\TimKiemDonGiaoHang.resx">
       <DependentUpon>TimKiemDonGiaoHang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TimKiemNhaCungCap.resx">
+    <EmbeddedResource Include="QL Nha Cung Cap\TimKiemNhaCungCap.resx">
       <DependentUpon>TimKiemNhaCungCap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TimKiemNhapHang.resx">
+    <EmbeddedResource Include="QL Kho\TimKiemNhapHang.resx">
       <DependentUpon>TimKiemNhapHang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TimKiemSanPham.resx">
+    <EmbeddedResource Include="QL San Pham\TimKiemSanPham.resx">
       <DependentUpon>TimKiemSanPham.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TimKiemXuatHang.resx">
+    <EmbeddedResource Include="QL Kho\TimKiemXuatHang.resx">
       <DependentUpon>TimKiemXuatHang.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
@@ -186,6 +239,19 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
