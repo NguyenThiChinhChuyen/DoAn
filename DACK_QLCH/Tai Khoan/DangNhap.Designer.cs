@@ -77,6 +77,7 @@
             this.btnDangNhap.Size = new System.Drawing.Size(104, 34);
             this.btnDangNhap.TabIndex = 5;
             this.btnDangNhap.Text = "Đăng Nhập ";
+            this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
             // 
             // btnThoat
             // 
@@ -86,6 +87,7 @@
             this.btnThoat.Size = new System.Drawing.Size(104, 34);
             this.btnThoat.TabIndex = 5;
             this.btnThoat.Text = "Thoát";
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // frmDangNhap
             // 
@@ -100,6 +102,8 @@
             this.Controls.Add(this.label1);
             this.Name = "frmDangNhap";
             this.Text = "Đăng Nhập ";
+            this.Enter += new System.EventHandler(this.frmDangNhap_Enter);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.frmDangNhap_KeyPress);
             this.ResumeLayout(false);
             this.PerformLayout();
 
