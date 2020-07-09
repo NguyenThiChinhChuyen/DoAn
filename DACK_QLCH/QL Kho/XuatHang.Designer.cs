@@ -39,7 +39,6 @@
             this.NoiSanXuat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DonViTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnTimKiem = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dateNgaySanXuat = new System.Windows.Forms.DateTimePicker();
             this.btnThoat = new DevExpress.XtraEditors.SimpleButton();
@@ -59,10 +58,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
+            this.btnTimKiem = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgTimKiemSP)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label3
@@ -78,7 +80,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dgTimKiemSP);
-            this.groupBox2.Location = new System.Drawing.Point(24, 225);
+            this.groupBox2.Location = new System.Drawing.Point(24, 261);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(846, 265);
             this.groupBox2.TabIndex = 14;
@@ -135,17 +137,6 @@
             // 
             this.DonGia.HeaderText = "Đơn Giá";
             this.DonGia.Name = "DonGia";
-            // 
-            // btnTimKiem
-            // 
-            this.btnTimKiem.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTimKiem.Appearance.Options.UseFont = true;
-            this.btnTimKiem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTimKiem.ImageOptions.Image")));
-            this.btnTimKiem.Location = new System.Drawing.Point(360, 189);
-            this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(98, 36);
-            this.btnTimKiem.TabIndex = 12;
-            this.btnTimKiem.Text = "Tìm Kiếm";
             // 
             // groupBox1
             // 
@@ -336,29 +327,52 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã SP:";
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.txtTimKiem);
+            this.groupBox3.Controls.Add(this.btnTimKiem);
+            this.groupBox3.Location = new System.Drawing.Point(25, 196);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(846, 55);
+            this.groupBox3.TabIndex = 16;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Tìm Kiếm";
+            // 
             // txtTimKiem
             // 
-            this.txtTimKiem.Location = new System.Drawing.Point(24, 196);
+            this.txtTimKiem.Location = new System.Drawing.Point(31, 22);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(322, 20);
-            this.txtTimKiem.TabIndex = 10;
+            this.txtTimKiem.TabIndex = 5;
+            // 
+            // btnTimKiem
+            // 
+            this.btnTimKiem.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTimKiem.Appearance.Options.UseFont = true;
+            this.btnTimKiem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTimKiem.ImageOptions.Image")));
+            this.btnTimKiem.Location = new System.Drawing.Point(366, 13);
+            this.btnTimKiem.Name = "btnTimKiem";
+            this.btnTimKiem.Size = new System.Drawing.Size(98, 36);
+            this.btnTimKiem.TabIndex = 7;
+            this.btnTimKiem.Text = "Tìm Kiếm";
             // 
             // XuatHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(892, 511);
+            this.ClientSize = new System.Drawing.Size(892, 541);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.btnTimKiem);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.txtTimKiem);
             this.Name = "XuatHang";
             this.Text = "XuatHang";
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgTimKiemSP)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -376,7 +390,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NoiSanXuat;
         private System.Windows.Forms.DataGridViewTextBoxColumn DonViTinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn DonGia;
-        private DevExpress.XtraEditors.SimpleButton btnTimKiem;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DateTimePicker dateNgaySanXuat;
         private DevExpress.XtraEditors.SimpleButton btnThoat;
@@ -396,6 +409,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox txtTimKiem;
+        private DevExpress.XtraEditors.SimpleButton btnTimKiem;
     }
 }
