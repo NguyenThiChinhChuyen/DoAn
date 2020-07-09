@@ -179,6 +179,21 @@
     <Compile Include="QL Kho\XuatHang.Designer.cs">
       <DependentUpon>XuatHang.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="QL Hoa Don\DonDatHang.resx">
+      <DependentUpon>DonDatHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QL Hoa Don\HoaDonBan.resx">
+      <DependentUpon>HoaDonBan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QL Kho\NhaHang.resx">
+      <DependentUpon>NhaHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QL Kho\XuatHang.resx">
+      <DependentUpon>XuatHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QL Nha Cung Cap\NhaCungCap.resx">
+      <DependentUpon>NhaCungCap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QL San Pham\SanPham.resx">
       <DependentUpon>SanPham.cs</DependentUpon>
     </EmbeddedResource>

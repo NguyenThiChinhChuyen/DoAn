@@ -16,5 +16,12 @@ namespace DACK_QLCH.QL_San_Pham
         {
             InitializeComponent();
         }
+
+        private void btnLưu_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }
