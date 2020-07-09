@@ -31,9 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTimKiemSanPham));
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dgTimKiemSP = new System.Windows.Forms.DataGridView();
-            this.Ma = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnThoat = new DevExpress.XtraEditors.SimpleButton();
             this.btnTimKiem = new DevExpress.XtraEditors.SimpleButton();
@@ -41,9 +38,17 @@
             this.txtMaSP = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.dgTimKiemSP = new System.Windows.Forms.DataGridView();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgaySanXuat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NoiSanXuat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DonViTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgTimKiemSP)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgTimKiemSP)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -65,27 +70,6 @@
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Kết Quả:";
-            // 
-            // dgTimKiemSP
-            // 
-            this.dgTimKiemSP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgTimKiemSP.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Ma,
-            this.Ten});
-            this.dgTimKiemSP.Location = new System.Drawing.Point(6, 21);
-            this.dgTimKiemSP.Name = "dgTimKiemSP";
-            this.dgTimKiemSP.Size = new System.Drawing.Size(755, 238);
-            this.dgTimKiemSP.TabIndex = 0;
-            // 
-            // Ma
-            // 
-            this.Ma.HeaderText = "Mã:";
-            this.Ma.Name = "Ma";
-            // 
-            // Ten
-            // 
-            this.Ten.HeaderText = "Tên";
-            this.Ten.Name = "Ten";
             // 
             // groupBox1
             // 
@@ -156,6 +140,57 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã SP:";
             // 
+            // dgTimKiemSP
+            // 
+            this.dgTimKiemSP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgTimKiemSP.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.STT,
+            this.MaSP,
+            this.TenSP,
+            this.NgaySanXuat,
+            this.NoiSanXuat,
+            this.DonViTinh,
+            this.DonGia});
+            this.dgTimKiemSP.Location = new System.Drawing.Point(6, 21);
+            this.dgTimKiemSP.Name = "dgTimKiemSP";
+            this.dgTimKiemSP.Size = new System.Drawing.Size(755, 238);
+            this.dgTimKiemSP.TabIndex = 1;
+            // 
+            // STT
+            // 
+            this.STT.HeaderText = "STT";
+            this.STT.Name = "STT";
+            // 
+            // MaSP
+            // 
+            this.MaSP.HeaderText = "Mã Sản Phẩm";
+            this.MaSP.Name = "MaSP";
+            // 
+            // TenSP
+            // 
+            this.TenSP.HeaderText = "Tên Sản Phẩm";
+            this.TenSP.Name = "TenSP";
+            // 
+            // NgaySanXuat
+            // 
+            this.NgaySanXuat.HeaderText = "Ngày Sản Xuất";
+            this.NgaySanXuat.Name = "NgaySanXuat";
+            // 
+            // NoiSanXuat
+            // 
+            this.NoiSanXuat.HeaderText = "Nơi Sản Xuất";
+            this.NoiSanXuat.Name = "NoiSanXuat";
+            // 
+            // DonViTinh
+            // 
+            this.DonViTinh.HeaderText = "Đơn Vị Tính";
+            this.DonViTinh.Name = "DonViTinh";
+            // 
+            // DonGia
+            // 
+            this.DonGia.HeaderText = "Đơn Giá";
+            this.DonGia.Name = "DonGia";
+            // 
             // frmTimKiemSanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -165,11 +200,11 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmTimKiemSanPham";
-            this.Text = "TimKiemSanPham";
+            this.Text = "TÌM KIẾM SẢN PHẨM";
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgTimKiemSP)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgTimKiemSP)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -179,9 +214,6 @@
 
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView dgTimKiemSP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Ma;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Ten;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -189,5 +221,13 @@
         private System.Windows.Forms.TextBox txtMaSP;
         private DevExpress.XtraEditors.SimpleButton btnTimKiem;
         private DevExpress.XtraEditors.SimpleButton btnThoat;
+        private System.Windows.Forms.DataGridView dgTimKiemSP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaSP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenSP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgaySanXuat;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NoiSanXuat;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DonViTinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DonGia;
     }
 }
