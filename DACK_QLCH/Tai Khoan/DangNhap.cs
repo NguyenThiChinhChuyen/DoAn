@@ -48,7 +48,7 @@ namespace DACK_QLCH
             DataRow[] r = tblNhanVien.Select("Username='" + txtDangNhap + "' and Password='" + txtMatKhau.Text + "'");
             if (r.Count() > 0)
             {
-                fMain.Text = "Quản lý Nhà Sách - Chào" + r[0]["TenNV"].ToString();
+                fMain.Text = "Quản lý Cửa Hàng  - Chào " + r[0]["TenNV"].ToString();
                 fMain.maNV = r[0]["MaNV"].ToString();
                 fMain.enableControl((int)r[0]["MaLTK"]);
                 this.Close();
