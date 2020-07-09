@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace DACK_QLCH.QL_Hoa_Don
 {
-    public partial class DonDatHang : Form
+    public partial class frmDonDatHang : Form
     {
-        public DonDatHang()
+        public frmDonDatHang()
         {
             InitializeComponent();
         }

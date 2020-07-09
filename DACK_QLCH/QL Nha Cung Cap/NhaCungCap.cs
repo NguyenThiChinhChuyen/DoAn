@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace DACK_QLCH.QL_Nha_Cung_Cap
 {
-    public partial class NhaCungCap : Form
+    public partial class frmNhaCungCap : Form
     {
-        public NhaCungCap()
+        public frmNhaCungCap()
         {
             InitializeComponent();
         }

@@ -1,6 +1,6 @@
 ﻿namespace DACK_QLCH.QL_Hoa_Don
 {
-    partial class HoaDonBan
+    partial class frmHoaDonBan
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HoaDonBan));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHoaDonBan));
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dgTimKiemSP = new System.Windows.Forms.DataGridView();
+            this.dgDSDBH = new System.Windows.Forms.DataGridView();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,7 +62,7 @@
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.btnTimKiem = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgTimKiemSP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgDSDBH)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
@@ -73,13 +73,13 @@
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(339, 18);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(191, 19);
+            this.label3.Size = new System.Drawing.Size(232, 19);
             this.label3.TabIndex = 11;
-            this.label3.Text = "DANH SÁCH SẢN PHẨM";
+            this.label3.Text = "DANH SÁCH ĐƠN BÁN HÀNG";
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.dgTimKiemSP);
+            this.groupBox2.Controls.Add(this.dgDSDBH);
             this.groupBox2.Location = new System.Drawing.Point(39, 258);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(846, 265);
@@ -87,10 +87,10 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Kết Quả:";
             // 
-            // dgTimKiemSP
+            // dgDSDBH
             // 
-            this.dgTimKiemSP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgTimKiemSP.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgDSDBH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgDSDBH.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.STT,
             this.MaSP,
             this.TenSP,
@@ -98,10 +98,10 @@
             this.NoiSanXuat,
             this.DonViTinh,
             this.DonGia});
-            this.dgTimKiemSP.Location = new System.Drawing.Point(6, 21);
-            this.dgTimKiemSP.Name = "dgTimKiemSP";
-            this.dgTimKiemSP.Size = new System.Drawing.Size(834, 238);
-            this.dgTimKiemSP.TabIndex = 0;
+            this.dgDSDBH.Location = new System.Drawing.Point(6, 21);
+            this.dgDSDBH.Name = "dgDSDBH";
+            this.dgDSDBH.Size = new System.Drawing.Size(834, 238);
+            this.dgDSDBH.TabIndex = 0;
             // 
             // STT
             // 
@@ -356,7 +356,7 @@
             this.btnTimKiem.TabIndex = 7;
             this.btnTimKiem.Text = "Tìm Kiếm";
             // 
-            // HoaDonBan
+            // frmHoaDonBan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -365,10 +365,10 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Name = "HoaDonBan";
-            this.Text = "HoaDonBan";
+            this.Name = "frmHoaDonBan";
+            this.Text = "DANH SÁCH ĐƠN BÁN HÀNG";
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgTimKiemSP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgDSDBH)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -382,7 +382,7 @@
 
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView dgTimKiemSP;
+        private System.Windows.Forms.DataGridView dgDSDBH;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaSP;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenSP;

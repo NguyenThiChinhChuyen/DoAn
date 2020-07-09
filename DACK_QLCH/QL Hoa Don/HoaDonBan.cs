@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace DACK_QLCH.QL_Hoa_Don
 {
-    public partial class HoaDonBan : Form
+    public partial class frmHoaDonBan : Form
     {
-        public HoaDonBan()
+        public frmHoaDonBan()
         {
             InitializeComponent();
         }
