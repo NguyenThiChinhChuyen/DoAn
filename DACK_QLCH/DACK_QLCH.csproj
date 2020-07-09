@@ -87,12 +87,6 @@
     <Compile Include="QL Hoa Don\DonDatHang.Designer.cs">
       <DependentUpon>DonDatHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="QL Hoa Don\DonGiaoHang.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QL Hoa Don\DonGiaoHang.Designer.cs">
-      <DependentUpon>DonGiaoHang.cs</DependentUpon>
-    </Compile>
     <Compile Include="QL Hoa Don\HoaDonBan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,12 +149,6 @@
     <Compile Include="QL Hoa Don\TimKiemDonDatHang.Designer.cs">
       <DependentUpon>TimKiemDonDatHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="QL Hoa Don\TimKiemDonGiaoHang.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QL Hoa Don\TimKiemDonGiaoHang.Designer.cs">
-      <DependentUpon>TimKiemDonGiaoHang.cs</DependentUpon>
-    </Compile>
     <Compile Include="QL Nha Cung Cap\TimKiemNhaCungCap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -191,6 +179,9 @@
     <Compile Include="QL Kho\XuatHang.Designer.cs">
       <DependentUpon>XuatHang.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="QL San Pham\SanPham.resx">
+      <DependentUpon>SanPham.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Tai Khoan\DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </EmbeddedResource>
@@ -218,9 +209,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QL Hoa Don\TimKiemDonDatHang.resx">
       <DependentUpon>TimKiemDonDatHang.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="QL Hoa Don\TimKiemDonGiaoHang.resx">
-      <DependentUpon>TimKiemDonGiaoHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QL Nha Cung Cap\TimKiemNhaCungCap.resx">
       <DependentUpon>TimKiemNhaCungCap.cs</DependentUpon>

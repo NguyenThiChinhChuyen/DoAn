@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace DACK_QLCH.QL_San_Pham
 {
-    public partial class SanPham : Form
+    public partial class frmSanPham : Form
     {
-        public SanPham()
+        public frmSanPham()
         {
             InitializeComponent();
         }

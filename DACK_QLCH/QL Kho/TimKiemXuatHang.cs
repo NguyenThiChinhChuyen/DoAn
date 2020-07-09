@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace DACK_QLCH
 {
-    public partial class TimKiemXuatHang : Form
+    public partial class frmTimKiemXuatHang : Form
     {
-        public TimKiemXuatHang()
+        public frmTimKiemXuatHang()
         {
             InitializeComponent();
         }
