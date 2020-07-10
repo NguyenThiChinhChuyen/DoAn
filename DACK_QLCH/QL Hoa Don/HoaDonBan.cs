@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using DACK_QLCH.Moduls;
 
 namespace DACK_QLCH.QL_Hoa_Don
 {
