@@ -75,10 +75,37 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Moduls\XLBang.cs">
+    <Compile Include="Moduls\XLBANG.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Moduls\XLCTHD.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Moduls\XLHOADON.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Moduls\XLLOAITK.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Moduls\XLNCC.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Moduls\XLNHANVIEN.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Moduls\XLPHIEUNHAP.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Moduls\XLPHIEUXUAT.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Moduls\XLPNCT.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Moduls\XLPXCT.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Moduls\XLSANPHAM.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="QL Hoa Don\DonDatHang.cs">
