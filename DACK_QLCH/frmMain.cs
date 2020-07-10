@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using DACK_QLCH.Moduls;
 
 namespace DACK_QLCH
 {
@@ -35,9 +36,9 @@ namespace DACK_QLCH
                     btnDoiMatKhau.Enabled = true;
 
                     break;
-                default:
-                    btnDangXuat.Enabled = true;
-                    btnDoiMatKhau.Enabled = true;
+                default://Đăng Xuất
+                    btnDangXuat.Enabled = false;
+                    btnDoiMatKhau.Enabled = false;
                     break;
             }
         }
@@ -54,7 +55,7 @@ namespace DACK_QLCH
                 tabControlMain.SelectedIndex = index;
             else
             {
-                frmDoiMatKhau f = new frmDoiMatKhau();
+                frmDoiMatKhau f = new frmDoiMatKhau(maNV);
                 TabPage p = new TabPage(f.Text);
                 p.Name = "tabPageDoiMatKhau";
                 f.TopLevel = false;
@@ -62,7 +63,7 @@ namespace DACK_QLCH
                 f.Dock = DockStyle.Fill;
                 f.FormBorderStyle = FormBorderStyle.None;
                 tabControlMain.TabPages.Add(p);
-                tabControlMain.SelectedTab = p;
+                //tabControlMain.SelectedTab = p;
                 f.Show();
             }
         }

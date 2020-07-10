@@ -21,7 +21,7 @@ namespace DACK_QLCH
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn đã chắc chắn thoát!", "QLCH", MessageBoxButtons.YesNo, MessageBoxIcon.Stop) == DialogResult.Yes)
+            if (MessageBox.Show("Bạn đã chắc chắn!", "QLCH", MessageBoxButtons.YesNo, MessageBoxIcon.Stop) == DialogResult.Yes)
             {
                 Application.Exit();
             }
@@ -45,10 +45,10 @@ namespace DACK_QLCH
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
             tblNhanVien = new XLNHANVIEN();
-            DataRow[] r = tblNhanVien.Select("Username='" + txtDangNhap + "' and Password='" + txtMatKhau.Text + "'");
+            DataRow[] r = tblNhanVien.Select("Username='" + txtDangNhap.Text + "' and Password='" + txtMatKhau.Text + "'");
             if (r.Count() > 0)
             {
-                fMain.Text = "Quản lý Cửa Hàng  - Chào " + r[0]["TenNV"].ToString();
+                fMain.Text = "Quản lý Cửa Hàng  - Chào " + r[0]["HoTen"].ToString();
                 fMain.maNV = r[0]["MaNV"].ToString();
                 fMain.enableControl((int)r[0]["MaLTK"]);
                 this.Close();

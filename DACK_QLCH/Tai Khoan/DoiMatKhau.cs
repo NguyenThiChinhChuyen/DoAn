@@ -13,9 +13,11 @@ namespace DACK_QLCH
 {
     public partial class frmDoiMatKhau : Form
     {
-        public frmDoiMatKhau()
+        string temp;
+        public frmDoiMatKhau(string truyen)
         {
             InitializeComponent();
+            this.temp = truyen;
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
@@ -27,20 +29,21 @@ namespace DACK_QLCH
 
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
-            errorProvider1.SetError(txtMKM, "");
-            errorProvider1.SetError(txtMKC, "");
-            if (txtMKM.Text.Length < 8 || txtMKM.Text.Any(char.IsDigit) || !txtMKM.Text.Any(char.IsLower) || !txtMKM.Text.Any(char.IsUpper))
+            errorProvider1.SetError(txtPassNew, "");
+            errorProvider1.SetError(txtConfirmPass, "");
+            if (txtPassNew.Text.Length<8 || !txtPassNew.Text.Any(char.IsDigit) || !txtPassNew.Text.Any(char.IsLower) || !txtPassNew.Text.Any(char.IsUpper))
             {
-                errorProvider1.SetError(txtMKM, "Mật khẩu mới tối thiểu 8 kí tự, gồm chữ số, " + "in hoa, in thường");
+                errorProvider1.SetError(txtPassNew, "Mật khẩu mới tối thiểu 8 kí tự, gồm chữ số, " + "in hoa, in thường");
                 return;
             }
-            if (txtMKM.Text != txtMKC.Text)
+            if (txtPassNew.Text != txtConfirmPass.Text)
             {
-                errorProvider1.SetError(txtMKC, "Mật khẩu nhập lại không trùng!!!");
+                errorProvider1.SetError(txtConfirmPass, "Mật khẩu nhập lại không trùng!!!");
                 return;
             }
             frmMain f = (frmMain)this.MdiParent;
-            int count = XLBANG.Thuc_hien_lenh("Update NHANVIEN set Password= '" + txtMKM.Text + "' where MaNV='" + f.maNV + "'");
+            MessageBox.Show(txtPassNew.Text.ToString() + temp);
+            int count = XLBANG.Thuc_hien_lenh("Update NHANVIEN set Password='" + txtPassNew.Text + "' where MaNV='" + temp + "'");
             if (count > 0)
             {
                 MessageBox.Show("Cập nhật thành công.");

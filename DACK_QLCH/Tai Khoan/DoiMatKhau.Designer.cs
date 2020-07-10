@@ -32,8 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDoiMatKhau));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtMKC = new System.Windows.Forms.TextBox();
-            this.txtMKM = new System.Windows.Forms.TextBox();
+            this.txtConfirmPass = new System.Windows.Forms.TextBox();
+            this.txtPassNew = new System.Windows.Forms.TextBox();
             this.btnCapNhat = new DevExpress.XtraEditors.SimpleButton();
             this.btnHuy = new DevExpress.XtraEditors.SimpleButton();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
@@ -43,34 +43,34 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(105, 91);
+            this.label1.Location = new System.Drawing.Point(103, 91);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 13);
+            this.label1.Size = new System.Drawing.Size(96, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Mật Khẩu Cũ:";
+            this.label1.Text = "Nhập lại mật khẩu:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(105, 48);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 13);
+            this.label2.Size = new System.Drawing.Size(105, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Mật Khẩu Mới: ";
+            this.label2.Text = "Nhập mật khẩu mới: ";
             // 
-            // txtMKC
+            // txtConfirmPass
             // 
-            this.txtMKC.Location = new System.Drawing.Point(205, 88);
-            this.txtMKC.Name = "txtMKC";
-            this.txtMKC.Size = new System.Drawing.Size(158, 20);
-            this.txtMKC.TabIndex = 2;
+            this.txtConfirmPass.Location = new System.Drawing.Point(205, 88);
+            this.txtConfirmPass.Name = "txtConfirmPass";
+            this.txtConfirmPass.Size = new System.Drawing.Size(158, 20);
+            this.txtConfirmPass.TabIndex = 2;
             // 
-            // txtMKM
+            // txtPassNew
             // 
-            this.txtMKM.Location = new System.Drawing.Point(205, 45);
-            this.txtMKM.Name = "txtMKM";
-            this.txtMKM.Size = new System.Drawing.Size(157, 20);
-            this.txtMKM.TabIndex = 3;
+            this.txtPassNew.Location = new System.Drawing.Point(205, 45);
+            this.txtPassNew.Name = "txtPassNew";
+            this.txtPassNew.Size = new System.Drawing.Size(157, 20);
+            this.txtPassNew.TabIndex = 3;
             // 
             // btnCapNhat
             // 
@@ -103,8 +103,8 @@
             this.ClientSize = new System.Drawing.Size(462, 226);
             this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.btnCapNhat);
-            this.Controls.Add(this.txtMKM);
-            this.Controls.Add(this.txtMKC);
+            this.Controls.Add(this.txtPassNew);
+            this.Controls.Add(this.txtConfirmPass);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "frmDoiMatKhau";
@@ -119,8 +119,8 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtMKC;
-        private System.Windows.Forms.TextBox txtMKM;
+        private System.Windows.Forms.TextBox txtConfirmPass;
+        private System.Windows.Forms.TextBox txtPassNew;
         private DevExpress.XtraEditors.SimpleButton btnCapNhat;
         private DevExpress.XtraEditors.SimpleButton btnHuy;
         private System.Windows.Forms.ErrorProvider errorProvider1;

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DACK_QLCH.Moduls;
 
 namespace DACK_QLCH.QL_San_Pham
 {
@@ -16,12 +17,13 @@ namespace DACK_QLCH.QL_San_Pham
         {
             InitializeComponent();
         }
+     
+        XLSANPHAM tblSanPham;
 
-        private void btnLưu_Click(object sender, EventArgs e)
+        private void frmSanPham_Load(object sender, EventArgs e)
         {
+            tblSanPham = new XLSANPHAM();
 
         }
-
-
     }
 }
