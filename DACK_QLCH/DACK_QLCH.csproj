@@ -75,6 +75,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DuLieuDoAnDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DuLieuDoAnDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Moduls\XLBANG.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -265,6 +270,17 @@
       <DependentUpon>TimKiemXuatHang.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
+    <None Include="DuLieuDoAnDataSet.xsc">
+      <DependentUpon>DuLieuDoAnDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DuLieuDoAnDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DuLieuDoAnDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DuLieuDoAnDataSet.xss">
+      <DependentUpon>DuLieuDoAnDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
