@@ -122,7 +122,7 @@
             this.ribbonPage3,
             this.ribbonPage4,
             this.ribbonPage5});
-            this.ribbonControl1.Size = new System.Drawing.Size(908, 150);
+            this.ribbonControl1.Size = new System.Drawing.Size(928, 150);
             // 
             // btnDangXuat
             // 
@@ -458,17 +458,17 @@
             // 
             // tabControlMain
             // 
-            this.tabControlMain.Location = new System.Drawing.Point(0, 150);
+            this.tabControlMain.Location = new System.Drawing.Point(0, 151);
             this.tabControlMain.Name = "tabControlMain";
             this.tabControlMain.SelectedIndex = 0;
-            this.tabControlMain.Size = new System.Drawing.Size(914, 500);
+            this.tabControlMain.Size = new System.Drawing.Size(928, 588);
             this.tabControlMain.TabIndex = 1;
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(908, 668);
+            this.ClientSize = new System.Drawing.Size(928, 738);
             this.Controls.Add(this.tabControlMain);
             this.Controls.Add(this.ribbonControl1);
             this.Name = "frmMain";

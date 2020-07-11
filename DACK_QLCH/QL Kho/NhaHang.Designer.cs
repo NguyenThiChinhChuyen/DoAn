@@ -33,6 +33,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgDSNH = new System.Windows.Forms.DataGridView();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoPhieuNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaNCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayPhieuNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NoiDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.duLieuDoAnDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.duLieuDoAnDataSet = new DACK_QLCH.DuLieuDoAnDataSet();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -55,12 +61,6 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.btnTimKiem = new DevExpress.XtraEditors.SimpleButton();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoPhieuNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaNCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayPhieuNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NoiDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgDSNH)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.duLieuDoAnDataSetBindingSource)).BeginInit();
@@ -73,7 +73,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(322, 21);
+            this.label3.Location = new System.Drawing.Point(347, 15);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(241, 19);
             this.label3.TabIndex = 11;
@@ -82,9 +82,9 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dgDSNH);
-            this.groupBox2.Location = new System.Drawing.Point(22, 267);
+            this.groupBox2.Location = new System.Drawing.Point(38, 261);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(846, 265);
+            this.groupBox2.Size = new System.Drawing.Size(846, 288);
             this.groupBox2.TabIndex = 14;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Kết Quả:";
@@ -101,11 +101,51 @@
             this.NgayPhieuNhap,
             this.NoiDung});
             this.dgDSNH.DataSource = this.duLieuDoAnDataSetBindingSource;
-            this.dgDSNH.Location = new System.Drawing.Point(6, 21);
+            this.dgDSNH.Location = new System.Drawing.Point(6, 18);
             this.dgDSNH.Name = "dgDSNH";
-            this.dgDSNH.Size = new System.Drawing.Size(834, 238);
+            this.dgDSNH.Size = new System.Drawing.Size(834, 263);
             this.dgDSNH.TabIndex = 0;
             this.dgDSNH.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgDSNH_DataBindingComplete);
+            // 
+            // STT
+            // 
+            this.STT.HeaderText = "STT";
+            this.STT.Name = "STT";
+            this.STT.Width = 50;
+            // 
+            // SoPhieuNhap
+            // 
+            this.SoPhieuNhap.DataPropertyName = "SoPhieuNhap";
+            this.SoPhieuNhap.HeaderText = "Số Phiếu Nhập";
+            this.SoPhieuNhap.Name = "SoPhieuNhap";
+            this.SoPhieuNhap.Width = 120;
+            // 
+            // MaNV
+            // 
+            this.MaNV.DataPropertyName = "MaNV";
+            this.MaNV.HeaderText = "Mã Nhân Viên";
+            this.MaNV.Name = "MaNV";
+            // 
+            // MaNCC
+            // 
+            this.MaNCC.DataPropertyName = "MaNCC";
+            this.MaNCC.HeaderText = "Mã Nhà Cung Cấp";
+            this.MaNCC.Name = "MaNCC";
+            this.MaNCC.Width = 120;
+            // 
+            // NgayPhieuNhap
+            // 
+            this.NgayPhieuNhap.DataPropertyName = "NgayPhieuNhap";
+            this.NgayPhieuNhap.HeaderText = "Ngày Phiếu Nhập";
+            this.NgayPhieuNhap.Name = "NgayPhieuNhap";
+            this.NgayPhieuNhap.Width = 120;
+            // 
+            // NoiDung
+            // 
+            this.NoiDung.DataPropertyName = "NoiDung";
+            this.NoiDung.HeaderText = "Nội Dung";
+            this.NoiDung.Name = "NoiDung";
+            this.NoiDung.Width = 300;
             // 
             // duLieuDoAnDataSetBindingSource
             // 
@@ -135,7 +175,7 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(23, 46);
+            this.groupBox1.Location = new System.Drawing.Point(39, 40);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(845, 136);
             this.groupBox1.TabIndex = 13;
@@ -209,7 +249,7 @@
             // 
             this.btnLuu.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuu.Appearance.Options.UseFont = true;
-            this.btnLuu.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLưu.ImageOptions.Image")));
+            this.btnLuu.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.ImageOptions.Image")));
             this.btnLuu.Location = new System.Drawing.Point(529, 67);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(98, 40);
@@ -294,7 +334,7 @@
             // 
             this.groupBox3.Controls.Add(this.txtTimKiem);
             this.groupBox3.Controls.Add(this.btnTimKiem);
-            this.groupBox3.Location = new System.Drawing.Point(22, 199);
+            this.groupBox3.Location = new System.Drawing.Point(38, 193);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(846, 55);
             this.groupBox3.TabIndex = 15;
@@ -319,51 +359,11 @@
             this.btnTimKiem.TabIndex = 7;
             this.btnTimKiem.Text = "Tìm Kiếm";
             // 
-            // STT
-            // 
-            this.STT.HeaderText = "STT";
-            this.STT.Name = "STT";
-            this.STT.Width = 50;
-            // 
-            // SoPhieuNhap
-            // 
-            this.SoPhieuNhap.DataPropertyName = "SoPhieuNhap";
-            this.SoPhieuNhap.HeaderText = "Số Phiếu Nhập";
-            this.SoPhieuNhap.Name = "SoPhieuNhap";
-            this.SoPhieuNhap.Width = 120;
-            // 
-            // MaNV
-            // 
-            this.MaNV.DataPropertyName = "MaNV";
-            this.MaNV.HeaderText = "Mã Nhân Viên";
-            this.MaNV.Name = "MaNV";
-            // 
-            // MaNCC
-            // 
-            this.MaNCC.DataPropertyName = "MaNCC";
-            this.MaNCC.HeaderText = "Mã Nhà Cung Cấp";
-            this.MaNCC.Name = "MaNCC";
-            this.MaNCC.Width = 120;
-            // 
-            // NgayPhieuNhap
-            // 
-            this.NgayPhieuNhap.DataPropertyName = "NgayPhieuNhap";
-            this.NgayPhieuNhap.HeaderText = "Ngày Phiếu Nhập";
-            this.NgayPhieuNhap.Name = "NgayPhieuNhap";
-            this.NgayPhieuNhap.Width = 120;
-            // 
-            // NoiDung
-            // 
-            this.NoiDung.DataPropertyName = "NoiDung";
-            this.NoiDung.HeaderText = "Nội Dung";
-            this.NoiDung.Name = "NoiDung";
-            this.NoiDung.Width = 300;
-            // 
             // frmNhaHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(894, 544);
+            this.ClientSize = new System.Drawing.Size(934, 591);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.groupBox2);

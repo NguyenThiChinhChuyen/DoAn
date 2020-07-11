@@ -19,27 +19,43 @@ namespace DACK_QLCH.QL_Hoa_Don
             InitializeComponent();
         }
         XLHOADON tblHoaDon;
-        XLNHANVIEN tblNhanVien;
-        bool capNhat = false;
+        XLHOADON_CT tblHOADON_CT;
+        bool capNhat=false;
         private void frmDonDatHang_Load(object sender, EventArgs e)
         {
             tblHoaDon = new XLHOADON();
-            tblNhanVien = new XLNHANVIEN();
+            tblHOADON_CT = new XLHOADON_CT();
             loadHoaDon();
+            LoadHoaDon_CTdgDONDATHANG();
             ennableButton();
+        }
+        private void LoadHoaDon_CTdgDONDATHANG()
+        {
+            var ds = new DataSet();
+            ds.Tables.AddRange(new DataTable[] { tblHOADON_CT, tblHoaDon });
+            ds.Relations.Add(new DataRelation("FRK_HOADON_CT_HOADON", tblHOADON_CT.Columns["SoHD"], tblHoaDon.Columns["SoHD"]));
+            DataColumn cot_SoLuong = new DataColumn("SoLuong", Type.GetType("System.String"), "Parent(FRK_HOADON_CT_HOADON).SoLuong");
+            tblHoaDon.Columns.Add(cot_SoLuong);
+            DataColumn cot_DonGia = new DataColumn("DonGia", Type.GetType("System.String"), "Parent(FRK_HOADON_CT_HOADON).DonGia");
+            tblHoaDon.Columns.Add(cot_DonGia);
+            DataColumn cot_ThanhTien = new DataColumn("ThanhTien", Type.GetType("System.String"), "Parent(FRK_HOADON_CT_HOADON).ThanhTien");
+            tblHoaDon.Columns.Add(cot_ThanhTien);
         }
         private void loadHoaDon()
         {
+
             txtSoHD.DataBindings.Add("text", tblHoaDon, "SoHD", true);
-            txtTenNV.DataBindings.Add("text", tblNhanVien, "HoTen", true);
-            txtMaNV.DataBindings.Add("text", tblHoaDon, "MaNV", true);
             dateGiaoHang.DataBindings.Add("text", tblHoaDon, "NgayGH", true);
             txtDiaChi.DataBindings.Add("text", tblHoaDon, "DiaChi", true);
             txtKhachHang.DataBindings.Add("text", tblHoaDon, "TenKH", true);
             txtSDT.DataBindings.Add("text", tblHoaDon, "SDT", true);
             txtTinhTrang.DataBindings.Add("text", tblHoaDon, "TinhTrangGiao", true);
+            txtThanhTien.DataBindings.Add("text", tblHOADON_CT, "ThanhTien", true);
+            txtDonGia.DataBindings.Add("text", tblHOADON_CT, "DonnGia", true);
+            txtSoLuong.DataBindings.Add("text", tblHOADON_CT, "SoLuong", true);
             dgDSDDH.AutoGenerateColumns = false;
-            dgDSDDH.DataSource = tblHoaDon;
+            dgDSDDH.DataSource =  tblHoaDon;
+       
         }
         private void ennableButton()
         {
@@ -48,7 +64,7 @@ namespace DACK_QLCH.QL_Hoa_Don
             btnXoa.Enabled = !capNhat;
             btnHuy.Enabled = capNhat;
             btnLuu.Enabled = capNhat;
-            btnThoat.Enabled = capNhat;
+            btnThoat.Enabled = !capNhat;
             btnTimKiem.Enabled = capNhat;
         }
 
@@ -59,5 +75,7 @@ namespace DACK_QLCH.QL_Hoa_Don
                 r.Cells[0].Value = r.Index + 1;
             }
         }
+
+
     }
 }

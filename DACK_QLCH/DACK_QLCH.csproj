@@ -83,7 +83,7 @@
     <Compile Include="Moduls\XLBANG.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Moduls\XLCTHD.cs">
+    <Compile Include="Moduls\XLHOADON_CT.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Moduls\XLHOADON.cs">
@@ -104,10 +104,10 @@
     <Compile Include="Moduls\XLPHIEUXUAT.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Moduls\XLPNCT.cs">
+    <Compile Include="Moduls\XLPHIEUNHAP_CT.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Moduls\XLPXCT.cs">
+    <Compile Include="Moduls\XLPHIEUXUAT_CT.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Moduls\XLSANPHAM.cs">

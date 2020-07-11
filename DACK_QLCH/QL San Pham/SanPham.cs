@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using DACK_QLCH.Moduls;
 using DevExpress.Utils.Extensions;
 using System.Data.SqlClient;
+using System.IO;
+
 
 namespace DACK_QLCH.QL_San_Pham
 {
@@ -21,13 +23,18 @@ namespace DACK_QLCH.QL_San_Pham
         }
      
         XLSANPHAM tblSanPham;
+        BindingManagerBase DSSP;
         bool capNhat = false;
 
         private void frmSanPham_Load(object sender, EventArgs e)
         {
             tblSanPham = new XLSANPHAM();
             LoadDSSP();
+            dgDSSP.AutoGenerateColumns = false;
+            dgDSSP.DataSource = tblSanPham;
+            DSSP = this.BindingContext[tblSanPham];
             ennableButton();
+
         }
         private void LoadDSSP()
         {
@@ -37,8 +44,8 @@ namespace DACK_QLCH.QL_San_Pham
             txtDonGia.DataBindings.Add("text", tblSanPham, "DonGia", true);
             txtDonViTinh.DataBindings.Add("text", tblSanPham, "DonViTinh", true);
             dateNgaySanXuat.DataBindings.Add("text", tblSanPham, "NgaySX", true);
-            dgDSSP.AutoGenerateColumns = false;
-            dgDSSP.DataSource = tblSanPham;
+   
+
         }
 
         private void ennableButton()
@@ -48,7 +55,7 @@ namespace DACK_QLCH.QL_San_Pham
             btnXoa.Enabled = !capNhat;
             btnHuy.Enabled = capNhat;
             btnLuu.Enabled = capNhat;
-            btnThoat.Enabled = capNhat;
+            btnThoat.Enabled = !capNhat;
             btnTimKiem.Enabled = capNhat;
         }
 
@@ -57,6 +64,71 @@ namespace DACK_QLCH.QL_San_Pham
             foreach(DataGridViewRow r in dgDSSP.Rows)
             {
                 r.Cells[0].Value = r.Index + 1;
+            }
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DSSP.AddNew();
+                capNhat = true;
+                ennableButton();
+                MessageBox.Show("Thêm thành công!!!");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            capNhat = true;
+            ennableButton();
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DSSP.CancelCurrentEdit();
+                MessageBox.Show("Cập nhật thành công!!!");
+                capNhat = false;
+                ennableButton();
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
+
+        }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+
+            DSSP.CancelCurrentEdit();
+            tblSanPham.RejectChanges();
+            capNhat = false;
+            ennableButton();
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void dgDSSP_SelectionChanged(object sender, EventArgs e)
+        {
+            if(capNhat)
+            {
+                btnHuy_Click(sender, e);
             }
         }
     }

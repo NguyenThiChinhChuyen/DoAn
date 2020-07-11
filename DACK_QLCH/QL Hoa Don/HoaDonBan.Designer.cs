@@ -40,6 +40,8 @@
             this.NoiSanXuat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DonViTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.duLieuDoAnDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.duLieuDoAnDataSet = new DACK_QLCH.DuLieuDoAnDataSet();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dateNgaySanXuat = new System.Windows.Forms.DateTimePicker();
             this.btnThoat = new DevExpress.XtraEditors.SimpleButton();
@@ -62,21 +64,19 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.btnTimKiem = new DevExpress.XtraEditors.SimpleButton();
-            this.duLieuDoAnDataSet = new DACK_QLCH.DuLieuDoAnDataSet();
-            this.duLieuDoAnDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgDSDBH)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.duLieuDoAnDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.duLieuDoAnDataSet)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.duLieuDoAnDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.duLieuDoAnDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(339, 18);
+            this.label3.Location = new System.Drawing.Point(350, 18);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(232, 19);
             this.label3.TabIndex = 11;
@@ -87,7 +87,7 @@
             this.groupBox2.Controls.Add(this.dgDSDBH);
             this.groupBox2.Location = new System.Drawing.Point(39, 258);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(846, 265);
+            this.groupBox2.Size = new System.Drawing.Size(846, 291);
             this.groupBox2.TabIndex = 14;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Kết Quả:";
@@ -107,7 +107,7 @@
             this.dgDSDBH.DataSource = this.duLieuDoAnDataSetBindingSource;
             this.dgDSDBH.Location = new System.Drawing.Point(6, 21);
             this.dgDSDBH.Name = "dgDSDBH";
-            this.dgDSDBH.Size = new System.Drawing.Size(834, 238);
+            this.dgDSDBH.Size = new System.Drawing.Size(834, 264);
             this.dgDSDBH.TabIndex = 0;
             // 
             // STT
@@ -144,6 +144,16 @@
             // 
             this.DonGia.HeaderText = "Đơn Giá";
             this.DonGia.Name = "DonGia";
+            // 
+            // duLieuDoAnDataSetBindingSource
+            // 
+            this.duLieuDoAnDataSetBindingSource.DataSource = this.duLieuDoAnDataSet;
+            this.duLieuDoAnDataSetBindingSource.Position = 0;
+            // 
+            // duLieuDoAnDataSet
+            // 
+            this.duLieuDoAnDataSet.DataSetName = "DuLieuDoAnDataSet";
+            this.duLieuDoAnDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // groupBox1
             // 
@@ -363,21 +373,11 @@
             this.btnTimKiem.TabIndex = 7;
             this.btnTimKiem.Text = "Tìm Kiếm";
             // 
-            // duLieuDoAnDataSet
-            // 
-            this.duLieuDoAnDataSet.DataSetName = "DuLieuDoAnDataSet";
-            this.duLieuDoAnDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // duLieuDoAnDataSetBindingSource
-            // 
-            this.duLieuDoAnDataSetBindingSource.DataSource = this.duLieuDoAnDataSet;
-            this.duLieuDoAnDataSetBindingSource.Position = 0;
-            // 
             // frmHoaDonBan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(924, 537);
+            this.ClientSize = new System.Drawing.Size(924, 561);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.groupBox2);
@@ -386,12 +386,12 @@
             this.Text = "DANH SÁCH ĐƠN BÁN HÀNG";
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgDSDBH)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.duLieuDoAnDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.duLieuDoAnDataSet)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.duLieuDoAnDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.duLieuDoAnDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

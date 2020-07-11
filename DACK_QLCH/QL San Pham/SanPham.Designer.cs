@@ -33,6 +33,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgDSSP = new System.Windows.Forms.DataGridView();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgaySX = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NoiSX = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DonViTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.duLieuDoAnDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.duLieuDoAnDataSet = new DACK_QLCH.DuLieuDoAnDataSet();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -57,13 +64,6 @@
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.btnTimKiem = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgaySX = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NoiSX = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DonViTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgDSSP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.duLieuDoAnDataSetBindingSource)).BeginInit();
@@ -110,6 +110,48 @@
             this.dgDSSP.Size = new System.Drawing.Size(834, 238);
             this.dgDSSP.TabIndex = 0;
             this.dgDSSP.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgDSSP_DataBindingComplete);
+            this.dgDSSP.SelectionChanged += new System.EventHandler(this.dgDSSP_SelectionChanged);
+            // 
+            // STT
+            // 
+            this.STT.HeaderText = "STT";
+            this.STT.Name = "STT";
+            // 
+            // MaSP
+            // 
+            this.MaSP.DataPropertyName = "MaSP";
+            this.MaSP.HeaderText = "Mã Sản Phẩm";
+            this.MaSP.Name = "MaSP";
+            // 
+            // TenSP
+            // 
+            this.TenSP.DataPropertyName = "TenSP";
+            this.TenSP.HeaderText = "Tên Sản Phẩm";
+            this.TenSP.Name = "TenSP";
+            // 
+            // NgaySX
+            // 
+            this.NgaySX.DataPropertyName = "NgaySX";
+            this.NgaySX.HeaderText = "Ngày Sản Xuất";
+            this.NgaySX.Name = "NgaySX";
+            // 
+            // NoiSX
+            // 
+            this.NoiSX.DataPropertyName = "NoiSX";
+            this.NoiSX.HeaderText = "Nơi Sản Xuất";
+            this.NoiSX.Name = "NoiSX";
+            // 
+            // DonViTinh
+            // 
+            this.DonViTinh.DataPropertyName = "DonViTinh";
+            this.DonViTinh.HeaderText = "Đơn Vị Tính";
+            this.DonViTinh.Name = "DonViTinh";
+            // 
+            // DonGia
+            // 
+            this.DonGia.DataPropertyName = "DonGia";
+            this.DonGia.HeaderText = "Đơn Giá";
+            this.DonGia.Name = "DonGia";
             // 
             // duLieuDoAnDataSetBindingSource
             // 
@@ -166,6 +208,7 @@
             this.btnThoat.Size = new System.Drawing.Size(98, 40);
             this.btnThoat.TabIndex = 7;
             this.btnThoat.Text = "Thoát";
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // btnXoa
             // 
@@ -177,6 +220,7 @@
             this.btnXoa.Size = new System.Drawing.Size(98, 40);
             this.btnXoa.TabIndex = 7;
             this.btnXoa.Text = "Xóa";
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnSua
             // 
@@ -188,6 +232,7 @@
             this.btnSua.Size = new System.Drawing.Size(96, 40);
             this.btnSua.TabIndex = 7;
             this.btnSua.Text = "Sửa";
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnHuy
             // 
@@ -199,6 +244,7 @@
             this.btnHuy.Size = new System.Drawing.Size(98, 40);
             this.btnHuy.TabIndex = 7;
             this.btnHuy.Text = "Hủy";
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // btnThem
             // 
@@ -210,6 +256,7 @@
             this.btnThem.Size = new System.Drawing.Size(96, 40);
             this.btnThem.TabIndex = 7;
             this.btnThem.Text = "Thêm";
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // txtDonGia
             // 
@@ -222,12 +269,13 @@
             // 
             this.btnLuu.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuu.Appearance.Options.UseFont = true;
-            this.btnLuu.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLưu.ImageOptions.Image")));
+            this.btnLuu.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.ImageOptions.Image")));
             this.btnLuu.Location = new System.Drawing.Point(529, 67);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(98, 40);
             this.btnLuu.TabIndex = 7;
             this.btnLuu.Text = "Lưu";
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // txtNoiSanXuat
             // 
@@ -339,47 +387,6 @@
             this.groupBox3.TabIndex = 10;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Tìm Kiếm";
-            // 
-            // STT
-            // 
-            this.STT.HeaderText = "STT";
-            this.STT.Name = "STT";
-            // 
-            // MaSP
-            // 
-            this.MaSP.DataPropertyName = "MaSP";
-            this.MaSP.HeaderText = "Mã Sản Phẩm";
-            this.MaSP.Name = "MaSP";
-            // 
-            // TenSP
-            // 
-            this.TenSP.DataPropertyName = "TenSP";
-            this.TenSP.HeaderText = "Tên Sản Phẩm";
-            this.TenSP.Name = "TenSP";
-            // 
-            // NgaySX
-            // 
-            this.NgaySX.DataPropertyName = "NgaySX";
-            this.NgaySX.HeaderText = "Ngày Sản Xuất";
-            this.NgaySX.Name = "NgaySX";
-            // 
-            // NoiSX
-            // 
-            this.NoiSX.DataPropertyName = "NoiSX";
-            this.NoiSX.HeaderText = "Nơi Sản Xuất";
-            this.NoiSX.Name = "NoiSX";
-            // 
-            // DonViTinh
-            // 
-            this.DonViTinh.DataPropertyName = "DonViTinh";
-            this.DonViTinh.HeaderText = "Đơn Vị Tính";
-            this.DonViTinh.Name = "DonViTinh";
-            // 
-            // DonGia
-            // 
-            this.DonGia.DataPropertyName = "DonGia";
-            this.DonGia.HeaderText = "Đơn Giá";
-            this.DonGia.Name = "DonGia";
             // 
             // frmSanPham
             // 

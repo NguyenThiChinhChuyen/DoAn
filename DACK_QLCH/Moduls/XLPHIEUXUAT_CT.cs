@@ -9,9 +9,9 @@ using System.Data.SqlClient;
 
 namespace DACK_QLCH.Moduls
 {
-    class XLPXCT:XLBANG
+    class XLPHIEUXUAT_CT:XLBANG
     {
-        public XLPXCT() : base("PXCT") { }
-        public XLPXCT(string pQuery) : base("PXCT", pQuery) { }
+        public XLPHIEUXUAT_CT() : base("PHIEUXUAT_CT") { }
+        public XLPHIEUXUAT_CT(string pQuery) : base("PHIEUXUAT_CT", pQuery) { }
     }
 }

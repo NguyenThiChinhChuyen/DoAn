@@ -8,9 +8,9 @@ using System.Data.SqlClient;
 
 namespace DACK_QLCH.Moduls
 {
-    class XLPNCT:XLBANG
+    class XLHOADON_CT:XLBANG
     {
-        public XLPNCT() : base("PNCT") { }
-        public XLPNCT(string pQuery) : base("PNCT", pQuery) { }
+        public XLHOADON_CT() : base("HOADON_CT") { }
+        public XLHOADON_CT(string pQuery) : base("HOADON_CT", pQuery) { }
     }
 }

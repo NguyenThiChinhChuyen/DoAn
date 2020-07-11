@@ -19,6 +19,7 @@ namespace DACK_QLCH
             InitializeComponent();
         }
         public string maNV;
+
         public void enableControl(int maLTK)
         {
             switch (maLTK)
@@ -26,21 +27,45 @@ namespace DACK_QLCH
                 case 1://admin
                     btnDangXuat.Enabled = true;
                     btnDoiMatKhau.Enabled = true;
+                    btnDonDatHang.Enabled = true;
+                    btnHoaDonBan.Enabled = true;
+                    btnNhaCungCap.Enabled = true;
+                    btnSanPham.Enabled = true;
+                    btnNhapHang.Enabled = true;
+                    btnXuatHang.Enabled = true;
 
                     break;
                 case 2://Nhan vien ban hang
                     btnDangXuat.Enabled = true;
                     btnDoiMatKhau.Enabled = true;
+                    btnDonDatHang.Enabled = true;
+                    btnHoaDonBan.Enabled = true;
+                    btnNhaCungCap.Enabled = false;
+                    btnSanPham.Enabled = true;
+                    btnNhapHang.Enabled = false;
+                    btnXuatHang.Enabled = false;
 
                     break;
                 case 3://Nhan viên quản lý kho
                     btnDangXuat.Enabled = true;
                     btnDoiMatKhau.Enabled = true;
+                    btnDonDatHang.Enabled = false;
+                    btnHoaDonBan.Enabled = false;
+                    btnNhaCungCap.Enabled = true;
+                    btnSanPham.Enabled = true;
+                    btnNhapHang.Enabled = true;
+                    btnXuatHang.Enabled = true;
 
                     break;
                 default://Đăng Xuất
                     btnDangXuat.Enabled = false;
                     btnDoiMatKhau.Enabled = false;
+                    btnDonDatHang.Enabled = false;
+                    btnHoaDonBan.Enabled = false;
+                    btnNhaCungCap.Enabled = false;
+                    btnSanPham.Enabled = false;
+                    btnNhapHang.Enabled = false;
+                    btnXuatHang.Enabled = false;
                     break;
             }
         }
@@ -87,7 +112,8 @@ namespace DACK_QLCH
                 tabControlMain.SelectedIndex = index;
             else
             {
-                frmSanPham f = new frmSanPham();
+              
+                frmSanPham f= new frmSanPham();
                 TabPage p = new TabPage(f.Text);
                 p.Name = "tabPageSanPham";
                 f.TopLevel = false;
