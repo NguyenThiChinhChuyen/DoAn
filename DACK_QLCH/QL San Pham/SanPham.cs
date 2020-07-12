@@ -11,7 +11,7 @@ using DACK_QLCH.Moduls;
 using DevExpress.Utils.Extensions;
 using System.Data.SqlClient;
 using System.IO;
-
+using DevExpress.Xpo.DB;
 
 namespace DACK_QLCH.QL_San_Pham
 {
@@ -21,10 +21,9 @@ namespace DACK_QLCH.QL_San_Pham
         {
             InitializeComponent();
         }
-     
         XLSANPHAM tblSanPham;
-        BindingManagerBase DSSP;
         bool capNhat = false;
+
 
         private void frmSanPham_Load(object sender, EventArgs e)
         {
@@ -32,9 +31,8 @@ namespace DACK_QLCH.QL_San_Pham
             LoadDSSP();
             dgDSSP.AutoGenerateColumns = false;
             dgDSSP.DataSource = tblSanPham;
-            DSSP = this.BindingContext[tblSanPham];
             ennableButton();
-
+            
         }
         private void LoadDSSP()
         {
@@ -44,8 +42,6 @@ namespace DACK_QLCH.QL_San_Pham
             txtDonGia.DataBindings.Add("text", tblSanPham, "DonGia", true);
             txtDonViTinh.DataBindings.Add("text", tblSanPham, "DonViTinh", true);
             dateNgaySanXuat.DataBindings.Add("text", tblSanPham, "NgaySX", true);
-   
-
         }
 
         private void ennableButton()
@@ -71,10 +67,10 @@ namespace DACK_QLCH.QL_San_Pham
         {
             try
             {
-                DSSP.AddNew();
+
                 capNhat = true;
                 ennableButton();
-                MessageBox.Show("Thêm thành công!!!");
+                MessageBox.Show("Thêm thành công, Bạn có muốn Lưu không!!!");
             }
             catch(Exception ex)
             {
@@ -98,7 +94,8 @@ namespace DACK_QLCH.QL_San_Pham
         {
             try
             {
-                DSSP.CancelCurrentEdit();
+                tblSanPham.ghi();
+                tblSanPham.AcceptChanges();
                 MessageBox.Show("Cập nhật thành công!!!");
                 capNhat = false;
                 ennableButton();
@@ -112,8 +109,6 @@ namespace DACK_QLCH.QL_San_Pham
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
-
-            DSSP.CancelCurrentEdit();
             tblSanPham.RejectChanges();
             capNhat = false;
             ennableButton();
