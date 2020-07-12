@@ -110,7 +110,6 @@
             this.dgDSSP.Size = new System.Drawing.Size(834, 238);
             this.dgDSSP.TabIndex = 0;
             this.dgDSSP.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgDSSP_DataBindingComplete);
-            this.dgDSSP.SelectionChanged += new System.EventHandler(this.dgDSSP_SelectionChanged);
             // 
             // STT
             // 

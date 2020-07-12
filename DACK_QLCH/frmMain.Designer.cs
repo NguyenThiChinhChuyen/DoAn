@@ -266,6 +266,7 @@
             this.btnTimKiemSP.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTimKiemSP.ImageOptions.Image")));
             this.btnTimKiemSP.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnTimKiemSP.ImageOptions.LargeImage")));
             this.btnTimKiemSP.Name = "btnTimKiemSP";
+            this.btnTimKiemSP.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTimKiemSP_ItemClick);
             // 
             // btnNhapHang
             // 
@@ -328,7 +329,7 @@
             // 
             // btnTimKiemDDH
             // 
-            this.btnTimKiemDDH.Caption = "Tìm Kiếm Đơn Giao Hàng";
+            this.btnTimKiemDDH.Caption = "Tìm Kiếm Đơn Đặt Hàng";
             this.btnTimKiemDDH.Id = 26;
             this.btnTimKiemDDH.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTimKiemDDH.ImageOptions.Image")));
             this.btnTimKiemDDH.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnTimKiemDDH.ImageOptions.LargeImage")));
@@ -357,6 +358,7 @@
             this.btnTimKiemHDB.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTimKiemHDB.ImageOptions.Image")));
             this.btnTimKiemHDB.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnTimKiemHDB.ImageOptions.LargeImage")));
             this.btnTimKiemHDB.Name = "btnTimKiemHDB";
+            this.btnTimKiemHDB.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTimKiemHDB_ItemClick);
             // 
             // ribbonPage1
             // 

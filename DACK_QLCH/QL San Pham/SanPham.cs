@@ -69,7 +69,7 @@ namespace DACK_QLCH.QL_San_Pham
         {
             try
             {
-
+                DSSP.AddNew();
                 capNhat = true;
                 ennableButton();
                 MessageBox.Show("Thêm thành công, Bạn có muốn Lưu không!!!");
@@ -89,13 +89,27 @@ namespace DACK_QLCH.QL_San_Pham
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
+            try
+            {
+                DSSP.RemoveAt(DSSP.Position);
+                tblSanPham.ghi();
+                tblSanPham.AcceptChanges();
+                capNhat = true;
+                ennableButton();
 
+            }
+            catch (SqlException)
+            {
+                tblSanPham.RejectChanges();
+                MessageBox.Show("Xóa thất bại!!!");
+            }
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
             try
             {
+                DSSP.CancelCurrentEdit();
                 tblSanPham.ghi();
                 tblSanPham.AcceptChanges();
                 MessageBox.Show("Cập nhật thành công!!!");
@@ -111,6 +125,7 @@ namespace DACK_QLCH.QL_San_Pham
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
+            DSSP.CancelCurrentEdit();
             tblSanPham.RejectChanges();
             capNhat = false;
             ennableButton();
@@ -118,15 +133,8 @@ namespace DACK_QLCH.QL_San_Pham
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            this.Close();
-        }
-
-        private void dgDSSP_SelectionChanged(object sender, EventArgs e)
-        {
-            if(capNhat)
-            {
-                btnHuy_Click(sender, e);
-            }
+            TabPage T = (TabPage)this.Parent;
+            T.Dispose();
         }
     }
 }

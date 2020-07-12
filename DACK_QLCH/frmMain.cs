@@ -132,7 +132,7 @@ namespace DACK_QLCH
                 tabControlMain.SelectedIndex = index;
             else
             {
-                frmNhaHang f = new frmNhaHang();
+                frmNhapHang f = new frmNhapHang();
                 TabPage p = new TabPage(f.Text);
                 p.Name = "tabPageNhapHang";
                 f.TopLevel = false;
@@ -174,6 +174,46 @@ namespace DACK_QLCH
                 frmHoaDonBan f = new frmHoaDonBan();
                 TabPage p = new TabPage(f.Text);
                 p.Name = "tabPageHoaDonBan";
+                f.TopLevel = false;
+                p.Controls.Add(f);
+                f.Dock = DockStyle.Fill;
+                f.FormBorderStyle = FormBorderStyle.None;
+                tabControlMain.TabPages.Add(p);
+                //tabControlMain.SelectedTab = p;
+                f.Show();
+            }
+        }
+
+        private void btnTimKiemSP_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            int index = tabControlMain.TabPages.IndexOfKey("tabPageTimKiemSanPham");
+            if (index > 0)
+                tabControlMain.SelectedIndex = index;
+            else
+            {
+                frmTimKiemSanPham f = new frmTimKiemSanPham();
+                TabPage p = new TabPage(f.Text);
+                p.Name = "tabPageTimKiemSanPham";
+                f.TopLevel = false;
+                p.Controls.Add(f);
+                f.Dock = DockStyle.Fill;
+                f.FormBorderStyle = FormBorderStyle.None;
+                tabControlMain.TabPages.Add(p);
+                //tabControlMain.SelectedTab = p;
+                f.Show();
+            }
+        }
+
+        private void btnTimKiemHDB_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            int index = tabControlMain.TabPages.IndexOfKey("tabPageTimKiemDonDaLap");
+            if (index > 0)
+                tabControlMain.SelectedIndex = index;
+            else
+            {
+                frmTimKiemDonDaLap f = new frmTimKiemDonDaLap();
+                TabPage p = new TabPage(f.Text);
+                p.Name = "tabPageTimKiemDonDaLap";
                 f.TopLevel = false;
                 p.Controls.Add(f);
                 f.Dock = DockStyle.Fill;

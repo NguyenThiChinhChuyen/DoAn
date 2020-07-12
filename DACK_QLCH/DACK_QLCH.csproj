@@ -155,11 +155,11 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="QL Kho\NhaHang.cs">
+    <Compile Include="QL Kho\NhapHang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QL Kho\NhaHang.Designer.cs">
-      <DependentUpon>NhaHang.cs</DependentUpon>
+    <Compile Include="QL Kho\NhapHang.Designer.cs">
+      <DependentUpon>NhapHang.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -217,8 +217,8 @@
     <EmbeddedResource Include="QL Hoa Don\HoaDonBan.resx">
       <DependentUpon>HoaDonBan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QL Kho\NhaHang.resx">
-      <DependentUpon>NhaHang.cs</DependentUpon>
+    <EmbeddedResource Include="QL Kho\NhapHang.resx">
+      <DependentUpon>NhapHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QL Kho\XuatHang.resx">
       <DependentUpon>XuatHang.cs</DependentUpon>

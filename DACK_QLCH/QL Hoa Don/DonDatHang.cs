@@ -20,6 +20,8 @@ namespace DACK_QLCH.QL_Hoa_Don
         }
         XLHOADON tblHoaDon;
         XLHOADON_CT tblHOADON_CT;
+        BindingManagerBase DSHD;
+        BindingManagerBase DSHDCT;
         bool capNhat=false;
         private void frmDonDatHang_Load(object sender, EventArgs e)
         {
@@ -27,6 +29,8 @@ namespace DACK_QLCH.QL_Hoa_Don
             tblHOADON_CT = new XLHOADON_CT();
             loadHoaDon();
             LoadHoaDon_CTdgDONDATHANG();
+            DSHD = this.BindingContext[tblHoaDon];
+            DSHDCT= BindingContext[tblHOADON_CT];
             ennableButton();
         }
         private void LoadHoaDon_CTdgDONDATHANG()
@@ -51,7 +55,7 @@ namespace DACK_QLCH.QL_Hoa_Don
             txtSDT.DataBindings.Add("text", tblHoaDon, "SDT", true);
             txtTinhTrang.DataBindings.Add("text", tblHoaDon, "TinhTrangGiao", true);
             txtThanhTien.DataBindings.Add("text", tblHOADON_CT, "ThanhTien", true);
-            txtDonGia.DataBindings.Add("text", tblHOADON_CT, "DonnGia", true);
+            txtDonGia.DataBindings.Add("text", tblHOADON_CT, "DonGia", true);
             txtSoLuong.DataBindings.Add("text", tblHOADON_CT, "SoLuong", true);
             dgDSDDH.AutoGenerateColumns = false;
             dgDSDDH.DataSource =  tblHoaDon;
@@ -76,6 +80,84 @@ namespace DACK_QLCH.QL_Hoa_Don
             }
         }
 
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DSHD.AddNew();
+                DSHDCT.AddNew();
+                capNhat = true;
+                ennableButton();
+                MessageBox.Show("Thêm thành công, Bạn có muốn Lưu không!!!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
 
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            capNhat = true;
+            ennableButton();
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DSHD.RemoveAt(DSHD.Position);
+                tblHoaDon.ghi();
+                tblHoaDon.AcceptChanges();
+                DSHDCT.RemoveAt(DSHD.Position);
+                tblHOADON_CT.ghi();
+                tblHOADON_CT.AcceptChanges();
+                capNhat = true;
+                ennableButton();
+
+            }
+            catch (SqlException)
+            {
+                tblHoaDon.RejectChanges();
+                tblHOADON_CT.RejectChanges();
+                MessageBox.Show("Xóa thất bại!!!");
+            }
+        }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DSHD.CancelCurrentEdit();
+                tblHoaDon.ghi();
+                tblHoaDon.AcceptChanges();
+                DSHDCT.CancelCurrentEdit();
+                tblHOADON_CT.ghi();
+                tblHOADON_CT.AcceptChanges();
+                MessageBox.Show("Cập nhật thành công!!!");
+                capNhat = false;
+                ennableButton();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            DSHD.CancelCurrentEdit();
+            tblHoaDon.RejectChanges();
+            DSHDCT.CancelCurrentEdit();
+            tblHOADON_CT.RejectChanges();
+            capNhat = false;
+            ennableButton();
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            TabPage T = (TabPage)this.Parent;
+            T.Dispose();
+        }
     }
 }
