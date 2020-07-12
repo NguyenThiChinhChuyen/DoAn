@@ -22,6 +22,7 @@ namespace DACK_QLCH.QL_San_Pham
             InitializeComponent();
         }
         XLSANPHAM tblSanPham;
+        BindingManagerBase DSSP;
         bool capNhat = false;
 
 
@@ -31,6 +32,7 @@ namespace DACK_QLCH.QL_San_Pham
             LoadDSSP();
             dgDSSP.AutoGenerateColumns = false;
             dgDSSP.DataSource = tblSanPham;
+            DSSP = this.BindingContext[tblSanPham];
             ennableButton();
             
         }
