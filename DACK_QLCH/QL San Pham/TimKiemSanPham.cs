@@ -31,8 +31,6 @@ namespace DACK_QLCH
         }
         private void loadTimKiem()
         {
-            txtMaSP.DataBindings.Add("text", tblSanPham, "MaSP", true);
-            txtTenSP.DataBindings.Add("text", tblSanPham, "TenSP", true);
             dgTimKiemSP.AutoGenerateColumns = false;
             dgTimKiemSP.DataSource = tblSanPham;
         }
@@ -54,7 +52,7 @@ namespace DACK_QLCH
         {
             try
             {
-                DataRow r = tblSanPham.Select("MaSP='" + txtMaSP.Text + "' and TenSP='" + txtTenSP.Text + "'")[1];
+                DataRow r = tblSanPham.Select("MaSP='" + txtMaSP.Text + "' and TenSP='" + txtTenSP.Text + "'")[0];
                 DSTKSP.Position = tblSanPham.Rows.IndexOf(r);
             }
             catch (Exception)
@@ -68,21 +66,25 @@ namespace DACK_QLCH
             txtMaSP.Text = "";
         }
 
-        private void txtMaSP_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)Keys.Enter)
-                btnTimKiem_Click(sender, e);
-        }
-
         private void txtTenSP_MouseDown(object sender, MouseEventArgs e)
         {
             txtTenSP.Text = "";
         }
 
+        private void txtMaSP_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                btnTimKiem_Click(sender, e);
+            }
+        }
+
         private void txtTenSP_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Enter)
+            {
                 btnTimKiem_Click(sender, e);
+            }
         }
     }
 }

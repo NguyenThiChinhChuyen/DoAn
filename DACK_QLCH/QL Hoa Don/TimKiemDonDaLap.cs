@@ -20,6 +20,7 @@ namespace DACK_QLCH
         }
         XLHOADON tblHoaDon;
         XLHOADON_CT tblHoaDon_CT;
+        BindingManagerBase DGTKDDL;
         
         private void TimKiemDonDaLap_Load(object sender, EventArgs e)
         {
@@ -27,6 +28,7 @@ namespace DACK_QLCH
             tblHoaDon_CT = new XLHOADON_CT();
             loadHoaDon();
             LoadHoaDon();
+            DGTKDDL = this.BindingContext[tblHoaDon];
         }
         private void LoadHoaDon()
         {
@@ -42,9 +44,6 @@ namespace DACK_QLCH
         }
         private void loadHoaDon()
         {
-            dateNgayLap.DataBindings.Add("text", tblHoaDon, "NgayHD", true);
-            txtSoHD.DataBindings.Add("text", tblHoaDon, "SoHD", true);
-
             dgTimKiemDDL.AutoGenerateColumns = false;
             dgTimKiemDDL.DataSource = tblHoaDon;
         }
@@ -60,6 +59,42 @@ namespace DACK_QLCH
         {
             TabPage T = (TabPage)this.Parent;
             T.Dispose();
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DataRow r = tblHoaDon.Select("MaSP='" + txtSoHD.Text + "' and NgayHD='" + dateNgayLap.Text + "'")[0];
+                DGTKDDL.Position = tblHoaDon.Rows.IndexOf(r);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Không Tìm Thấy");
+            }
+        }
+
+        private void txtSoHD_MouseDown(object sender, MouseEventArgs e)
+        {
+            txtSoHD.Text = "";
+        }
+
+        private void txtSoHD_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar==(char)Keys.Enter)
+            {
+                btnTimKiem_Click(sender, e);
+            }
+        }
+
+        private void dateNgayLap_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void dateNgayLap_MouseDown(object sender, MouseEventArgs e)
+        {
+            dateNgayLap.Text = "";
         }
     }
 }

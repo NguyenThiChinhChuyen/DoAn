@@ -33,13 +33,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgTimKiemSP = new System.Windows.Forms.DataGridView();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgaySX = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NoiSanXuat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DonViTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.duLieuDoAnDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.duLieuDoAnDataSet = new DACK_QLCH.DuLieuDoAnDataSet();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -49,6 +42,13 @@
             this.txtMaSP = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgaySX = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NoiSX = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DonViTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgTimKiemSP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.duLieuDoAnDataSetBindingSource)).BeginInit();
@@ -85,7 +85,7 @@
             this.MaSP,
             this.TenSP,
             this.NgaySX,
-            this.NoiSanXuat,
+            this.NoiSX,
             this.DonViTinh,
             this.DonGia});
             this.dgTimKiemSP.DataSource = this.duLieuDoAnDataSetBindingSource;
@@ -94,47 +94,6 @@
             this.dgTimKiemSP.Size = new System.Drawing.Size(755, 332);
             this.dgTimKiemSP.TabIndex = 1;
             this.dgTimKiemSP.SelectionChanged += new System.EventHandler(this.dgTimKiemSP_SelectionChanged);
-            // 
-            // STT
-            // 
-            this.STT.HeaderText = "STT";
-            this.STT.Name = "STT";
-            // 
-            // MaSP
-            // 
-            this.MaSP.DataPropertyName = "MaSP";
-            this.MaSP.HeaderText = "Mã Sản Phẩm";
-            this.MaSP.Name = "MaSP";
-            // 
-            // TenSP
-            // 
-            this.TenSP.DataPropertyName = "TenSP";
-            this.TenSP.HeaderText = "Tên Sản Phẩm";
-            this.TenSP.Name = "TenSP";
-            // 
-            // NgaySX
-            // 
-            this.NgaySX.DataPropertyName = "NgaySX";
-            this.NgaySX.HeaderText = "Ngày Sản Xuất";
-            this.NgaySX.Name = "NgaySX";
-            // 
-            // NoiSanXuat
-            // 
-            this.NoiSanXuat.DataPropertyName = "NoiSX";
-            this.NoiSanXuat.HeaderText = "Nơi Sản Xuất";
-            this.NoiSanXuat.Name = "NoiSanXuat";
-            // 
-            // DonViTinh
-            // 
-            this.DonViTinh.DataPropertyName = "DonViTinh";
-            this.DonViTinh.HeaderText = "Đơn Vị Tính";
-            this.DonViTinh.Name = "DonViTinh";
-            // 
-            // DonGia
-            // 
-            this.DonGia.DataPropertyName = "DonGia";
-            this.DonGia.HeaderText = "Đơn Giá";
-            this.DonGia.Name = "DonGia";
             // 
             // duLieuDoAnDataSetBindingSource
             // 
@@ -221,6 +180,47 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã SP:";
             // 
+            // STT
+            // 
+            this.STT.HeaderText = "STT";
+            this.STT.Name = "STT";
+            // 
+            // MaSP
+            // 
+            this.MaSP.DataPropertyName = "MaSP";
+            this.MaSP.HeaderText = "Mã Sản Phẩm";
+            this.MaSP.Name = "MaSP";
+            // 
+            // TenSP
+            // 
+            this.TenSP.DataPropertyName = "TenSP";
+            this.TenSP.HeaderText = "Tên Sản Phẩm";
+            this.TenSP.Name = "TenSP";
+            // 
+            // NgaySX
+            // 
+            this.NgaySX.DataPropertyName = "NgaySX";
+            this.NgaySX.HeaderText = "Ngày Sản Xuất";
+            this.NgaySX.Name = "NgaySX";
+            // 
+            // NoiSX
+            // 
+            this.NoiSX.DataPropertyName = "NoiSX";
+            this.NoiSX.HeaderText = "Nơi Sản Xuất";
+            this.NoiSX.Name = "NoiSX";
+            // 
+            // DonViTinh
+            // 
+            this.DonViTinh.DataPropertyName = "DonViTinh";
+            this.DonViTinh.HeaderText = "Đơn Vị Tính";
+            this.DonViTinh.Name = "DonViTinh";
+            // 
+            // DonGia
+            // 
+            this.DonGia.DataPropertyName = "DonGia";
+            this.DonGia.HeaderText = "Đơn Giá";
+            this.DonGia.Name = "DonGia";
+            // 
             // frmTimKiemSanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -255,14 +255,14 @@
         private DevExpress.XtraEditors.SimpleButton btnTimKiem;
         private DevExpress.XtraEditors.SimpleButton btnThoat;
         private System.Windows.Forms.DataGridView dgTimKiemSP;
+        private System.Windows.Forms.BindingSource duLieuDoAnDataSetBindingSource;
+        private DuLieuDoAnDataSet duLieuDoAnDataSet;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaSP;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenSP;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgaySX;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NoiSanXuat;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NoiSX;
         private System.Windows.Forms.DataGridViewTextBoxColumn DonViTinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn DonGia;
-        private System.Windows.Forms.BindingSource duLieuDoAnDataSetBindingSource;
-        private DuLieuDoAnDataSet duLieuDoAnDataSet;
     }
 }

@@ -38,7 +38,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dgTimKiemDDL = new System.Windows.Forms.DataGridView();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,6 +46,7 @@
             this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgTimKiemDDL)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -89,6 +89,7 @@
             this.btnTimKiem.Size = new System.Drawing.Size(96, 40);
             this.btnTimKiem.TabIndex = 9;
             this.btnTimKiem.Text = "Tìm Kiếm";
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // dateNgayLap
             // 
@@ -96,6 +97,8 @@
             this.dateNgayLap.Name = "dateNgayLap";
             this.dateNgayLap.Size = new System.Drawing.Size(198, 20);
             this.dateNgayLap.TabIndex = 3;
+            this.dateNgayLap.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dateNgayLap_KeyDown);
+            this.dateNgayLap.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dateNgayLap_MouseDown);
             // 
             // txtSoHD
             // 
@@ -103,6 +106,8 @@
             this.txtSoHD.Name = "txtSoHD";
             this.txtSoHD.Size = new System.Drawing.Size(135, 20);
             this.txtSoHD.TabIndex = 2;
+            this.txtSoHD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoHD_KeyPress);
+            this.txtSoHD.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtSoHD_MouseDown);
             // 
             // label2
             // 
@@ -150,16 +155,6 @@
             this.dgTimKiemDDL.TabIndex = 0;
             this.dgTimKiemDDL.SelectionChanged += new System.EventHandler(this.dgTimKiemDDL_SelectionChanged);
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.dgTimKiemDDL);
-            this.groupBox2.Location = new System.Drawing.Point(49, 176);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(805, 381);
-            this.groupBox2.TabIndex = 0;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Kết Quả";
-            // 
             // STT
             // 
             this.STT.HeaderText = "STT";
@@ -206,6 +201,16 @@
             this.ThanhTien.DataPropertyName = "ThanhTien";
             this.ThanhTien.HeaderText = "ThanhTien";
             this.ThanhTien.Name = "ThanhTien";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.dgTimKiemDDL);
+            this.groupBox2.Location = new System.Drawing.Point(49, 176);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(805, 381);
+            this.groupBox2.TabIndex = 0;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Kết Quả";
             // 
             // frmTimKiemDonDaLap
             // 
