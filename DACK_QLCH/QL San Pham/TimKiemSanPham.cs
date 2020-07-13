@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using DACK_QLCH.Moduls;
+using DevExpress.Utils.Extensions;
 
 namespace DACK_QLCH
 {
@@ -19,10 +20,12 @@ namespace DACK_QLCH
             InitializeComponent();
         }
         XLSANPHAM tblSanPham;
+        BindingManagerBase DSTKSP;
 
         private void frmTimKiemSanPham_Load(object sender, EventArgs e)
         {
             tblSanPham = new XLSANPHAM();
+            DSTKSP = this.BindingContext[tblSanPham];
             loadTimKiem();
             
         }
@@ -45,6 +48,41 @@ namespace DACK_QLCH
             {
                 r.Cells[0].Value = r.Index + 1;
             }
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DataRow r = tblSanPham.Select("MaSP='" + txtMaSP.Text + "' and TenSP='" + txtTenSP.Text + "'")[1];
+                DSTKSP.Position = tblSanPham.Rows.IndexOf(r);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Không Tìm Thấy");
+            }
+        }
+
+        private void txtMaSP_MouseDown(object sender, MouseEventArgs e)
+        {
+            txtMaSP.Text = "";
+        }
+
+        private void txtMaSP_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+                btnTimKiem_Click(sender, e);
+        }
+
+        private void txtTenSP_MouseDown(object sender, MouseEventArgs e)
+        {
+            txtTenSP.Text = "";
+        }
+
+        private void txtTenSP_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+                btnTimKiem_Click(sender, e);
         }
     }
 }

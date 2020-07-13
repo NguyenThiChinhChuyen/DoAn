@@ -30,6 +30,7 @@ namespace DACK_QLCH.QL_Hoa_Don
             loadHoaDon();
             LoadHoaDon();
             DSHD = this.BindingContext[tblHoaDon];
+            DSHDCT = this.BindingContext[tblHoaDon_CT];
             ennableButton();
         }
         private void LoadHoaDon()
@@ -63,7 +64,7 @@ namespace DACK_QLCH.QL_Hoa_Don
             btnXoa.Enabled = !capNhat;
             btnHuy.Enabled = capNhat;
             btnLuu.Enabled = capNhat;
-            btnThoát.Enabled = !capNhat;
+            btnThoat.Enabled = !capNhat;
             btnTimKiem.Enabled = capNhat;
         }
 
@@ -141,10 +142,39 @@ namespace DACK_QLCH.QL_Hoa_Don
             ennableButton();
         }
 
-        private void btnThoát_Click(object sender, EventArgs e)
+        private void btnThoat_Click(object sender, EventArgs e)
         {
             TabPage T = (TabPage)this.Parent;
             T.Dispose();
         }
+
+        private void txtTimKiem_MouseDown(object sender, MouseEventArgs e)
+        {
+            txtTimKiem.Text = "";
+        }
+
+        private void txtTimKiem_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar==(char)Keys.Enter)
+            {
+                btnTimKiem_Click(sender, e);
+            }
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DataRow r = tblHoaDon.Select("SoHD ='" + txtTimKiem.Text + "'")[0];
+                DSHD.Position = tblHoaDon.Rows.IndexOf(r);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Không Tìm Thấy");
+            }
+        }
+
+
+
     }
 }

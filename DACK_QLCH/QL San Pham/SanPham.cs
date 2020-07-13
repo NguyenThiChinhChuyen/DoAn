@@ -54,7 +54,7 @@ namespace DACK_QLCH.QL_San_Pham
             btnHuy.Enabled = capNhat;
             btnLuu.Enabled = capNhat;
             btnThoat.Enabled = !capNhat;
-            btnTimKiem.Enabled = capNhat;
+            btnTimKiem.Enabled = !capNhat;
         }
 
         private void dgDSSP_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
@@ -135,6 +135,30 @@ namespace DACK_QLCH.QL_San_Pham
         {
             TabPage T = (TabPage)this.Parent;
             T.Dispose();
+        }
+
+        private void txtTimKiem_MouseDown(object sender, MouseEventArgs e)
+        {
+            txtTimKiem.Text = "";
+        }
+
+        private void txtTimKiem_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+                btnTimKiem_Click(sender, e);
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DataRow r = tblSanPham.Select("MaSP ='" + txtTimKiem.Text + "'")[0];
+                DSSP.Position = tblSanPham.Rows.IndexOf(r);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Không Tìm Thấy");
+            }
         }
     }
 }

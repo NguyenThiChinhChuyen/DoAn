@@ -159,5 +159,31 @@ namespace DACK_QLCH.QL_Hoa_Don
             TabPage T = (TabPage)this.Parent;
             T.Dispose();
         }
+
+        private void txtTimKiem_MouseDown(object sender, MouseEventArgs e)
+        {
+            txtTimKiem.Text = "";
+        }
+
+        private void txtTimKiem_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar==(char)Keys.Enter)
+            {
+                btnTimKiem_Click(sender, e);
+            }
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DataRow r = tblHoaDon.Select("SoHD ='" + txtTimKiem.Text + "'")[0];
+                DSHD.Position = tblHoaDon.Rows.IndexOf(r);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Không Tìm Thấy");
+            }
+        }
     }
 }
