@@ -90,6 +90,7 @@ namespace DACK_QLCH
         private void dateNgayLap_KeyDown(object sender, KeyEventArgs e)
         {
 
+            btnTimKiem_Click(sender, e);
         }
 
         private void dateNgayLap_MouseDown(object sender, MouseEventArgs e)
