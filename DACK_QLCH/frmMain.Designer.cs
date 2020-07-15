@@ -335,6 +335,7 @@
             this.btnTimKiemDDH.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTimKiemDDH.ImageOptions.Image")));
             this.btnTimKiemDDH.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnTimKiemDDH.ImageOptions.LargeImage")));
             this.btnTimKiemDDH.Name = "btnTimKiemDDH";
+            this.btnTimKiemDDH.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTimKiemDDH_ItemClick);
             // 
             // barButtonItem24
             // 

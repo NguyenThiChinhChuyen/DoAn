@@ -243,5 +243,25 @@ namespace DACK_QLCH
                 f.Show();
             }
         }
+
+        private void btnTimKiemDDH_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            int index = tabControlMain.TabPages.IndexOfKey("tabPageTimKiemDonDatHang");
+            if (index > 0)
+                tabControlMain.SelectedIndex = index;
+            else
+            {
+                frmTimKiemDonDatHang f = new frmTimKiemDonDatHang();
+                TabPage p = new TabPage(f.Text);
+                p.Name = "tabPageTimKiemDonDatHang";
+                f.TopLevel = false;
+                p.Controls.Add(f);
+                f.Dock = DockStyle.Fill;
+                f.FormBorderStyle = FormBorderStyle.None;
+                tabControlMain.TabPages.Add(p);
+                //tabControlMain.SelectedTab = p;
+                f.Show();
+            }
+        }
     }
 }

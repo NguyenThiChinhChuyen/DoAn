@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using DACK_QLCH.Moduls;
+using DevExpress.Utils.Extensions;
 
 namespace DACK_QLCH
 {
@@ -20,14 +21,13 @@ namespace DACK_QLCH
         }
         XLHOADON tblHoaDon;
         XLHOADON_CT tblHOADON_CT;
-        BindingManagerBase DS;
+        BindingManagerBase DGTKDH;
 
         private void frmTimKiemDonDatHang_Load(object sender, EventArgs e)
         {
             tblHoaDon = new XLHOADON();
             tblHOADON_CT = new XLHOADON_CT();
-            dgDSDDH.AutoGenerateColumns = false;
-            dgDSDDH.DataSource = tblHoaDon;
+            DGTKDH = this.BindingContext[tblHoaDon];
             LoadHoaDon_CTdgDONDATHANG();
         }
         private void LoadHoaDon_CTdgDONDATHANG()
@@ -41,6 +41,8 @@ namespace DACK_QLCH
             tblHoaDon.Columns.Add(cot_DonGia);
             DataColumn cot_ThanhTien = new DataColumn("ThanhTien", Type.GetType("System.String"), "Parent(FRK_HOADON_CT_HOADON).ThanhTien");
             tblHoaDon.Columns.Add(cot_ThanhTien);
+            dgDSDDH.AutoGenerateColumns = false;
+            dgDSDDH.DataSource = tblHoaDon;
         }
 
         private void dgDSDDH_SelectionChanged(object sender, EventArgs e)
@@ -56,7 +58,7 @@ namespace DACK_QLCH
             try
             {
                 DataRow r = tblHoaDon.Select("MaSP='" + txtSoHD.Text + "' and NgayGH='" + dateNgayLap.Text + "'")[0];
-                DS.Position = tblHoaDon.Rows.IndexOf(r);
+                DGTKDH.Position = tblHoaDon.Rows.IndexOf(r);
             }
             catch (Exception)
             {
