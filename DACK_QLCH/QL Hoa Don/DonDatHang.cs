@@ -30,7 +30,6 @@ namespace DACK_QLCH.QL_Hoa_Don
             loadHoaDon();
             LoadHoaDon_CTdgDONDATHANG();
             DSHD = this.BindingContext[tblHoaDon];
-            DSHDCT= BindingContext[tblHOADON_CT];
             ennableButton();
         }
         private void LoadHoaDon_CTdgDONDATHANG()
@@ -107,7 +106,7 @@ namespace DACK_QLCH.QL_Hoa_Don
             {
                 DSHD.RemoveAt(DSHD.Position);
                 tblHoaDon.ghi();
- 
+
                 capNhat = true;
                 ennableButton();
 
@@ -126,7 +125,6 @@ namespace DACK_QLCH.QL_Hoa_Don
             {
                 DSHD.EndCurrentEdit();
                 tblHoaDon.ghi();
-                tblHoaDon.AcceptChanges();
                 MessageBox.Show("Cập nhật thành công!!!");
                 capNhat = false;
                 ennableButton();
