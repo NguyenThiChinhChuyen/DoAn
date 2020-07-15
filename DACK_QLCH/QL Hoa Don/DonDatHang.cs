@@ -128,10 +128,10 @@ namespace DACK_QLCH.QL_Hoa_Don
         {
             try
             {
-                DSHD.CancelCurrentEdit();
+                DSHD.EndCurrentEdit();
                 tblHoaDon.ghi();
                 tblHoaDon.AcceptChanges();
-                DSHDCT.CancelCurrentEdit();
+                DSHDCT.EndCurrentEdit();
                 tblHOADON_CT.ghi();
                 tblHOADON_CT.AcceptChanges();
                 MessageBox.Show("Cập nhật thành công!!!");

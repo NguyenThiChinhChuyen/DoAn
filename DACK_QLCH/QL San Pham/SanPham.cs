@@ -24,14 +24,10 @@ namespace DACK_QLCH.QL_San_Pham
         XLSANPHAM tblSanPham;
         BindingManagerBase DSSP;
         bool capNhat = false;
-
-
         private void frmSanPham_Load(object sender, EventArgs e)
         {
             tblSanPham = new XLSANPHAM();
             LoadDSSP();
-            dgDSSP.AutoGenerateColumns = false;
-            dgDSSP.DataSource = tblSanPham;
             DSSP = this.BindingContext[tblSanPham];
             ennableButton();
             
@@ -44,6 +40,8 @@ namespace DACK_QLCH.QL_San_Pham
             txtDonGia.DataBindings.Add("text", tblSanPham, "DonGia", true);
             txtDonViTinh.DataBindings.Add("text", tblSanPham, "DonViTinh", true);
             dateNgaySanXuat.DataBindings.Add("text", tblSanPham, "NgaySX", true);
+            dgDSSP.AutoGenerateColumns = false;
+            dgDSSP.DataSource = tblSanPham;
         }
 
         private void ennableButton()
@@ -69,10 +67,10 @@ namespace DACK_QLCH.QL_San_Pham
         {
             try
             {
+
                 DSSP.AddNew();
                 capNhat = true;
                 ennableButton();
-                MessageBox.Show("Thêm thành công, Bạn có muốn Lưu không!!!");
             }
             catch(Exception ex)
             {
@@ -109,9 +107,8 @@ namespace DACK_QLCH.QL_San_Pham
         {
             try
             {
-                DSSP.CancelCurrentEdit();
+                DSSP.EndCurrentEdit();
                 tblSanPham.ghi();
-                tblSanPham.AcceptChanges();
                 MessageBox.Show("Cập nhật thành công!!!");
                 capNhat = false;
                 ennableButton();

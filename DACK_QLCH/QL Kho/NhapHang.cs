@@ -167,7 +167,7 @@ namespace DACK_QLCH
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
-            DSPN.CancelCurrentEdit();
+            DSPN.EndCurrentEdit();
             tblPhieuNhap.RejectChanges();
             DSPNCT.CancelCurrentEdit();
             tblPhieuNhap_CT.RejectChanges();
