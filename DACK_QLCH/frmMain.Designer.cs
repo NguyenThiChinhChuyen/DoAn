@@ -122,7 +122,7 @@
             this.ribbonPage3,
             this.ribbonPage4,
             this.ribbonPage5});
-            this.ribbonControl1.Size = new System.Drawing.Size(928, 150);
+            this.ribbonControl1.Size = new System.Drawing.Size(928, 158);
             // 
             // btnDangXuat
             // 
@@ -366,13 +366,15 @@
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup1});
+            this.ribbonPage1.KeyTip = "TÀ";
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "TÀI KHOẢN";
             // 
             // ribbonPageGroup1
             // 
-            this.ribbonPageGroup1.ItemLinks.Add(this.btnDangXuat);
-            this.ribbonPageGroup1.ItemLinks.Add(this.btnDoiMatKhau);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnDangXuat, "ĐĂ");
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnDoiMatKhau, "ĐỔ");
+            this.ribbonPageGroup1.KeyTip = "H";
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "Hệ Thống";
             // 
@@ -381,21 +383,24 @@
             this.ribbonPage7.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup9,
             this.ribbonPageGroup2});
+            this.ribbonPage7.KeyTip = "QU";
             this.ribbonPage7.Name = "ribbonPage7";
             this.ribbonPage7.Text = "QUẢN LÝ HÓA ĐƠN";
             // 
             // ribbonPageGroup9
             // 
-            this.ribbonPageGroup9.ItemLinks.Add(this.btnHoaDonBan);
-            this.ribbonPageGroup9.ItemLinks.Add(this.barButtonItem21);
-            this.ribbonPageGroup9.ItemLinks.Add(this.btnTimKiemHDB);
+            this.ribbonPageGroup9.ItemLinks.Add(this.btnHoaDonBan, "H");
+            this.ribbonPageGroup9.ItemLinks.Add(this.barButtonItem21, "I");
+            this.ribbonPageGroup9.ItemLinks.Add(this.btnTimKiemHDB, "TÌ");
+            this.ribbonPageGroup9.KeyTip = "B";
             this.ribbonPageGroup9.Name = "ribbonPageGroup9";
             this.ribbonPageGroup9.Text = "Bán Hàng";
             // 
             // ribbonPageGroup2
             // 
-            this.ribbonPageGroup2.ItemLinks.Add(this.btnDonDatHang);
-            this.ribbonPageGroup2.ItemLinks.Add(this.btnTimKiemDDH);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnDonDatHang, "Đ");
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnTimKiemDDH, "TM");
+            this.ribbonPageGroup2.KeyTip = "Q";
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "Quản Lý Đơn Đặt Hàng";
             // 
@@ -403,26 +408,30 @@
             // 
             this.ribbonPage2.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup7});
+            this.ribbonPage2.KeyTip = "QẢ";
             this.ribbonPage2.Name = "ribbonPage2";
             this.ribbonPage2.Text = "QUẢN LÝ SẢN PHẨM";
             // 
             // ribbonPageGroup7
             // 
-            this.ribbonPageGroup7.ItemLinks.Add(this.btnSanPham);
-            this.ribbonPageGroup7.ItemLinks.Add(this.btnTimKiemSP);
+            this.ribbonPageGroup7.ItemLinks.Add(this.btnSanPham, "D");
+            this.ribbonPageGroup7.ItemLinks.Add(this.btnTimKiemSP, "T");
+            this.ribbonPageGroup7.KeyTip = "0";
             this.ribbonPageGroup7.Name = "ribbonPageGroup7";
             // 
             // ribbonPage3
             // 
             this.ribbonPage3.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup3});
+            this.ribbonPage3.KeyTip = "QN";
             this.ribbonPage3.Name = "ribbonPage3";
             this.ribbonPage3.Text = "QUẢN LÝ NHÀ CUNG CẤP";
             // 
             // ribbonPageGroup3
             // 
-            this.ribbonPageGroup3.ItemLinks.Add(this.btnNhaCungCap);
-            this.ribbonPageGroup3.ItemLinks.Add(this.btnTimKiemNCC);
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnNhaCungCap, "D");
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnTimKiemNCC, "T");
+            this.ribbonPageGroup3.KeyTip = "0";
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             // 
             // ribbonPage4
@@ -430,20 +439,23 @@
             this.ribbonPage4.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup4,
             this.ribbonPageGroup8});
+            this.ribbonPage4.KeyTip = "QL";
             this.ribbonPage4.Name = "ribbonPage4";
             this.ribbonPage4.Text = "QUẢN LÝ KHO";
             // 
             // ribbonPageGroup4
             // 
-            this.ribbonPageGroup4.ItemLinks.Add(this.btnNhapHang);
-            this.ribbonPageGroup4.ItemLinks.Add(this.btnTimKiemDNH);
+            this.ribbonPageGroup4.ItemLinks.Add(this.btnNhapHang, "NẬ");
+            this.ribbonPageGroup4.ItemLinks.Add(this.btnTimKiemDNH, "TÌ");
+            this.ribbonPageGroup4.KeyTip = "NH";
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             this.ribbonPageGroup4.Text = "Nhập Kho";
             // 
             // ribbonPageGroup8
             // 
-            this.ribbonPageGroup8.ItemLinks.Add(this.btnXuatHang);
-            this.ribbonPageGroup8.ItemLinks.Add(this.btnTimKiemDXH);
+            this.ribbonPageGroup8.ItemLinks.Add(this.btnXuatHang, "XẤ");
+            this.ribbonPageGroup8.ItemLinks.Add(this.btnTimKiemDXH, "TM");
+            this.ribbonPageGroup8.KeyTip = "XU";
             this.ribbonPageGroup8.Name = "ribbonPageGroup8";
             this.ribbonPageGroup8.Text = "Xuất Kho";
             // 
@@ -451,18 +463,20 @@
             // 
             this.ribbonPage5.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup5});
+            this.ribbonPage5.KeyTip = "TH";
             this.ribbonPage5.Name = "ribbonPage5";
             this.ribbonPage5.Text = "THỐNG KÊ";
             // 
             // ribbonPageGroup5
             // 
-            this.ribbonPageGroup5.ItemLinks.Add(this.btnXuatBaoCao);
-            this.ribbonPageGroup5.ItemLinks.Add(this.btnTimKiemBaoCao);
+            this.ribbonPageGroup5.ItemLinks.Add(this.btnXuatBaoCao, "X");
+            this.ribbonPageGroup5.ItemLinks.Add(this.btnTimKiemBaoCao, "T");
+            this.ribbonPageGroup5.KeyTip = "0";
             this.ribbonPageGroup5.Name = "ribbonPageGroup5";
             // 
             // tabControlMain
             // 
-            this.tabControlMain.Location = new System.Drawing.Point(0, 151);
+            this.tabControlMain.Location = new System.Drawing.Point(1, 157);
             this.tabControlMain.Name = "tabControlMain";
             this.tabControlMain.SelectedIndex = 0;
             this.tabControlMain.Size = new System.Drawing.Size(928, 588);
@@ -470,6 +484,12 @@
             // 
             // frmMain
             // 
+            this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.True;
+            this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.Appearance.BackColor2 = System.Drawing.Color.Olive;
+            this.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.Appearance.Options.UseBackColor = true;
+            this.Appearance.Options.UseBorderColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(928, 738);
@@ -477,6 +497,7 @@
             this.Controls.Add(this.ribbonControl1);
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.None;
             this.Name = "frmMain";
+            this.Ribbon = this.ribbonControl1;
             this.Text = "Phầm Mềm Cửa Hàng Tạp Hóa Giáng Hương";
             this.Load += new System.EventHandler(this.frmMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();

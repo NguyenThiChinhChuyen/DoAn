@@ -85,7 +85,6 @@ namespace DACK_QLCH.QL_Hoa_Don
             try
             {
                 DSHD.AddNew();
-                DSHDCT.AddNew();
                 capNhat = true;
                 ennableButton();
                 MessageBox.Show("Thêm thành công, Bạn có muốn Lưu không!!!");
@@ -108,10 +107,7 @@ namespace DACK_QLCH.QL_Hoa_Don
             {
                 DSHD.RemoveAt(DSHD.Position);
                 tblHoaDon.ghi();
-                tblHoaDon.AcceptChanges();
-                DSHDCT.RemoveAt(DSHD.Position);
-                tblHOADON_CT.ghi();
-                tblHOADON_CT.AcceptChanges();
+ 
                 capNhat = true;
                 ennableButton();
 
@@ -131,9 +127,6 @@ namespace DACK_QLCH.QL_Hoa_Don
                 DSHD.EndCurrentEdit();
                 tblHoaDon.ghi();
                 tblHoaDon.AcceptChanges();
-                DSHDCT.EndCurrentEdit();
-                tblHOADON_CT.ghi();
-                tblHOADON_CT.AcceptChanges();
                 MessageBox.Show("Cập nhật thành công!!!");
                 capNhat = false;
                 ennableButton();
@@ -148,8 +141,6 @@ namespace DACK_QLCH.QL_Hoa_Don
         {
             DSHD.CancelCurrentEdit();
             tblHoaDon.RejectChanges();
-            DSHDCT.CancelCurrentEdit();
-            tblHOADON_CT.RejectChanges();
             capNhat = false;
             ennableButton();
         }

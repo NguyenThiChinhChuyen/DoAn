@@ -12,7 +12,7 @@ using DACK_QLCH.QL_San_Pham;
 
 namespace DACK_QLCH
 {
-    public partial class frmMain : DevExpress.XtraEditors.XtraForm
+    public partial class frmMain : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         public frmMain()
         {
