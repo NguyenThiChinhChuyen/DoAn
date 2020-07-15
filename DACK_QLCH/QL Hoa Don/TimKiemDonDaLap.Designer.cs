@@ -93,9 +93,10 @@
             // 
             // dateNgayLap
             // 
-            this.dateNgayLap.Location = new System.Drawing.Point(335, 39);
+            this.dateNgayLap.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateNgayLap.Location = new System.Drawing.Point(360, 39);
             this.dateNgayLap.Name = "dateNgayLap";
-            this.dateNgayLap.Size = new System.Drawing.Size(198, 20);
+            this.dateNgayLap.Size = new System.Drawing.Size(130, 20);
             this.dateNgayLap.TabIndex = 3;
             this.dateNgayLap.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dateNgayLap_KeyDown);
             this.dateNgayLap.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dateNgayLap_MouseDown);
@@ -112,7 +113,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(273, 41);
+            this.label2.Location = new System.Drawing.Point(298, 41);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 13);
             this.label2.TabIndex = 1;

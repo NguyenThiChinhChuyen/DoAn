@@ -20,6 +20,7 @@ namespace DACK_QLCH.QL_Hoa_Don
         }
         XLHOADON tblHoaDon;
         XLHOADON_CT tblHoaDon_CT;
+        XLNHANVIEN tblNhanVien;
         BindingManagerBase DSHD;
         BindingManagerBase DSHDCT;
         bool capNhat = false;
@@ -27,8 +28,10 @@ namespace DACK_QLCH.QL_Hoa_Don
         {
             tblHoaDon = new XLHOADON();
             tblHoaDon_CT = new XLHOADON_CT();
+            tblNhanVien = new XLNHANVIEN();
             loadHoaDon();
             LoadHoaDon();
+            cboMaNV_Load();
             DSHD = this.BindingContext[tblHoaDon];
             DSHDCT = this.BindingContext[tblHoaDon_CT];
             ennableButton();
@@ -45,11 +48,17 @@ namespace DACK_QLCH.QL_Hoa_Don
             DataColumn cot_ThanhTien = new DataColumn("ThanhTien", Type.GetType("System.String"), "Parent(FRK_HOADON_CT_HOADON).ThanhTien");
             tblHoaDon.Columns.Add(cot_ThanhTien);
         }
+        private void cboMaNV_Load()
+        {
+            cboMaNV.DataSource = tblNhanVien;
+            cboMaNV.DisplayMember = "MaNV";
+            cboMaNV.ValueMember = "MaNV";
+        }
         private void loadHoaDon()
         {
             txtSoHD.DataBindings.Add("text", tblHoaDon, "SoHD", true);
             dateNgayLap.DataBindings.Add("text", tblHoaDon, "NgayHD", true);
-            txtMaNV.DataBindings.Add("text", tblHoaDon, "MaNV", true);
+            cboMaNV.DataBindings.Add("SelectedValue", tblHoaDon, "MaNV", true);
             txtNoiDung.DataBindings.Add("text", tblHoaDon, "NoiDung", true);
             txtThanhTien.DataBindings.Add("text", tblHoaDon_CT, "ThanhTien", true);
             txtDonGia.DataBindings.Add("text", tblHoaDon_CT, "DonGia", true);

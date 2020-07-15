@@ -25,14 +25,20 @@ namespace DACK_QLCH
         BindingManagerBase DSPN;
         BindingManagerBase DSPNCT;
         bool capNhat = false;
+        XLNHANVIEN tblNhanVien;
+        XLNCC tblNCC;
         private void frmNhaHang_Load(object sender, EventArgs e)
         {
             tblPhieuNhap = new XLPHIEUNHAP();
             tblPhieuNhap_CT = new XLPHIEUNHAP_CT();
+            tblNhanVien = new XLNHANVIEN();
+            tblNCC = new XLNCC();
             DSPN = this.BindingContext[tblPhieuNhap];
             DSPNCT = this.BindingContext[tblPhieuNhap_CT];
             loadPhieuNhap();
             LoadPhieuNhapCT();
+            cbMaNV();
+            cbNCC();
             ennableButton();
         }
         private void LoadPhieuNhapCT()
@@ -46,19 +52,35 @@ namespace DACK_QLCH
             tblPhieuNhap.Columns.Add(cot_DonGia);
             DataColumn cot_ThanhTien = new DataColumn("ThanhTien", Type.GetType("System.String"), "Parent(FRK_PHIEUNHAP_CT_PHIEUNHAP).ThanhTien");
             tblPhieuNhap.Columns.Add(cot_ThanhTien);
+            DataColumn cot_MaSP = new DataColumn("MaSP", Type.GetType("System.String"), "Parent(FRK_PHIEUNHAP_CT_PHIEUNHAP).MaSP");
+            tblPhieuNhap.Columns.Add(cot_MaSP);
         }
         private void loadPhieuNhap()
         {
             dateNgayPN.DataBindings.Add("text",tblPhieuNhap,"NgayPhieuNhap",true);
             txtSoPN.DataBindings.Add("text", tblPhieuNhap, "SoPhieuNhap", true);
-            txtMaNCC.DataBindings.Add("text", tblPhieuNhap, "MaNCC", true);
-            txtMaNV.DataBindings.Add("text", tblPhieuNhap, "MaNV", true);
+            cboNCC.DataBindings.Add("SelectedValue", tblPhieuNhap, "MaNCC", true);
+            txtMaSP.DataBindings.Add("text", tblPhieuNhap_CT, "MaSP", true);
+            cboMaNV.DataBindings.Add("SelectedValue",tblPhieuNhap,"MaNV",true);
             txtNoiDungPN.DataBindings.Add("text", tblPhieuNhap, "NoiDung", true);
             txtDonGia.DataBindings.Add("text", tblPhieuNhap_CT, "DonGia", true);
             txtSoLuong.DataBindings.Add("text", tblPhieuNhap_CT, "SoLuong", true);
             txtThanhTien.DataBindings.Add("text", tblPhieuNhap_CT, "ThanhTien", true);
             dgDSNH.AutoGenerateColumns = false;
             dgDSNH.DataSource = tblPhieuNhap;
+        }
+
+        private void cbMaNV()
+        {
+            cboMaNV.DataSource = tblNhanVien;
+            cboMaNV.DisplayMember = "MaNV";
+            cboMaNV.ValueMember = "MaNV";
+        }
+        private void cbNCC()
+        {
+            cboNCC.DataSource = tblNCC;
+            cboNCC.DisplayMember = "MaNCC";
+            cboNCC.ValueMember = "MaNCC";
         }
         private void ennableButton()
         {

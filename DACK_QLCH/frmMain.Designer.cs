@@ -292,6 +292,7 @@
             this.btnTimKiemDNH.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTimKiemDNH.ImageOptions.Image")));
             this.btnTimKiemDNH.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnTimKiemDNH.ImageOptions.LargeImage")));
             this.btnTimKiemDNH.Name = "btnTimKiemDNH";
+            this.btnTimKiemDNH.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTimKiemDNH_ItemClick);
             // 
             // btnTimKiemDXH
             // 
@@ -473,6 +474,7 @@
             this.ClientSize = new System.Drawing.Size(928, 738);
             this.Controls.Add(this.tabControlMain);
             this.Controls.Add(this.ribbonControl1);
+            this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.None;
             this.Name = "frmMain";
             this.Text = "Phầm Mềm Cửa Hàng Tạp Hóa Giáng Hương";
             this.Load += new System.EventHandler(this.frmMain_Load);
