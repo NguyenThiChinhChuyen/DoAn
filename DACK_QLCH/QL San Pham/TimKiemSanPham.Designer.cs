@@ -48,6 +48,7 @@
             this.NgaySX = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NoiSX = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DonViTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuongTon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgTimKiemSP)).BeginInit();
@@ -87,6 +88,7 @@
             this.NgaySX,
             this.NoiSX,
             this.DonViTinh,
+            this.SoLuongTon,
             this.DonGia});
             this.dgTimKiemSP.DataSource = this.duLieuDoAnDataSetBindingSource;
             this.dgTimKiemSP.Location = new System.Drawing.Point(6, 21);
@@ -215,6 +217,12 @@
             this.DonViTinh.HeaderText = "Đơn Vị Tính";
             this.DonViTinh.Name = "DonViTinh";
             // 
+            // SoLuongTon
+            // 
+            this.SoLuongTon.DataPropertyName = "SoLuongTon";
+            this.SoLuongTon.HeaderText = "Số Lượng Tồn";
+            this.SoLuongTon.Name = "SoLuongTon";
+            // 
             // DonGia
             // 
             this.DonGia.DataPropertyName = "DonGia";
@@ -263,6 +271,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NgaySX;
         private System.Windows.Forms.DataGridViewTextBoxColumn NoiSX;
         private System.Windows.Forms.DataGridViewTextBoxColumn DonViTinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuongTon;
         private System.Windows.Forms.DataGridViewTextBoxColumn DonGia;
     }
 }

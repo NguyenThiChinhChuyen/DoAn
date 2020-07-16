@@ -33,13 +33,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgDSSP = new System.Windows.Forms.DataGridView();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgaySX = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NoiSX = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DonViTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.duLieuDoAnDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.duLieuDoAnDataSet = new DACK_QLCH.DuLieuDoAnDataSet();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -64,6 +57,16 @@
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.btnTimKiem = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtSoLuongTon = new System.Windows.Forms.TextBox();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgaySX = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NoiSX = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DonViTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuongTon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgDSSP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.duLieuDoAnDataSetBindingSource)).BeginInit();
@@ -103,6 +106,7 @@
             this.NgaySX,
             this.NoiSX,
             this.DonViTinh,
+            this.SoLuongTon,
             this.DonGia});
             this.dgDSSP.DataSource = this.duLieuDoAnDataSetBindingSource;
             this.dgDSSP.Location = new System.Drawing.Point(6, 21);
@@ -110,47 +114,6 @@
             this.dgDSSP.Size = new System.Drawing.Size(834, 238);
             this.dgDSSP.TabIndex = 0;
             this.dgDSSP.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgDSSP_DataBindingComplete);
-            // 
-            // STT
-            // 
-            this.STT.HeaderText = "STT";
-            this.STT.Name = "STT";
-            // 
-            // MaSP
-            // 
-            this.MaSP.DataPropertyName = "MaSP";
-            this.MaSP.HeaderText = "Mã Sản Phẩm";
-            this.MaSP.Name = "MaSP";
-            // 
-            // TenSP
-            // 
-            this.TenSP.DataPropertyName = "TenSP";
-            this.TenSP.HeaderText = "Tên Sản Phẩm";
-            this.TenSP.Name = "TenSP";
-            // 
-            // NgaySX
-            // 
-            this.NgaySX.DataPropertyName = "NgaySX";
-            this.NgaySX.HeaderText = "Ngày Sản Xuất";
-            this.NgaySX.Name = "NgaySX";
-            // 
-            // NoiSX
-            // 
-            this.NoiSX.DataPropertyName = "NoiSX";
-            this.NoiSX.HeaderText = "Nơi Sản Xuất";
-            this.NoiSX.Name = "NoiSX";
-            // 
-            // DonViTinh
-            // 
-            this.DonViTinh.DataPropertyName = "DonViTinh";
-            this.DonViTinh.HeaderText = "Đơn Vị Tính";
-            this.DonViTinh.Name = "DonViTinh";
-            // 
-            // DonGia
-            // 
-            this.DonGia.DataPropertyName = "DonGia";
-            this.DonGia.HeaderText = "Đơn Giá";
-            this.DonGia.Name = "DonGia";
             // 
             // duLieuDoAnDataSetBindingSource
             // 
@@ -170,9 +133,11 @@
             this.groupBox1.Controls.Add(this.btnSua);
             this.groupBox1.Controls.Add(this.btnHuy);
             this.groupBox1.Controls.Add(this.btnThem);
+            this.groupBox1.Controls.Add(this.txtSoLuongTon);
             this.groupBox1.Controls.Add(this.txtDonGia);
             this.groupBox1.Controls.Add(this.btnLuu);
             this.groupBox1.Controls.Add(this.txtNoiSanXuat);
+            this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.txtDonViTinh);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.txtTenSP);
@@ -259,9 +224,9 @@
             // 
             // txtDonGia
             // 
-            this.txtDonGia.Location = new System.Drawing.Point(322, 104);
+            this.txtDonGia.Location = new System.Drawing.Point(429, 104);
             this.txtDonGia.Name = "txtDonGia";
-            this.txtDonGia.Size = new System.Drawing.Size(197, 20);
+            this.txtDonGia.Size = new System.Drawing.Size(89, 20);
             this.txtDonGia.TabIndex = 5;
             // 
             // btnLuu
@@ -287,13 +252,13 @@
             // 
             this.txtDonViTinh.Location = new System.Drawing.Point(96, 104);
             this.txtDonViTinh.Name = "txtDonViTinh";
-            this.txtDonViTinh.Size = new System.Drawing.Size(146, 20);
+            this.txtDonViTinh.Size = new System.Drawing.Size(91, 20);
             this.txtDonViTinh.TabIndex = 5;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(270, 107);
+            this.label7.Location = new System.Drawing.Point(377, 107);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(49, 13);
             this.label7.TabIndex = 1;
@@ -390,6 +355,69 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Tìm Kiếm";
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(194, 107);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(78, 13);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "Số Lượng Tồn:";
+            // 
+            // txtSoLuongTon
+            // 
+            this.txtSoLuongTon.Location = new System.Drawing.Point(278, 104);
+            this.txtSoLuongTon.Name = "txtSoLuongTon";
+            this.txtSoLuongTon.Size = new System.Drawing.Size(89, 20);
+            this.txtSoLuongTon.TabIndex = 5;
+            // 
+            // STT
+            // 
+            this.STT.HeaderText = "STT";
+            this.STT.Name = "STT";
+            // 
+            // MaSP
+            // 
+            this.MaSP.DataPropertyName = "MaSP";
+            this.MaSP.HeaderText = "Mã Sản Phẩm";
+            this.MaSP.Name = "MaSP";
+            // 
+            // TenSP
+            // 
+            this.TenSP.DataPropertyName = "TenSP";
+            this.TenSP.HeaderText = "Tên Sản Phẩm";
+            this.TenSP.Name = "TenSP";
+            // 
+            // NgaySX
+            // 
+            this.NgaySX.DataPropertyName = "NgaySX";
+            this.NgaySX.HeaderText = "Ngày Sản Xuất";
+            this.NgaySX.Name = "NgaySX";
+            // 
+            // NoiSX
+            // 
+            this.NoiSX.DataPropertyName = "NoiSX";
+            this.NoiSX.HeaderText = "Nơi Sản Xuất";
+            this.NoiSX.Name = "NoiSX";
+            // 
+            // DonViTinh
+            // 
+            this.DonViTinh.DataPropertyName = "DonViTinh";
+            this.DonViTinh.HeaderText = "Đơn Vị Tính";
+            this.DonViTinh.Name = "DonViTinh";
+            // 
+            // SoLuongTon
+            // 
+            this.SoLuongTon.DataPropertyName = "SoLuongTon";
+            this.SoLuongTon.HeaderText = "Số Lượng Tồn";
+            this.SoLuongTon.Name = "SoLuongTon";
+            // 
+            // DonGia
+            // 
+            this.DonGia.DataPropertyName = "DonGia";
+            this.DonGia.HeaderText = "Đơn Giá";
+            this.DonGia.Name = "DonGia";
+            // 
             // frmSanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -444,12 +472,15 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.BindingSource duLieuDoAnDataSetBindingSource;
         private DuLieuDoAnDataSet duLieuDoAnDataSet;
+        private System.Windows.Forms.TextBox txtSoLuongTon;
+        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaSP;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenSP;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgaySX;
         private System.Windows.Forms.DataGridViewTextBoxColumn NoiSX;
         private System.Windows.Forms.DataGridViewTextBoxColumn DonViTinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuongTon;
         private System.Windows.Forms.DataGridViewTextBoxColumn DonGia;
     }
 }

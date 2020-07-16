@@ -69,7 +69,7 @@ namespace DACK_QLCH
             dgDSNH.AutoGenerateColumns = false;
             dgDSNH.DataSource = tblPhieuNhap;
         }
-
+        
         private void cbMaNV()
         {
             cboMaNV.DataSource = tblNhanVien;
