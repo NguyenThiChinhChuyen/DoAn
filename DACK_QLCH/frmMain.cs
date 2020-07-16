@@ -51,7 +51,7 @@ namespace DACK_QLCH
                     btnDoiMatKhau.Enabled = true;
                     btnDonDatHang.Enabled = false;
                     btnHoaDonBan.Enabled = false;
-                    btnNhaCungCap.Enabled = true;
+                    btnNhaCungCap.Enabled = false;
                     btnSanPham.Enabled = true;
                     btnNhapHang.Enabled = true;
                     btnXuatHang.Enabled = true;
