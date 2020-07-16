@@ -81,7 +81,7 @@ namespace DACK_QLCH
 
         private void txtTenSP_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == (char)Keys.Enter)
+           if (e.KeyChar == (char)Keys.Enter)
             {
                 btnTimKiem_Click(sender, e);
             }
