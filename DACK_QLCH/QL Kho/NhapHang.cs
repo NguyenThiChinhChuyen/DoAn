@@ -54,11 +54,16 @@ namespace DACK_QLCH
             tblPhieuNhap.Columns.Add(cot_DonGia);
             DataColumn cot_ThanhTien = new DataColumn("ThanhTien", Type.GetType("System.String"), "Parent(FRK_PHIEUNHAP_CT_PHIEUNHAP).ThanhTien");
             tblPhieuNhap.Columns.Add(cot_ThanhTien);
+            DataColumn cot_MaSP = new DataColumn("MaSP", Type.GetType("System.String"), "Parent(FRK_PHIEUNHAP_CT_PHIEUNHAP).MaSP");
+            tblPhieuNhap.Columns.Add(cot_MaSP);
         }
         private void loadPhieuNhap()
         {
+
+
             dateNgayPN.DataBindings.Add("text",tblPhieuNhap,"NgayPhieuNhap",true);
             txtSoPN.DataBindings.Add("text", tblPhieuNhap, "SoPhieuNhap", true);
+            cboMaSP.DataBindings.Add("SelectedValue", tblSanPham, "MaSP", true);
             cboMaNV.DataBindings.Add("SelectedValue", tblPhieuNhap, "MaNV", true);
             txtNoiDungPN.DataBindings.Add("text", tblPhieuNhap, "NoiDung", true);
             txtDonGia.DataBindings.Add("text", tblPhieuNhap_CT, "DonGia", true);
