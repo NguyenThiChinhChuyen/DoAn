@@ -21,7 +21,6 @@ namespace DACK_QLCH.QL_Hoa_Don
         XLHOADON tblHoaDon;
         XLHOADON_CT tblHOADON_CT;
         BindingManagerBase DSHD;
-        BindingManagerBase DSHDCT;
         bool capNhat=false;
         private void frmDonDatHang_Load(object sender, EventArgs e)
         {

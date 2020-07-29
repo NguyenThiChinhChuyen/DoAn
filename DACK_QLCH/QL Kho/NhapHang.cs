@@ -1,5 +1,4 @@
-﻿
-using DevExpress.ClipboardSource.SpreadsheetML;
+﻿using DevExpress.ClipboardSource.SpreadsheetML;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,29 +21,32 @@ namespace DACK_QLCH
         }
         XLPHIEUNHAP tblPhieuNhap;
         XLPHIEUNHAP_CT tblPhieuNhap_CT;
-        BindingManagerBase DSPN;
-        BindingManagerBase DSPNCT;
-        bool capNhat = false;
         XLNHANVIEN tblNhanVien;
+        XLSANPHAM tblSanPham;
         XLNCC tblNCC;
+        BindingManagerBase DSPN;
+        bool capNhat = false;
+
         private void frmNhaHang_Load(object sender, EventArgs e)
         {
             tblPhieuNhap = new XLPHIEUNHAP();
             tblPhieuNhap_CT = new XLPHIEUNHAP_CT();
             tblNhanVien = new XLNHANVIEN();
             tblNCC = new XLNCC();
-            DSPN = this.BindingContext[tblPhieuNhap];
-            DSPNCT = this.BindingContext[tblPhieuNhap_CT];
-            loadPhieuNhap();
-            LoadPhieuNhapCT();
+            tblSanPham = new XLSANPHAM();
             cbMaNV();
             cbNCC();
+            cbMaSP();
+            loadPhieuNhap();
+            LoadPhieuNhapCT();
+            DSPN = this.BindingContext[tblPhieuNhap];
             ennableButton();
+
         }
         private void LoadPhieuNhapCT()
         {
             var ds = new DataSet();
-            ds.Tables.AddRange(new DataTable[] { tblPhieuNhap_CT, tblPhieuNhap });
+            ds.Tables.AddRange(new DataTable[] { tblPhieuNhap_CT, tblPhieuNhap, tblSanPham });
             ds.Relations.Add(new DataRelation("FRK_PHIEUNHAP_CT_PHIEUNHAP", tblPhieuNhap_CT.Columns["SoPhieuNhap"], tblPhieuNhap.Columns["SoPhieuNhap"]));
             DataColumn cot_SoLuong = new DataColumn("SoLuong", Type.GetType("System.String"), "Parent(FRK_PHIEUNHAP_CT_PHIEUNHAP).SoLuong");
             tblPhieuNhap.Columns.Add(cot_SoLuong);
@@ -52,16 +54,12 @@ namespace DACK_QLCH
             tblPhieuNhap.Columns.Add(cot_DonGia);
             DataColumn cot_ThanhTien = new DataColumn("ThanhTien", Type.GetType("System.String"), "Parent(FRK_PHIEUNHAP_CT_PHIEUNHAP).ThanhTien");
             tblPhieuNhap.Columns.Add(cot_ThanhTien);
-            DataColumn cot_MaSP = new DataColumn("MaSP", Type.GetType("System.String"), "Parent(FRK_PHIEUNHAP_CT_PHIEUNHAP).MaSP");
-            tblPhieuNhap.Columns.Add(cot_MaSP);
         }
         private void loadPhieuNhap()
         {
             dateNgayPN.DataBindings.Add("text",tblPhieuNhap,"NgayPhieuNhap",true);
             txtSoPN.DataBindings.Add("text", tblPhieuNhap, "SoPhieuNhap", true);
-            cboNCC.DataBindings.Add("SelectedValue", tblPhieuNhap, "MaNCC", true);
-            txtMaSP.DataBindings.Add("text", tblPhieuNhap_CT, "MaSP", true);
-            cboMaNV.DataBindings.Add("SelectedValue",tblPhieuNhap,"MaNV",true);
+            cboMaNV.DataBindings.Add("SelectedValue", tblPhieuNhap, "MaNV", true);
             txtNoiDungPN.DataBindings.Add("text", tblPhieuNhap, "NoiDung", true);
             txtDonGia.DataBindings.Add("text", tblPhieuNhap_CT, "DonGia", true);
             txtSoLuong.DataBindings.Add("text", tblPhieuNhap_CT, "SoLuong", true);
@@ -69,7 +67,12 @@ namespace DACK_QLCH
             dgDSNH.AutoGenerateColumns = false;
             dgDSNH.DataSource = tblPhieuNhap;
         }
-        
+        private void cbMaSP()
+        {
+            cboMaSP.DataSource = tblSanPham;
+            cboMaSP.DisplayMember = "MaSP";
+            cboMaSP.ValueMember = "MaSP";
+        }
         private void cbMaNV()
         {
             cboMaNV.DataSource = tblNhanVien;
@@ -106,7 +109,6 @@ namespace DACK_QLCH
             try
             {
                 DSPN.AddNew();
-                DSPNCT.AddNew();
                 capNhat = true;
                 ennableButton();
                 MessageBox.Show("Thêm thành công, Bạn có muốn Lưu không!!!");
@@ -129,9 +131,6 @@ namespace DACK_QLCH
                 DSPN.RemoveAt(DSPN.Position);
                 tblPhieuNhap.ghi();
                 tblPhieuNhap.AcceptChanges();
-                DSPNCT.RemoveAt(DSPNCT.Position);
-                tblPhieuNhap_CT.ghi();
-                tblPhieuNhap_CT.AcceptChanges();
                 capNhat = true;
                 ennableButton();
 
@@ -139,7 +138,6 @@ namespace DACK_QLCH
             catch (SqlException)
             {
                 tblPhieuNhap.RejectChanges();
-                tblPhieuNhap_CT.RejectChanges();
                 MessageBox.Show("Xóa thất bại!!!");
             }
         }
@@ -147,12 +145,9 @@ namespace DACK_QLCH
         {
             try
             {
-                DSPN.CancelCurrentEdit();
+                DSPN.EndCurrentEdit();
                 tblPhieuNhap.ghi();
                 tblPhieuNhap.AcceptChanges();
-                DSPNCT.CancelCurrentEdit();
-                tblPhieuNhap_CT.ghi();
-                tblPhieuNhap_CT.AcceptChanges();
                 MessageBox.Show("Cập nhật thành công!!!");
                 capNhat = false;
                 ennableButton();
@@ -167,10 +162,8 @@ namespace DACK_QLCH
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
-            DSPN.EndCurrentEdit();
+            DSPN.CancelCurrentEdit();
             tblPhieuNhap.RejectChanges();
-            DSPNCT.CancelCurrentEdit();
-            tblPhieuNhap_CT.RejectChanges();
             capNhat = false;
             ennableButton();
         }

@@ -18,7 +18,6 @@ namespace DACK_QLCH
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
             BonusSkins.Register();
             Application.Run(new frmMain());
         }

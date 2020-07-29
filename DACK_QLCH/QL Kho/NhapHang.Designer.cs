@@ -46,6 +46,7 @@
             this.duLieuDoAnDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.duLieuDoAnDataSet = new DACK_QLCH.DuLieuDoAnDataSet();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cboNCC = new System.Windows.Forms.ComboBox();
             this.cboMaNV = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -56,7 +57,6 @@
             this.btnHuy = new DevExpress.XtraEditors.SimpleButton();
             this.btnThem = new DevExpress.XtraEditors.SimpleButton();
             this.btnLuu = new DevExpress.XtraEditors.SimpleButton();
-            this.txtMaSP = new System.Windows.Forms.TextBox();
             this.txtSoLuong = new System.Windows.Forms.TextBox();
             this.txtDonGia = new System.Windows.Forms.TextBox();
             this.txtThanhTien = new System.Windows.Forms.TextBox();
@@ -74,7 +74,7 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.btnTimKiem = new DevExpress.XtraEditors.SimpleButton();
-            this.cboNCC = new System.Windows.Forms.ComboBox();
+            this.cboMaSP = new System.Windows.Forms.ComboBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgDSNH)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.duLieuDoAnDataSetBindingSource)).BeginInit();
@@ -199,6 +199,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cboMaSP);
             this.groupBox1.Controls.Add(this.cboNCC);
             this.groupBox1.Controls.Add(this.cboMaNV);
             this.groupBox1.Controls.Add(this.label10);
@@ -210,7 +211,6 @@
             this.groupBox1.Controls.Add(this.btnHuy);
             this.groupBox1.Controls.Add(this.btnThem);
             this.groupBox1.Controls.Add(this.btnLuu);
-            this.groupBox1.Controls.Add(this.txtMaSP);
             this.groupBox1.Controls.Add(this.txtSoLuong);
             this.groupBox1.Controls.Add(this.txtDonGia);
             this.groupBox1.Controls.Add(this.txtThanhTien);
@@ -231,6 +231,14 @@
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tìm Kiếm";
+            // 
+            // cboNCC
+            // 
+            this.cboNCC.FormattingEnabled = true;
+            this.cboNCC.Location = new System.Drawing.Point(415, 20);
+            this.cboNCC.Name = "cboNCC";
+            this.cboNCC.Size = new System.Drawing.Size(89, 21);
+            this.cboNCC.TabIndex = 11;
             // 
             // cboMaNV
             // 
@@ -337,13 +345,6 @@
             this.btnLuu.TabIndex = 7;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
-            // 
-            // txtMaSP
-            // 
-            this.txtMaSP.Location = new System.Drawing.Point(365, 52);
-            this.txtMaSP.Name = "txtMaSP";
-            this.txtMaSP.Size = new System.Drawing.Size(148, 20);
-            this.txtMaSP.TabIndex = 5;
             // 
             // txtSoLuong
             // 
@@ -497,13 +498,13 @@
             this.btnTimKiem.Text = "Tìm Kiếm";
             this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
-            // cboNCC
+            // cboMaSP
             // 
-            this.cboNCC.FormattingEnabled = true;
-            this.cboNCC.Location = new System.Drawing.Point(415, 20);
-            this.cboNCC.Name = "cboNCC";
-            this.cboNCC.Size = new System.Drawing.Size(89, 21);
-            this.cboNCC.TabIndex = 11;
+            this.cboMaSP.FormattingEnabled = true;
+            this.cboMaSP.Location = new System.Drawing.Point(362, 52);
+            this.cboMaSP.Name = "cboMaSP";
+            this.cboMaSP.Size = new System.Drawing.Size(142, 21);
+            this.cboMaSP.TabIndex = 11;
             // 
             // frmNhapHang
             // 
@@ -574,8 +575,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DonGia;
         private System.Windows.Forms.DataGridViewTextBoxColumn ThanhTien;
         private System.Windows.Forms.ComboBox cboMaNV;
-        private System.Windows.Forms.TextBox txtMaSP;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox cboNCC;
+        private System.Windows.Forms.ComboBox cboMaSP;
     }
 }

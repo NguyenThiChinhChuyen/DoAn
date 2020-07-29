@@ -110,6 +110,7 @@ namespace DACK_QLCH.QL_San_Pham
             {
                 DSSP.EndCurrentEdit();
                 tblSanPham.ghi();
+                tblSanPham.AcceptChanges();
                 MessageBox.Show("Cập nhật thành công!!!");
                 capNhat = false;
                 ennableButton();
