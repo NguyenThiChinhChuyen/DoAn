@@ -21,32 +21,44 @@ namespace DACK_QLCH
         }
         XLPHIEUNHAP tblPhieuNhap;
         XLPHIEUNHAP_CT tblPhieuNhap_CT;
-        XLNHANVIEN tblNhanVien;
         XLSANPHAM tblSanPham;
         XLNCC tblNCC;
-        BindingManagerBase DSPN;
+        BindingManagerBase DSPN,DSPNCT;
+        SqlDataAdapter daNH, daNHCT,daSP;
         bool capNhat = false;
 
         private void frmNhaHang_Load(object sender, EventArgs e)
         {
             tblPhieuNhap = new XLPHIEUNHAP();
             tblPhieuNhap_CT = new XLPHIEUNHAP_CT();
-            tblNhanVien = new XLNHANVIEN();
             tblNCC = new XLNCC();
             tblSanPham = new XLSANPHAM();
-            cbMaNV();
+            daNH = new SqlDataAdapter("Select*From PHIEUNHAP", XLBANG.cnnStr);
+            daNHCT = new SqlDataAdapter("Select*From PHIEUNHAP_CT", XLBANG.cnnStr);
+            daSP = new SqlDataAdapter("Select*From SANPHAM",XLBANG.cnnStr);
+            try
+            {
+                daNH.Fill(tblPhieuNhap);
+                daNHCT.Fill(tblPhieuNhap_CT);
+                daSP.Fill(tblSanPham);
+                SqlCommandBuilder cmdPDB = new SqlCommandBuilder(daNH);
+                SqlCommandBuilder cmdCTDB = new SqlCommandBuilder(daNHCT);
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
             cbNCC();
             cbMaSP();
             loadPhieuNhap();
             LoadPhieuNhapCT();
-            DSPN = this.BindingContext[tblPhieuNhap];
             ennableButton();
 
         }
         private void LoadPhieuNhapCT()
         {
             var ds = new DataSet();
-            ds.Tables.AddRange(new DataTable[] { tblPhieuNhap_CT, tblPhieuNhap, tblSanPham });
+            ds.Tables.AddRange(new DataTable[] { tblPhieuNhap_CT, tblPhieuNhap });
             ds.Relations.Add(new DataRelation("FRK_PHIEUNHAP_CT_PHIEUNHAP", tblPhieuNhap_CT.Columns["SoPhieuNhap"], tblPhieuNhap.Columns["SoPhieuNhap"]));
             DataColumn cot_SoLuong = new DataColumn("SoLuong", Type.GetType("System.String"), "Parent(FRK_PHIEUNHAP_CT_PHIEUNHAP).SoLuong");
             tblPhieuNhap.Columns.Add(cot_SoLuong);
@@ -63,32 +75,31 @@ namespace DACK_QLCH
 
             dateNgayPN.DataBindings.Add("text",tblPhieuNhap,"NgayPhieuNhap",true);
             txtSoPN.DataBindings.Add("text", tblPhieuNhap, "SoPhieuNhap", true);
-            cboMaSP.DataBindings.Add("SelectedValue", tblSanPham, "MaSP", true);
-            cboMaNV.DataBindings.Add("SelectedValue", tblPhieuNhap, "MaNV", true);
+            cboMaSP.DataBindings.Add("SelectedValue",tblPhieuNhap_CT, "MaSP", true); 
             txtNoiDungPN.DataBindings.Add("text", tblPhieuNhap, "NoiDung", true);
             txtDonGia.DataBindings.Add("text", tblPhieuNhap_CT, "DonGia", true);
             txtSoLuong.DataBindings.Add("text", tblPhieuNhap_CT, "SoLuong", true);
             txtThanhTien.DataBindings.Add("text", tblPhieuNhap_CT, "ThanhTien", true);
+            DSPN = this.BindingContext[tblPhieuNhap];
+            DSPNCT = this.BindingContext[tblPhieuNhap_CT];
             dgDSNH.AutoGenerateColumns = false;
             dgDSNH.DataSource = tblPhieuNhap;
         }
         private void cbMaSP()
         {
             cboMaSP.DataSource = tblSanPham;
-            cboMaSP.DisplayMember = "MaSP";
             cboMaSP.ValueMember = "MaSP";
-        }
-        private void cbMaNV()
-        {
-            cboMaNV.DataSource = tblNhanVien;
-            cboMaNV.DisplayMember = "MaNV";
-            cboMaNV.ValueMember = "MaNV";
+            cboMaSP.DisplayMember = "MaSP";
+            cboMaSP.AutoCompleteMode = AutoCompleteMode.Suggest;
+            cboMaSP.AutoCompleteSource = AutoCompleteSource.ListItems;
         }
         private void cbNCC()
         {
             cboNCC.DataSource = tblNCC;
             cboNCC.DisplayMember = "MaNCC";
-            cboNCC.ValueMember = "MaNCC";
+            cboNCC.ValueMember = "TenNCC";
+            cboNCC.AutoCompleteMode = AutoCompleteMode.Suggest;
+            cboNCC.AutoCompleteSource = AutoCompleteSource.ListItems;
         }
         private void ennableButton()
         {
