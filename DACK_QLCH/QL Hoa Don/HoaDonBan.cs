@@ -19,34 +19,43 @@ namespace DACK_QLCH.QL_Hoa_Don
             InitializeComponent();
         }
         XLHOADON tblHoaDon;
-        XLHOADON_CT tblHoaDon_CT;
+        XLSANPHAM tblSanPham;
+        XLKHACHHANG tblKhachHang;
         XLNHANVIEN tblNhanVien;
         BindingManagerBase DSHD;
-        BindingManagerBase DSHDCT;
         bool capNhat = false;
         private void frmHoaDonBan_Load(object sender, EventArgs e)
         {
             tblHoaDon = new XLHOADON();
-            tblHoaDon_CT = new XLHOADON_CT();
+            tblSanPham = new XLSANPHAM();
             tblNhanVien = new XLNHANVIEN();
+            tblKhachHang = new XLKHACHHANG();
             loadHoaDon();
             LoadHoaDon();
+            cbMaSP();
             cboMaNV_Load();
-            DSHD = this.BindingContext[tblHoaDon];
-            DSHDCT = this.BindingContext[tblHoaDon_CT];
+            cbMaKH();
             ennableButton();
+        }
+        private void cbMaSP()
+        {
+            cboMaSP.DataSource = tblSanPham;
+            cboMaSP.DisplayMember = "MaSP";
+            cboMaSP.ValueMember = "MaSP";
+        }
+        private void cbMaKH()
+        {
+            cboMaKH.DataSource = tblKhachHang;
+            cboMaKH.DisplayMember = "MaKH";
+            cboMaKH.ValueMember = "MaKH";
         }
         private void LoadHoaDon()
         {
-            var ds = new DataSet();
-            ds.Tables.AddRange(new DataTable[] { tblHoaDon_CT, tblHoaDon });
-            ds.Relations.Add(new DataRelation("FRK_HOADON_CT_HOADON", tblHoaDon_CT.Columns["SoHD"], tblHoaDon.Columns["SoHD"]));
-            DataColumn cot_SoLuong = new DataColumn("SoLuong", Type.GetType("System.String"), "Parent(FRK_HOADON_CT_HOADON).SoLuong");
-            tblHoaDon.Columns.Add(cot_SoLuong);
-            DataColumn cot_DonGia = new DataColumn("DonGia", Type.GetType("System.String"), "Parent(FRK_HOADON_CT_HOADON).DonGia");
-            tblHoaDon.Columns.Add(cot_DonGia);
-            DataColumn cot_ThanhTien = new DataColumn("ThanhTien", Type.GetType("System.String"), "Parent(FRK_HOADON_CT_HOADON).ThanhTien");
-            tblHoaDon.Columns.Add(cot_ThanhTien);
+           var ds = new DataSet();
+            ds.Tables.AddRange(new DataTable[] { tblSanPham, tblHoaDon, tblKhachHang });
+            ds.Relations.Add(new DataRelation("FRK_SANPHAM_HOADON", tblSanPham.Columns["MaSP"], tblHoaDon.Columns["MaSP"]));
+            DataColumn cot_TenSP = new DataColumn("TenSP", Type.GetType("System.String"), "Parent(FRK_SANPHAM_HOADON).TenSP");
+            tblHoaDon.Columns.Add(cot_TenSP);
         }
         private void cboMaNV_Load()
         {
@@ -59,10 +68,12 @@ namespace DACK_QLCH.QL_Hoa_Don
             txtSoHD.DataBindings.Add("text", tblHoaDon, "SoHD", true);
             dateNgayLap.DataBindings.Add("text", tblHoaDon, "NgayHD", true);
             cboMaNV.DataBindings.Add("SelectedValue", tblHoaDon, "MaNV", true);
-            txtNoiDung.DataBindings.Add("text", tblHoaDon, "NoiDung", true);
-            txtThanhTien.DataBindings.Add("text", tblHoaDon_CT, "ThanhTien", true);
-            txtDonGia.DataBindings.Add("text", tblHoaDon_CT, "DonGia", true);
-            txtSoLuong.DataBindings.Add("text", tblHoaDon_CT, "SoLuong", true);
+            cboMaSP.DataBindings.Add("SelectedValue", tblHoaDon, "MaSP", true);
+            cboMaKH.DataBindings.Add("SelectedValue", tblHoaDon, "MaKH", true);
+            txtThanhTien.DataBindings.Add("text", tblHoaDon, "ThanhTien", true);
+            txtDonGia.DataBindings.Add("text", tblHoaDon, "DonGia", true);
+            txtSoLuong.DataBindings.Add("text", tblHoaDon, "SoLuong", true);
+            DSHD = this.BindingContext[tblHoaDon];
             dgDSDBH.AutoGenerateColumns = false;
             dgDSDBH.DataSource = tblHoaDon;
         }
@@ -82,10 +93,9 @@ namespace DACK_QLCH.QL_Hoa_Don
             try
             {
                 DSHD.AddNew();
-                //DSHDCT.AddNew();
                 capNhat = true;
                 ennableButton();
-                MessageBox.Show("Thêm thành công, Bạn có muốn Lưu không!!!");
+                MessageBox.Show("Bạn có muốn Thêm không!!!");
             }
             catch (Exception ex)
             {

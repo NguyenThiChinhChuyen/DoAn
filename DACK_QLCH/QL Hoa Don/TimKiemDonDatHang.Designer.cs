@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTimKiemDonDatHang));
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dgDSDDH = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnThoat = new DevExpress.XtraEditors.SimpleButton();
             this.btnTimKiem = new DevExpress.XtraEditors.SimpleButton();
@@ -38,20 +40,27 @@
             this.txtSoHD = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dgDSDDH = new System.Windows.Forms.DataGridView();
+            this.duLieuDoAnDataSet = new DACK_QLCH.DuLieuDoAnDataSet();
+            this.duLieuDoAnDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayGH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TinhTrangGiao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgDSDDH)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.duLieuDoAnDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.duLieuDoAnDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -73,6 +82,32 @@
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Kết Quả";
+            // 
+            // dgDSDDH
+            // 
+            this.dgDSDDH.AutoGenerateColumns = false;
+            this.dgDSDDH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgDSDDH.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.STT,
+            this.SoHD,
+            this.MaKH,
+            this.MaNV,
+            this.MaSP,
+            this.TenKH,
+            this.DiaChi,
+            this.SDT,
+            this.NgayHD,
+            this.NgayGH,
+            this.SoLuong,
+            this.DonGia,
+            this.ThanhTien,
+            this.TinhTrangGiao});
+            this.dgDSDDH.DataSource = this.duLieuDoAnDataSetBindingSource;
+            this.dgDSDDH.Location = new System.Drawing.Point(6, 19);
+            this.dgDSDDH.Name = "dgDSDDH";
+            this.dgDSDDH.Size = new System.Drawing.Size(818, 238);
+            this.dgDSDDH.TabIndex = 1;
+            this.dgDSDDH.SelectionChanged += new System.EventHandler(this.dgDSDDH_SelectionChanged);
             // 
             // groupBox1
             // 
@@ -150,25 +185,15 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Số Hóa Đơn:";
             // 
-            // dgDSDDH
+            // duLieuDoAnDataSet
             // 
-            this.dgDSDDH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgDSDDH.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.STT,
-            this.SoHD,
-            this.TenKH,
-            this.DiaChi,
-            this.SDT,
-            this.NgayGH,
-            this.SoLuong,
-            this.DonGia,
-            this.ThanhTien,
-            this.TinhTrangGiao});
-            this.dgDSDDH.Location = new System.Drawing.Point(6, 19);
-            this.dgDSDDH.Name = "dgDSDDH";
-            this.dgDSDDH.Size = new System.Drawing.Size(818, 238);
-            this.dgDSDDH.TabIndex = 1;
-            this.dgDSDDH.SelectionChanged += new System.EventHandler(this.dgDSDDH_SelectionChanged);
+            this.duLieuDoAnDataSet.DataSetName = "DuLieuDoAnDataSet";
+            this.duLieuDoAnDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // duLieuDoAnDataSetBindingSource
+            // 
+            this.duLieuDoAnDataSetBindingSource.DataSource = this.duLieuDoAnDataSet;
+            this.duLieuDoAnDataSetBindingSource.Position = 0;
             // 
             // STT
             // 
@@ -181,6 +206,21 @@
             this.SoHD.DataPropertyName = "SoHD";
             this.SoHD.HeaderText = "Số Hóa Đơn";
             this.SoHD.Name = "SoHD";
+            // 
+            // MaKH
+            // 
+            this.MaKH.HeaderText = "Mã Khách Hàng";
+            this.MaKH.Name = "MaKH";
+            // 
+            // MaNV
+            // 
+            this.MaNV.HeaderText = "Mã Nhân Viên";
+            this.MaNV.Name = "MaNV";
+            // 
+            // MaSP
+            // 
+            this.MaSP.HeaderText = "Mã Sản Phẩm";
+            this.MaSP.Name = "MaSP";
             // 
             // TenKH
             // 
@@ -199,6 +239,12 @@
             this.SDT.DataPropertyName = "SDT";
             this.SDT.HeaderText = "SĐT";
             this.SDT.Name = "SDT";
+            // 
+            // NgayHD
+            // 
+            this.NgayHD.DataPropertyName = "NgayHD";
+            this.NgayHD.HeaderText = "Ngày Lập";
+            this.NgayHD.Name = "NgayHD";
             // 
             // NgayGH
             // 
@@ -242,9 +288,11 @@
             this.Text = "Tìm Kiếm Đơn Đặt Hàng";
             this.Load += new System.EventHandler(this.frmTimKiemDonDatHang_Load);
             this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgDSDDH)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgDSDDH)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.duLieuDoAnDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.duLieuDoAnDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -262,11 +310,17 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgDSDDH;
+        private System.Windows.Forms.BindingSource duLieuDoAnDataSetBindingSource;
+        private DuLieuDoAnDataSet duLieuDoAnDataSet;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoHD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaKH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaNV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaSP;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenKH;
         private System.Windows.Forms.DataGridViewTextBoxColumn DiaChi;
         private System.Windows.Forms.DataGridViewTextBoxColumn SDT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgayHD;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayGH;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
         private System.Windows.Forms.DataGridViewTextBoxColumn DonGia;

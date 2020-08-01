@@ -37,15 +37,13 @@
             this.dateNhapHang = new System.Windows.Forms.DateTimePicker();
             this.txtSoPhieuNhap = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.dgTimKiemHN = new System.Windows.Forms.DataGridView();
+            this.label3 = new System.Windows.Forms.Label();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoPhieuNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaNCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayPhieuNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NoiDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -139,6 +137,24 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Kết Quả:";
             // 
+            // dgTimKiemHN
+            // 
+            this.dgTimKiemHN.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgTimKiemHN.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.STT,
+            this.SoPhieuNhap,
+            this.MaSP,
+            this.MaNCC,
+            this.NgayPhieuNhap,
+            this.SoLuong,
+            this.DonGia,
+            this.ThanhTien});
+            this.dgTimKiemHN.Location = new System.Drawing.Point(6, 19);
+            this.dgTimKiemHN.Name = "dgTimKiemHN";
+            this.dgTimKiemHN.Size = new System.Drawing.Size(755, 230);
+            this.dgTimKiemHN.TabIndex = 1;
+            this.dgTimKiemHN.SelectionChanged += new System.EventHandler(this.dgTimKiemHN_SelectionChanged);
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -148,26 +164,6 @@
             this.label3.Size = new System.Drawing.Size(188, 19);
             this.label3.TabIndex = 1;
             this.label3.Text = "TÌM KIẾM HÀNG NHẬP";
-            // 
-            // dgTimKiemHN
-            // 
-            this.dgTimKiemHN.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgTimKiemHN.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.STT,
-            this.SoPhieuNhap,
-            this.MaNV,
-            this.MaSP,
-            this.MaNCC,
-            this.NgayPhieuNhap,
-            this.NoiDung,
-            this.SoLuong,
-            this.DonGia,
-            this.ThanhTien});
-            this.dgTimKiemHN.Location = new System.Drawing.Point(6, 19);
-            this.dgTimKiemHN.Name = "dgTimKiemHN";
-            this.dgTimKiemHN.Size = new System.Drawing.Size(755, 230);
-            this.dgTimKiemHN.TabIndex = 1;
-            this.dgTimKiemHN.SelectionChanged += new System.EventHandler(this.dgTimKiemHN_SelectionChanged);
             // 
             // STT
             // 
@@ -180,12 +176,6 @@
             this.SoPhieuNhap.DataPropertyName = "SoPhieuNhap";
             this.SoPhieuNhap.HeaderText = "Số Phiếu Nhập";
             this.SoPhieuNhap.Name = "SoPhieuNhap";
-            // 
-            // MaNV
-            // 
-            this.MaNV.DataPropertyName = "MaNV";
-            this.MaNV.HeaderText = "Mã Nhân Viên";
-            this.MaNV.Name = "MaNV";
             // 
             // MaSP
             // 
@@ -204,13 +194,6 @@
             this.NgayPhieuNhap.DataPropertyName = "NgayPhieuNhap";
             this.NgayPhieuNhap.HeaderText = "Ngày Phiếu Nhập";
             this.NgayPhieuNhap.Name = "NgayPhieuNhap";
-            // 
-            // NoiDung
-            // 
-            this.NoiDung.DataPropertyName = "NoiDung";
-            this.NoiDung.HeaderText = "Nội Dung";
-            this.NoiDung.Name = "NoiDung";
-            this.NoiDung.Width = 150;
             // 
             // SoLuong
             // 
@@ -265,11 +248,9 @@
         private System.Windows.Forms.DataGridView dgTimKiemHN;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoPhieuNhap;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaNV;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaSP;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaNCC;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayPhieuNhap;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NoiDung;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
         private System.Windows.Forms.DataGridViewTextBoxColumn DonGia;
         private System.Windows.Forms.DataGridViewTextBoxColumn ThanhTien;

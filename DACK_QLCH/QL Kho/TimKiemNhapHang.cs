@@ -45,6 +45,8 @@ namespace DACK_QLCH
             tblPhieuNhap.Columns.Add(cot_ThanhTien);
             DataColumn cot_MaSP = new DataColumn("MaSP", Type.GetType("System.String"), "Parent(FRK_PHIEUNHAP_CT_PHIEUNHAP).MaSP");
             tblPhieuNhap.Columns.Add(cot_MaSP);
+            DataColumn cot_MaNCC = new DataColumn("MaNCC", Type.GetType("System.String"), "Parent(FRK_PHIEUNHAP_CT_PHIEUNHAP).MaNCC");
+            tblPhieuNhap.Columns.Add(cot_MaNCC);
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)

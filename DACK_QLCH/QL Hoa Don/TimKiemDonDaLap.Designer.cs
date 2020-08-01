@@ -38,15 +38,17 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dgTimKiemDDL = new System.Windows.Forms.DataGridView();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NoiDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgTimKiemDDL)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -145,8 +147,10 @@
             this.STT,
             this.SoHD,
             this.MaNV,
+            this.MaKH,
+            this.MaSP,
+            this.TenSP,
             this.NgayHD,
-            this.NoiDung,
             this.DonGia,
             this.SoLuong,
             this.ThanhTien});
@@ -155,6 +159,16 @@
             this.dgTimKiemDDL.Size = new System.Drawing.Size(793, 356);
             this.dgTimKiemDDL.TabIndex = 0;
             this.dgTimKiemDDL.SelectionChanged += new System.EventHandler(this.dgTimKiemDDL_SelectionChanged);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.dgTimKiemDDL);
+            this.groupBox2.Location = new System.Drawing.Point(49, 176);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(805, 381);
+            this.groupBox2.TabIndex = 0;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Kết Quả";
             // 
             // STT
             // 
@@ -173,17 +187,29 @@
             this.MaNV.HeaderText = "Mã Nhân Viên";
             this.MaNV.Name = "MaNV";
             // 
+            // MaKH
+            // 
+            this.MaKH.DataPropertyName = "MaKH";
+            this.MaKH.HeaderText = "Mã Khách Hàng";
+            this.MaKH.Name = "MaKH";
+            // 
+            // MaSP
+            // 
+            this.MaSP.DataPropertyName = "MaSP";
+            this.MaSP.HeaderText = "Mã Sản Phẩm";
+            this.MaSP.Name = "MaSP";
+            // 
+            // TenSP
+            // 
+            this.TenSP.DataPropertyName = "TenSP";
+            this.TenSP.HeaderText = "Tên Sản Phẩm";
+            this.TenSP.Name = "TenSP";
+            // 
             // NgayHD
             // 
             this.NgayHD.DataPropertyName = "NgayHD";
             this.NgayHD.HeaderText = "Ngày Lập";
             this.NgayHD.Name = "NgayHD";
-            // 
-            // NoiDung
-            // 
-            this.NoiDung.DataPropertyName = "NoiDung";
-            this.NoiDung.HeaderText = "NoiDung";
-            this.NoiDung.Name = "NoiDung";
             // 
             // DonGia
             // 
@@ -202,16 +228,6 @@
             this.ThanhTien.DataPropertyName = "ThanhTien";
             this.ThanhTien.HeaderText = "ThanhTien";
             this.ThanhTien.Name = "ThanhTien";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.dgTimKiemDDL);
-            this.groupBox2.Location = new System.Drawing.Point(49, 176);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(805, 381);
-            this.groupBox2.TabIndex = 0;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Kết Quả";
             // 
             // frmTimKiemDonDaLap
             // 
@@ -244,14 +260,16 @@
         private DevExpress.XtraEditors.SimpleButton btnThoat;
         private DevExpress.XtraEditors.SimpleButton btnTimKiem;
         private System.Windows.Forms.DataGridView dgTimKiemDDL;
+        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoHD;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaNV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaKH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaSP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenSP;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayHD;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NoiDung;
         private System.Windows.Forms.DataGridViewTextBoxColumn DonGia;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
         private System.Windows.Forms.DataGridViewTextBoxColumn ThanhTien;
-        private System.Windows.Forms.GroupBox groupBox2;
     }
 }

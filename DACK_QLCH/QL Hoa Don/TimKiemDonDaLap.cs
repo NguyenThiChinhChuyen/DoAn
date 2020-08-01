@@ -19,13 +19,13 @@ namespace DACK_QLCH
             InitializeComponent();
         }
         XLHOADON tblHoaDon;
-        XLHOADON_CT tblHoaDon_CT;
+        XLSANPHAM tblSanPham;
         BindingManagerBase DGTKDDL;
         
         private void TimKiemDonDaLap_Load(object sender, EventArgs e)
         {
             tblHoaDon = new XLHOADON();
-            tblHoaDon_CT = new XLHOADON_CT();
+            tblSanPham = new XLSANPHAM();
             loadHoaDon();
             LoadHoaDon();
             DGTKDDL = this.BindingContext[tblHoaDon];
@@ -33,14 +33,11 @@ namespace DACK_QLCH
         private void LoadHoaDon()
         {
             var ds = new DataSet();
-            ds.Tables.AddRange(new DataTable[] { tblHoaDon_CT, tblHoaDon });
-            ds.Relations.Add(new DataRelation("FRK_HOADON_CT_HOADON", tblHoaDon_CT.Columns["SoHD"], tblHoaDon.Columns["SoHD"]));
-            DataColumn cot_SoLuong = new DataColumn("SoLuong", Type.GetType("System.String"), "Parent(FRK_HOADON_CT_HOADON).SoLuong");
-            tblHoaDon.Columns.Add(cot_SoLuong);
-            DataColumn cot_DonGia = new DataColumn("DonGia", Type.GetType("System.String"), "Parent(FRK_HOADON_CT_HOADON).DonGia");
-            tblHoaDon.Columns.Add(cot_DonGia);
-            DataColumn cot_ThanhTien = new DataColumn("ThanhTien", Type.GetType("System.String"), "Parent(FRK_HOADON_CT_HOADON).ThanhTien");
-            tblHoaDon.Columns.Add(cot_ThanhTien);
+            ds.Tables.AddRange(new DataTable[] { tblSanPham, tblHoaDon});
+            ds.Relations.Add(new DataRelation("FRK_SANPHAM_HOADON", tblSanPham.Columns["MaSP"], tblHoaDon.Columns["MaSP"]));
+            DataColumn cot_TenSP = new DataColumn("TenSP", Type.GetType("System.String"), "Parent(FRK_SANPHAM_HOADON).TenSP");
+            tblHoaDon.Columns.Add(cot_TenSP);
+
         }
         private void loadHoaDon()
         {

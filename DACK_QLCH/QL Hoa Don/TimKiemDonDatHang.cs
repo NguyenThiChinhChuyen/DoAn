@@ -19,30 +19,33 @@ namespace DACK_QLCH
         {
             InitializeComponent();
         }
-        XLHOADON tblHoaDon;
-        XLHOADON_CT tblHOADON_CT;
+        XLKHACHHANG tblKhachHang;
+        XLHOADON_CT tblHoaDon_CT;
         BindingManagerBase DGTKDH;
 
         private void frmTimKiemDonDatHang_Load(object sender, EventArgs e)
         {
-            tblHoaDon = new XLHOADON();
-            tblHOADON_CT = new XLHOADON_CT();
-            DGTKDH = this.BindingContext[tblHoaDon];
+        
+            tblHoaDon_CT = new XLHOADON_CT();
+            tblKhachHang = new XLKHACHHANG();
+           
             LoadHoaDon_CTdgDONDATHANG();
         }
         private void LoadHoaDon_CTdgDONDATHANG()
         {
             var ds = new DataSet();
-            ds.Tables.AddRange(new DataTable[] { tblHOADON_CT, tblHoaDon });
-            ds.Relations.Add(new DataRelation("FRK_HOADON_CT_HOADON", tblHOADON_CT.Columns["SoHD"], tblHoaDon.Columns["SoHD"]));
-            DataColumn cot_SoLuong = new DataColumn("SoLuong", Type.GetType("System.String"), "Parent(FRK_HOADON_CT_HOADON).SoLuong");
-            tblHoaDon.Columns.Add(cot_SoLuong);
-            DataColumn cot_DonGia = new DataColumn("DonGia", Type.GetType("System.String"), "Parent(FRK_HOADON_CT_HOADON).DonGia");
-            tblHoaDon.Columns.Add(cot_DonGia);
-            DataColumn cot_ThanhTien = new DataColumn("ThanhTien", Type.GetType("System.String"), "Parent(FRK_HOADON_CT_HOADON).ThanhTien");
-            tblHoaDon.Columns.Add(cot_ThanhTien);
+            ds.Tables.AddRange(new DataTable[] { tblKhachHang, tblHoaDon_CT });
+            ds.Relations.Add(new DataRelation("FRK_KHACHHANG_HOADON_CT", tblKhachHang.Columns["MaKH"], tblHoaDon_CT.Columns["MaKH"]));
+            DataColumn cot_TenKH = new DataColumn("TenKH", Type.GetType("System.String"), "Parent(FRK_KHACHHANG_HOADON_CT).TenKH");
+            tblHoaDon_CT.Columns.Add(cot_TenKH);
+            DataColumn cot_DiaChi = new DataColumn("DiaChi", Type.GetType("System.String"), "Parent(FRK_KHACHHANG_HOADON_CT).DiaChi");
+            tblHoaDon_CT.Columns.Add(cot_DiaChi);
+            DataColumn cot_SDT = new DataColumn("SDT", Type.GetType("System.String"), "Parent(FRK_KHACHHANG_HOADON_CT).SDT");
+            tblHoaDon_CT.Columns.Add(cot_SDT);
+
+            DGTKDH = this.BindingContext[tblHoaDon_CT]; 
             dgDSDDH.AutoGenerateColumns = false;
-            dgDSDDH.DataSource = tblHoaDon;
+            dgDSDDH.DataSource = tblHoaDon_CT;
         }
 
         private void dgDSDDH_SelectionChanged(object sender, EventArgs e)
@@ -57,8 +60,8 @@ namespace DACK_QLCH
         {
             try
             {
-                DataRow r = tblHoaDon.Select("MaSP='" + txtSoHD.Text + "' and NgayGH='" + dateNgayLap.Text + "'")[0];
-                DGTKDH.Position = tblHoaDon.Rows.IndexOf(r);
+                DataRow r = tblHoaDon_CT.Select("MaSP='" + txtSoHD.Text + "' and NgayGH='" + dateNgayLap.Text + "'")[0];
+                DGTKDH.Position = tblHoaDon_CT.Rows.IndexOf(r);
             }
             catch (Exception)
             {
