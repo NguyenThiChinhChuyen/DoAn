@@ -40,7 +40,7 @@ namespace DACK_QLCH.QL_San_Pham
             txtDonGia.DataBindings.Add("text", tblSanPham, "DonGia", true);
             txtDonViTinh.DataBindings.Add("text", tblSanPham, "DonViTinh", true);
             dateNgaySanXuat.DataBindings.Add("text", tblSanPham, "NgaySX", true);
-            txtSoLuongTon.DataBindings.Add("text",tblSanPham,"SoLuongTon",true);
+            txtSoLuongTon.DataBindings.Add("text",tblSanPham,"SoLuong",true);
             dgDSSP.AutoGenerateColumns = false;
             dgDSSP.DataSource = tblSanPham;
         }

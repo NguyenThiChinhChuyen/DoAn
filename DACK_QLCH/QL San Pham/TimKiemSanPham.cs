@@ -20,12 +20,10 @@ namespace DACK_QLCH
             InitializeComponent();
         }
         XLSANPHAM tblSanPham;
-        BindingManagerBase DSTKSP;
 
         private void frmTimKiemSanPham_Load(object sender, EventArgs e)
         {
             tblSanPham = new XLSANPHAM();
-            DSTKSP = this.BindingContext[tblSanPham];
             loadTimKiem();
             
         }
@@ -40,50 +38,25 @@ namespace DACK_QLCH
             T.Dispose();
         }
 
-        private void dgTimKiemSP_SelectionChanged(object sender, EventArgs e)
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            if (radMaSP.Checked == true)
+            {
+                string std = string.Format("MaSP like '%{0}%'", txtTimKiem.Text);
+                tblSanPham.DefaultView.RowFilter = std;
+            }
+            else
+            {
+                string std = string.Format("TenSP like '%{0}%'", txtTimKiem.Text);
+                tblSanPham.DefaultView.RowFilter = std;
+            }
+        }
+
+        private void dgTimKiemSP_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             foreach (DataGridViewRow r in dgTimKiemSP.Rows)
             {
                 r.Cells[0].Value = r.Index + 1;
-            }
-        }
-
-        private void btnTimKiem_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                DataRow r = tblSanPham.Select("MaSP='" + txtMaSP.Text + "' and TenSP='" + txtTenSP.Text + "'")[0];
-                DSTKSP.Position = tblSanPham.Rows.IndexOf(r);
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Không Tìm Thấy");
-            }
-        }
-
-        private void txtMaSP_MouseDown(object sender, MouseEventArgs e)
-        {
-            txtMaSP.Text = "";
-        }
-
-        private void txtTenSP_MouseDown(object sender, MouseEventArgs e)
-        {
-            txtTenSP.Text = "";
-        }
-
-        private void txtMaSP_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)Keys.Enter)
-            {
-                btnTimKiem_Click(sender, e);
-            }
-        }
-
-        private void txtTenSP_KeyPress(object sender, KeyPressEventArgs e)
-        {
-           if (e.KeyChar == (char)Keys.Enter)
-            {
-                btnTimKiem_Click(sender, e);
             }
         }
     }

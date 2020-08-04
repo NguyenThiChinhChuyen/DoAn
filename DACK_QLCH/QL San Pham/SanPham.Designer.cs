@@ -42,9 +42,11 @@
             this.btnSua = new DevExpress.XtraEditors.SimpleButton();
             this.btnHuy = new DevExpress.XtraEditors.SimpleButton();
             this.btnThem = new DevExpress.XtraEditors.SimpleButton();
+            this.txtSoLuongTon = new System.Windows.Forms.TextBox();
             this.txtDonGia = new System.Windows.Forms.TextBox();
             this.btnLuu = new DevExpress.XtraEditors.SimpleButton();
             this.txtNoiSanXuat = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.txtDonViTinh = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtTenSP = new System.Windows.Forms.TextBox();
@@ -57,15 +59,13 @@
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.btnTimKiem = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtSoLuongTon = new System.Windows.Forms.TextBox();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgaySX = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NoiSX = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DonViTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoLuongTon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgDSSP)).BeginInit();
@@ -106,7 +106,7 @@
             this.NgaySX,
             this.NoiSX,
             this.DonViTinh,
-            this.SoLuongTon,
+            this.SoLuong,
             this.DonGia});
             this.dgDSSP.DataSource = this.duLieuDoAnDataSetBindingSource;
             this.dgDSSP.Location = new System.Drawing.Point(6, 21);
@@ -222,6 +222,13 @@
             this.btnThem.Text = "Thêm";
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
+            // txtSoLuongTon
+            // 
+            this.txtSoLuongTon.Location = new System.Drawing.Point(278, 104);
+            this.txtSoLuongTon.Name = "txtSoLuongTon";
+            this.txtSoLuongTon.Size = new System.Drawing.Size(89, 20);
+            this.txtSoLuongTon.TabIndex = 5;
+            // 
             // txtDonGia
             // 
             this.txtDonGia.Location = new System.Drawing.Point(429, 104);
@@ -247,6 +254,15 @@
             this.txtNoiSanXuat.Name = "txtNoiSanXuat";
             this.txtNoiSanXuat.Size = new System.Drawing.Size(174, 20);
             this.txtNoiSanXuat.TabIndex = 5;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(194, 107);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(78, 13);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "Số Lượng Tồn:";
             // 
             // txtDonViTinh
             // 
@@ -355,22 +371,6 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Tìm Kiếm";
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(194, 107);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(78, 13);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "Số Lượng Tồn:";
-            // 
-            // txtSoLuongTon
-            // 
-            this.txtSoLuongTon.Location = new System.Drawing.Point(278, 104);
-            this.txtSoLuongTon.Name = "txtSoLuongTon";
-            this.txtSoLuongTon.Size = new System.Drawing.Size(89, 20);
-            this.txtSoLuongTon.TabIndex = 5;
-            // 
             // STT
             // 
             this.STT.HeaderText = "STT";
@@ -406,11 +406,11 @@
             this.DonViTinh.HeaderText = "Đơn Vị Tính";
             this.DonViTinh.Name = "DonViTinh";
             // 
-            // SoLuongTon
+            // SoLuong
             // 
-            this.SoLuongTon.DataPropertyName = "SoLuongTon";
-            this.SoLuongTon.HeaderText = "Số Lượng Tồn";
-            this.SoLuongTon.Name = "SoLuongTon";
+            this.SoLuong.DataPropertyName = "SoLuong";
+            this.SoLuong.HeaderText = "Số Lượng";
+            this.SoLuong.Name = "SoLuong";
             // 
             // DonGia
             // 
@@ -480,7 +480,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NgaySX;
         private System.Windows.Forms.DataGridViewTextBoxColumn NoiSX;
         private System.Windows.Forms.DataGridViewTextBoxColumn DonViTinh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuongTon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
         private System.Windows.Forms.DataGridViewTextBoxColumn DonGia;
     }
 }

@@ -19,37 +19,61 @@ namespace DACK_QLCH
             InitializeComponent();
         }
         XLHOADON tblHoaDon;
+        XLHOADON_CT tblHoaDon_CT;
         XLSANPHAM tblSanPham;
-        BindingManagerBase DGTKDDL;
-        
+        BindingManagerBase DSHD;
+        bool capNhat = false;
         private void TimKiemDonDaLap_Load(object sender, EventArgs e)
         {
+            tblHoaDon_CT = new XLHOADON_CT();
             tblHoaDon = new XLHOADON();
             tblSanPham = new XLSANPHAM();
+            tinhtien();
             loadHoaDon();
-            LoadHoaDon();
-            DGTKDDL = this.BindingContext[tblHoaDon];
-        }
-        private void LoadHoaDon()
-        {
-            var ds = new DataSet();
-            ds.Tables.AddRange(new DataTable[] { tblSanPham, tblHoaDon});
-            ds.Relations.Add(new DataRelation("FRK_SANPHAM_HOADON", tblSanPham.Columns["MaSP"], tblHoaDon.Columns["MaSP"]));
-            DataColumn cot_TenSP = new DataColumn("TenSP", Type.GetType("System.String"), "Parent(FRK_SANPHAM_HOADON).TenSP");
-            tblHoaDon.Columns.Add(cot_TenSP);
+            LoadHoaDoncoi();
+            enable();
 
+        }
+        private void enable()
+        {
+            txtThanhTien.Enabled = capNhat;
+        }
+        private void LoadHoaDoncoi()
+        {
+            DataSet ds = new DataSet();
+            ds.Tables.AddRange(new DataTable[] { tblHoaDon_CT, tblSanPham, tblHoaDon });
+            DataRelation qh = new DataRelation("FPK_SANPHAM_HOADON_CT", tblSanPham.Columns["MaSP"], tblHoaDon_CT.Columns["MaSP"]);
+            DataRelation qx = new DataRelation("FPK_HOADON_HOADON_CT", tblHoaDon.Columns["SoHD"], tblHoaDon_CT.Columns["SoHD"]);
+            ds.Relations.Add(qx);
+            ds.Relations.Add(qh);
+            DataColumn cot_DonGia = new DataColumn("DonGia", Type.GetType("System.String"), "Parent(FPK_SANPHAM_HOADON_CT).DonGia");
+            tblHoaDon_CT.Columns.Add(cot_DonGia);
+            DataColumn cot_TenSP = new DataColumn("TenSP", Type.GetType("System.String"), "Parent(FPK_SANPHAM_HOADON_CT).TenSP");
+            tblHoaDon_CT.Columns.Add(cot_TenSP);
+            DataColumn cot_MaKH = new DataColumn("MaKH", Type.GetType("System.String"), "Parent(FPK_HOADON_HOADON_CT).MaKH");
+            tblHoaDon_CT.Columns.Add(cot_MaKH);
+            DataColumn cot_MaNV = new DataColumn("MaNV", Type.GetType("System.String"), "Parent(FPK_HOADON_HOADON_CT).MaNV");
+            tblHoaDon_CT.Columns.Add(cot_MaNV);
+            DataColumn cot_NgayHD = new DataColumn("NgayHD", Type.GetType("System.String"), "Parent(FPK_HOADON_HOADON_CT).NgayHD");
+            tblHoaDon_CT.Columns.Add(cot_NgayHD);
+            
+        }
+
+        private void tinhtien()
+        {
+            for (int r = 0; r < dgTimKiemDDL.Rows.Count; r++)
+            {
+                dgTimKiemDDL.Rows[r].Cells[10].Value = Convert.ToInt32(dgTimKiemDDL.Rows[r].Cells[8].Value) * Convert.ToInt32(dgTimKiemDDL.Rows[r].Cells[9].Value);
+                txtThanhTien.Text = dgTimKiemDDL.Rows[r].Cells[10].Value.ToString();
+            }
+           
         }
         private void loadHoaDon()
         {
+            DSHD = this.BindingContext[tblHoaDon_CT];
             dgTimKiemDDL.AutoGenerateColumns = false;
-            dgTimKiemDDL.DataSource = tblHoaDon;
-        }
-        private void dgTimKiemDDL_SelectionChanged(object sender, EventArgs e)
-        {
-            foreach (DataGridViewRow r in dgTimKiemDDL.Rows)
-            {
-                r.Cells[0].Value = r.Index + 1;
-            }
+            dgTimKiemDDL.DataSource = tblHoaDon_CT;
+            
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -58,12 +82,20 @@ namespace DACK_QLCH
             T.Dispose();
         }
 
-        private void btnTimKiem_Click(object sender, EventArgs e)
+        private void dgTimKiemDDL_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            foreach (DataGridViewRow r in dgTimKiemDDL.Rows)
+            {
+                r.Cells[0].Value = r.Index + 1;
+            }
+        }
+
+        private void btnTimKiem_Click_1(object sender, EventArgs e)
         {
             try
             {
-                DataRow r = tblHoaDon.Select("MaSP='" + txtSoHD.Text + "' and NgayHD='" + dateNgayLap.Text + "'")[0];
-                DGTKDDL.Position = tblHoaDon.Rows.IndexOf(r);
+                DataRow r = tblHoaDon_CT.Select("SoHDCT ='" + txtTimKiem.Text + "'")[0];
+                DSHD.Position = tblHoaDon_CT.Rows.IndexOf(r);
             }
             catch (Exception)
             {
@@ -71,28 +103,22 @@ namespace DACK_QLCH
             }
         }
 
-        private void txtSoHD_MouseDown(object sender, MouseEventArgs e)
+        private void txtTimKiem_MouseDown(object sender, MouseEventArgs e)
         {
-            txtSoHD.Text = "";
+            txtTimKiem.Text = "";
         }
 
-        private void txtSoHD_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtTimKiem_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(e.KeyChar==(char)Keys.Enter)
+            if (e.KeyChar == (char)Keys.Enter)
             {
-                btnTimKiem_Click(sender, e);
+                btnTimKiem_Click_1(sender, e);
             }
         }
 
-        private void dateNgayLap_KeyDown(object sender, KeyEventArgs e)
+        private void dgTimKiemDDL_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
-            btnTimKiem_Click(sender, e);
-        }
-
-        private void dateNgayLap_MouseDown(object sender, MouseEventArgs e)
-        {
-            dateNgayLap.Text = "";
+            txtThanhTien.Text = dgTimKiemDDL.Rows[DSHD.Position].Cells[10].Value.ToString();
         }
     }
 }
