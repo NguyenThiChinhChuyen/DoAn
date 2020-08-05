@@ -227,6 +227,7 @@
             this.btnTimKiemBaoCao.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTimKiemBaoCao.ImageOptions.Image")));
             this.btnTimKiemBaoCao.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnTimKiemBaoCao.ImageOptions.LargeImage")));
             this.btnTimKiemBaoCao.Name = "btnTimKiemBaoCao";
+            this.btnTimKiemBaoCao.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTimKiemBaoCao_ItemClick);
             // 
             // barButtonItem12
             // 
@@ -241,6 +242,7 @@
             this.btnNhaCungCap.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNhaCungCap.ImageOptions.Image")));
             this.btnNhaCungCap.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnNhaCungCap.ImageOptions.LargeImage")));
             this.btnNhaCungCap.Name = "btnNhaCungCap";
+            this.btnNhaCungCap.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNhaCungCap_ItemClick);
             // 
             // btnTimKiemNCC
             // 
@@ -249,6 +251,7 @@
             this.btnTimKiemNCC.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTimKiemNCC.ImageOptions.Image")));
             this.btnTimKiemNCC.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnTimKiemNCC.ImageOptions.LargeImage")));
             this.btnTimKiemNCC.Name = "btnTimKiemNCC";
+            this.btnTimKiemNCC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTimKiemNCC_ItemClick);
             // 
             // btnSanPham
             // 

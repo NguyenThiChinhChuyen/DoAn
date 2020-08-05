@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using DACK_QLCH.Moduls;
 using DACK_QLCH.QL_Hoa_Don;
+using DACK_QLCH.QL_Nha_Cung_Cap;
 using DACK_QLCH.QL_San_Pham;
 
 namespace DACK_QLCH
@@ -28,14 +29,14 @@ namespace DACK_QLCH
                     btnDangXuat.Enabled = true;
                     btnDoiMatKhau.Enabled = true;
                     btnDonDatHang.Enabled = true;
-                    btnHoaDonBan.Enabled = true;
+                    btnHoaDonBan.Enabled = false;
                     btnNhaCungCap.Enabled = true;
                     btnSanPham.Enabled = true;
-                    btnNhapHang.Enabled = true;
-                    btnXuatHang.Enabled = true;
+                    btnNhapHang.Enabled = false;
+                    btnXuatHang.Enabled = false;
 
                     break;
-                case 2://Nhan vien ban hang
+                case 3://Nhan vien ban hang
                     btnDangXuat.Enabled = true;
                     btnDoiMatKhau.Enabled = true;
                     btnDonDatHang.Enabled = true;
@@ -46,7 +47,7 @@ namespace DACK_QLCH
                     btnXuatHang.Enabled = false;
 
                     break;
-                case 3://Nhan viên quản lý kho
+                case 2://Nhan viên quản lý kho
                     btnDangXuat.Enabled = true;
                     btnDoiMatKhau.Enabled = true;
                     btnDonDatHang.Enabled = false;
@@ -254,6 +255,66 @@ namespace DACK_QLCH
                 frmTimKiemDonDatHang f = new frmTimKiemDonDatHang();
                 TabPage p = new TabPage(f.Text);
                 p.Name = "tabPageTimKiemDonDatHang";
+                f.TopLevel = false;
+                p.Controls.Add(f);
+                f.Dock = DockStyle.Fill;
+                f.FormBorderStyle = FormBorderStyle.None;
+                tabControlMain.TabPages.Add(p);
+                //tabControlMain.SelectedTab = p;
+                f.Show();
+            }
+        }
+
+        private void btnNhaCungCap_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            int index = tabControlMain.TabPages.IndexOfKey("tabPageNhaCungCap");
+            if (index > 0)
+                tabControlMain.SelectedIndex = index;
+            else
+            {
+                frmNhaCungCap f = new frmNhaCungCap();
+                TabPage p = new TabPage(f.Text);
+                p.Name = "tabPageNhaCungCap";
+                f.TopLevel = false;
+                p.Controls.Add(f);
+                f.Dock = DockStyle.Fill;
+                f.FormBorderStyle = FormBorderStyle.None;
+                tabControlMain.TabPages.Add(p);
+                //tabControlMain.SelectedTab = p;
+                f.Show();
+            }
+        }
+
+        private void btnTimKiemNCC_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            int index = tabControlMain.TabPages.IndexOfKey("tabPageTimKiemNhaCungCap");
+            if (index > 0)
+                tabControlMain.SelectedIndex = index;
+            else
+            {
+                frmTimKiemNhaCungCap f = new frmTimKiemNhaCungCap();
+                TabPage p = new TabPage(f.Text);
+                p.Name = "tabPageTimKiemNhaCungCap";
+                f.TopLevel = false;
+                p.Controls.Add(f);
+                f.Dock = DockStyle.Fill;
+                f.FormBorderStyle = FormBorderStyle.None;
+                tabControlMain.TabPages.Add(p);
+                //tabControlMain.SelectedTab = p;
+                f.Show();
+            }
+        }
+
+        private void btnTimKiemBaoCao_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            int index = tabControlMain.TabPages.IndexOfKey("tabPageTimKiemBaoCao");
+            if (index > 0)
+                tabControlMain.SelectedIndex = index;
+            else
+            {
+                frmTimKiemBaoCao f = new frmTimKiemBaoCao();
+                TabPage p = new TabPage(f.Text);
+                p.Name = "tabPageTimKiemBaoCao";
                 f.TopLevel = false;
                 p.Controls.Add(f);
                 f.Dock = DockStyle.Fill;

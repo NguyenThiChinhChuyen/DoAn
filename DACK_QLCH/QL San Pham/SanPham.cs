@@ -116,8 +116,6 @@ namespace DACK_QLCH.QL_San_Pham
             {
                 MessageBox.Show(ex.Message);
             }
-            
-
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
