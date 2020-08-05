@@ -29,7 +29,6 @@ namespace DACK_QLCH
             tblHoaDon = new XLHOADON();
             tblSanPham = new XLSANPHAM();
             tinhtien();
-            loadHoaDon();
             LoadHoaDoncoi();
             enable();
 
@@ -56,26 +55,20 @@ namespace DACK_QLCH
             tblHoaDon_CT.Columns.Add(cot_MaNV);
             DataColumn cot_NgayHD = new DataColumn("NgayHD", Type.GetType("System.String"), "Parent(FPK_HOADON_HOADON_CT).NgayHD");
             tblHoaDon_CT.Columns.Add(cot_NgayHD);
-            
+            txtThanhTien.DataBindings.Add("text", tblHoaDon_CT, "ThanhTien", true);
+            DSHD = this.BindingContext[tblHoaDon_CT];
+            dgTimKiemDDL.AutoGenerateColumns = false;
+            dgTimKiemDDL.DataSource = tblHoaDon_CT;
         }
-
         private void tinhtien()
         {
             for (int r = 0; r < dgTimKiemDDL.Rows.Count; r++)
             {
                 dgTimKiemDDL.Rows[r].Cells[10].Value = Convert.ToInt32(dgTimKiemDDL.Rows[r].Cells[8].Value) * Convert.ToInt32(dgTimKiemDDL.Rows[r].Cells[9].Value);
-                txtThanhTien.Text = dgTimKiemDDL.Rows[r].Cells[10].Value.ToString();
+                
             }
            
         }
-        private void loadHoaDon()
-        {
-            DSHD = this.BindingContext[tblHoaDon_CT];
-            dgTimKiemDDL.AutoGenerateColumns = false;
-            dgTimKiemDDL.DataSource = tblHoaDon_CT;
-            
-        }
-
         private void btnThoat_Click(object sender, EventArgs e)
         {
             TabPage T = (TabPage)this.Parent;
@@ -90,35 +83,28 @@ namespace DACK_QLCH
             }
         }
 
-        private void btnTimKiem_Click_1(object sender, EventArgs e)
-        {
-            try
-            {
-                DataRow r = tblHoaDon_CT.Select("SoHDCT ='" + txtTimKiem.Text + "'")[0];
-                DSHD.Position = tblHoaDon_CT.Rows.IndexOf(r);
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Không Tìm Thấy");
-            }
-        }
 
-        private void txtTimKiem_MouseDown(object sender, MouseEventArgs e)
-        {
-            txtTimKiem.Text = "";
-        }
-
-        private void txtTimKiem_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)Keys.Enter)
-            {
-                btnTimKiem_Click_1(sender, e);
-            }
-        }
 
         private void dgTimKiemDDL_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtThanhTien.Text = dgTimKiemDDL.Rows[DSHD.Position].Cells[10].Value.ToString();
+           
+        }
+
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            {
+                if (radSoHD.Checked == true)
+                {
+                    string std = string.Format("SoHDCT like '%{0}%'", txtTimKiem.Text);
+                    tblHoaDon_CT.DefaultView.RowFilter = std;
+                }
+                else
+                {
+                    string std = string.Format("SoHD like '%{0}%'", txtTimKiem.Text);
+                    tblHoaDon_CT.DefaultView.RowFilter = std;
+                }
+
+            }
         }
     }
 }

@@ -121,7 +121,7 @@ namespace DACK_QLCH
                 f.Dock = DockStyle.Fill;
                 f.FormBorderStyle = FormBorderStyle.None;
                 tabControlMain.TabPages.Add(p);
-                //tabControlMain.SelectedTab = p;
+                tabControlMain.SelectedTab = p;
                 f.Show();
             }
         }
@@ -140,7 +140,7 @@ namespace DACK_QLCH
                 f.Dock = DockStyle.Fill;
                 f.FormBorderStyle = FormBorderStyle.None;
                 tabControlMain.TabPages.Add(p);
-                //tabControlMain.SelectedTab = p;
+                tabControlMain.SelectedTab = p;
                 f.Show();
             }
         }
@@ -160,7 +160,7 @@ namespace DACK_QLCH
                 f.Dock = DockStyle.Fill;
                 f.FormBorderStyle = FormBorderStyle.None;
                 tabControlMain.TabPages.Add(p);
-                //tabControlMain.SelectedTab = p;
+                tabControlMain.SelectedTab = p;
                 f.Show();
             }
         }
@@ -179,7 +179,7 @@ namespace DACK_QLCH
                 f.Dock = DockStyle.Fill;
                 f.FormBorderStyle = FormBorderStyle.None;
                 tabControlMain.TabPages.Add(p);
-                //tabControlMain.SelectedTab = p;
+                tabControlMain.SelectedTab = p;
                 f.Show();
             }
         }
@@ -199,7 +199,7 @@ namespace DACK_QLCH
                 f.Dock = DockStyle.Fill;
                 f.FormBorderStyle = FormBorderStyle.None;
                 tabControlMain.TabPages.Add(p);
-                //tabControlMain.SelectedTab = p;
+                tabControlMain.SelectedTab = p;
                 f.Show();
             }
         }
@@ -219,7 +219,7 @@ namespace DACK_QLCH
                 f.Dock = DockStyle.Fill;
                 f.FormBorderStyle = FormBorderStyle.None;
                 tabControlMain.TabPages.Add(p);
-                //tabControlMain.SelectedTab = p;
+                tabControlMain.SelectedTab = p;
                 f.Show();
             }
         }
@@ -239,7 +239,7 @@ namespace DACK_QLCH
                 f.Dock = DockStyle.Fill;
                 f.FormBorderStyle = FormBorderStyle.None;
                 tabControlMain.TabPages.Add(p);
-                //tabControlMain.SelectedTab = p;
+                tabControlMain.SelectedTab = p;
                 f.Show();
             }
         }
@@ -259,7 +259,7 @@ namespace DACK_QLCH
                 f.Dock = DockStyle.Fill;
                 f.FormBorderStyle = FormBorderStyle.None;
                 tabControlMain.TabPages.Add(p);
-                //tabControlMain.SelectedTab = p;
+                tabControlMain.SelectedTab = p;
                 f.Show();
             }
         }

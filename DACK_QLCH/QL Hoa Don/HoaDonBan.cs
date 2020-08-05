@@ -109,10 +109,10 @@ namespace DACK_QLCH.QL_Hoa_Don
             cboMaNV.DisplayMember = "MaNV";
             cboMaNV.AutoCompleteMode = AutoCompleteMode.Suggest;
             cboMaNV.AutoCompleteSource = AutoCompleteSource.ListItems;
-
         }
         private void loadHoaDon()
         {
+            txtSoHDCT.DataBindings.Add("text", tblHoaDon_CT, "SoHDCT", true);
             txtSoHD.DataBindings.Add("text", tblHoaDon_CT, "SoHD", true);
             //txtThanhTien.DataBindings.Add("text", tblHoaDon_CT, "ThanhTien", true);
             txtSoLuong.DataBindings.Add("text",tblHoaDon_CT,"SoLuong",true);
@@ -142,7 +142,7 @@ namespace DACK_QLCH.QL_Hoa_Don
             try
             {
                 DSHD.AddNew();
-               
+                tinhtien();
                 //BdpDB_PositionChange(sender, e);
                 capNhat = true;
                 ennableButton();
@@ -187,9 +187,7 @@ namespace DACK_QLCH.QL_Hoa_Don
                 DSHD.EndCurrentEdit();
                 tblHoaDon_CT.ghi();
                 tinhtien();
-                
                 tblHoaDon_CT.AcceptChanges();
-
                 //BdpDB_PositionChange(sender,e);
                 MessageBox.Show("Cập nhật thành công!!!");
                 capNhat = false;
@@ -256,6 +254,11 @@ namespace DACK_QLCH.QL_Hoa_Don
             cboMaNV.Text = dgDSDBH.Rows[DSHD.Position].Cells[3].Value.ToString();
             cboMaKH.Text = dgDSDBH.Rows[DSHD.Position].Cells[4].Value.ToString();
             txtDonGia.Text = dgDSDBH.Rows[DSHD.Position].Cells[9].Value.ToString();
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
 
         }
     }

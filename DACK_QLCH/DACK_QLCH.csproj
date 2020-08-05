@@ -63,6 +63,9 @@
     <Reference Include="DevExpress.XtraBars.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v19.2" />
     <Reference Include="DevExpress.Printing.v19.2.Core" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.WinForms.v12.12.0.0.1\lib\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -81,6 +84,9 @@
       <DependentUpon>DuLieuDoAnDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Moduls\XLBANG.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Moduls\XLHOADONDH_CT.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Moduls\XLHOADON_CT.cs">
@@ -232,6 +238,7 @@
     <EmbeddedResource Include="QL San Pham\SanPham.resx">
       <DependentUpon>SanPham.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report\InHoaDon.rdlc" />
     <EmbeddedResource Include="Tai Khoan\DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </EmbeddedResource>
@@ -284,6 +291,7 @@
     <None Include="DuLieuDoAnDataSet.xss">
       <DependentUpon>DuLieuDoAnDataSet.xsd</DependentUpon>
     </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

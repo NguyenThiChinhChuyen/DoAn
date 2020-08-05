@@ -31,8 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTimKiemDonDaLap));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtTimKiem = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.txtThanhTien = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.btnThoat = new DevExpress.XtraEditors.SimpleButton();
             this.label3 = new System.Windows.Forms.Label();
             this.dgTimKiemDDL = new System.Windows.Forms.DataGridView();
@@ -50,10 +51,10 @@
             this.duLieuDoAnDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.duLieuDoAnDataSet = new DACK_QLCH.DuLieuDoAnDataSet();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnTimKiem = new DevExpress.XtraEditors.SimpleButton();
-            this.txtThanhTien = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.radMaNCC = new System.Windows.Forms.RadioButton();
+            this.radSoHD = new System.Windows.Forms.RadioButton();
+            this.txtTimKiem = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgTimKiemDDL)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.duLieuDoAnDataSetBindingSource)).BeginInit();
@@ -63,12 +64,13 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.radMaNCC);
+            this.groupBox1.Controls.Add(this.radSoHD);
+            this.groupBox1.Controls.Add(this.txtTimKiem);
+            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtThanhTien);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.btnTimKiem);
-            this.groupBox1.Controls.Add(this.txtTimKiem);
-            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.btnThoat);
             this.groupBox1.Location = new System.Drawing.Point(49, 70);
             this.groupBox1.Name = "groupBox1";
@@ -77,23 +79,30 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tìm Kiếm";
             // 
-            // txtTimKiem
+            // txtThanhTien
             // 
-            this.txtTimKiem.Location = new System.Drawing.Point(245, 27);
-            this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(182, 20);
-            this.txtTimKiem.TabIndex = 14;
-            this.txtTimKiem.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTimKiem_KeyPress);
-            this.txtTimKiem.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtTimKiem_MouseDown);
+            this.txtThanhTien.Location = new System.Drawing.Point(145, 63);
+            this.txtThanhTien.Name = "txtThanhTien";
+            this.txtThanhTien.Size = new System.Drawing.Size(137, 20);
+            this.txtThanhTien.TabIndex = 29;
             // 
-            // label1
+            // label10
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(182, 30);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 13);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "Tìm Kiếm:";
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(74, 66);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(65, 13);
+            this.label10.TabIndex = 27;
+            this.label10.Text = "Thành Tiền:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(288, 66);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(30, 13);
+            this.label8.TabIndex = 28;
+            this.label8.Text = "VNĐ";
             // 
             // btnThoat
             // 
@@ -226,42 +235,44 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Kết Quả";
             // 
-            // btnTimKiem
+            // radMaNCC
             // 
-            this.btnTimKiem.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTimKiem.Appearance.Options.UseFont = true;
-            this.btnTimKiem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTimKiem.ImageOptions.Image")));
-            this.btnTimKiem.Location = new System.Drawing.Point(483, 27);
-            this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(96, 40);
-            this.btnTimKiem.TabIndex = 15;
-            this.btnTimKiem.Text = "Tìm Kiếm";
-            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click_1);
+            this.radMaNCC.AutoSize = true;
+            this.radMaNCC.Location = new System.Drawing.Point(464, 40);
+            this.radMaNCC.Name = "radMaNCC";
+            this.radMaNCC.Size = new System.Drawing.Size(84, 17);
+            this.radMaNCC.TabIndex = 32;
+            this.radMaNCC.Text = "Số Hóa Đơn";
+            this.radMaNCC.UseVisualStyleBackColor = true;
             // 
-            // txtThanhTien
+            // radSoHD
             // 
-            this.txtThanhTien.Location = new System.Drawing.Point(245, 63);
-            this.txtThanhTien.Name = "txtThanhTien";
-            this.txtThanhTien.Size = new System.Drawing.Size(137, 20);
-            this.txtThanhTien.TabIndex = 29;
+            this.radSoHD.AutoSize = true;
+            this.radSoHD.Checked = true;
+            this.radSoHD.Location = new System.Drawing.Point(345, 39);
+            this.radSoHD.Name = "radSoHD";
+            this.radSoHD.Size = new System.Drawing.Size(96, 17);
+            this.radSoHD.TabIndex = 33;
+            this.radSoHD.TabStop = true;
+            this.radSoHD.Text = "Số HD Chi Tiết";
+            this.radSoHD.UseVisualStyleBackColor = true;
             // 
-            // label10
+            // txtTimKiem
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(174, 66);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(65, 13);
-            this.label10.TabIndex = 27;
-            this.label10.Text = "Thành Tiền:";
+            this.txtTimKiem.Location = new System.Drawing.Point(145, 37);
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.Size = new System.Drawing.Size(182, 20);
+            this.txtTimKiem.TabIndex = 31;
+            this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
             // 
-            // label8
+            // label1
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(388, 66);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(30, 13);
-            this.label8.TabIndex = 28;
-            this.label8.Text = "VNĐ";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(82, 40);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 13);
+            this.label1.TabIndex = 30;
+            this.label1.Text = "Tìm Kiếm:";
             // 
             // frmTimKiemDonDaLap
             // 
@@ -292,8 +303,6 @@
         private DevExpress.XtraEditors.SimpleButton btnThoat;
         private System.Windows.Forms.DataGridView dgTimKiemDDL;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox txtTimKiem;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.BindingSource duLieuDoAnDataSetBindingSource;
         private DuLieuDoAnDataSet duLieuDoAnDataSet;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;
@@ -307,9 +316,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
         private System.Windows.Forms.DataGridViewTextBoxColumn DonGia;
         private System.Windows.Forms.DataGridViewTextBoxColumn ThanhTien;
-        private DevExpress.XtraEditors.SimpleButton btnTimKiem;
         private System.Windows.Forms.TextBox txtThanhTien;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.RadioButton radMaNCC;
+        private System.Windows.Forms.RadioButton radSoHD;
+        private System.Windows.Forms.TextBox txtTimKiem;
+        private System.Windows.Forms.Label label1;
     }
 }
