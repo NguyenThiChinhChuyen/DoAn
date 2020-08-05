@@ -428,7 +428,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmSanPham";
-            this.Text = "DANH SÁCH SẢN PHẨM";
+            this.Text = "DANH SÁCH SẨN PHẨM";
             this.Load += new System.EventHandler(this.frmSanPham_Load);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgDSSP)).EndInit();
