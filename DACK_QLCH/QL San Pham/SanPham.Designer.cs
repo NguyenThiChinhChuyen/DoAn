@@ -39,6 +39,7 @@
             this.NgaySX = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NoiSX = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DonViTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.duLieuDoAnDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.duLieuDoAnDataSet = new DACK_QLCH.DuLieuDoAnDataSet();
@@ -49,9 +50,11 @@
             this.btnSua = new DevExpress.XtraEditors.SimpleButton();
             this.btnHuy = new DevExpress.XtraEditors.SimpleButton();
             this.btnThem = new DevExpress.XtraEditors.SimpleButton();
+            this.txtSoLuongTon = new System.Windows.Forms.TextBox();
             this.txtDonGia = new System.Windows.Forms.TextBox();
             this.btnLuu = new DevExpress.XtraEditors.SimpleButton();
             this.txtNoiSanXuat = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.txtDonViTinh = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtTenSP = new System.Windows.Forms.TextBox();
@@ -103,6 +106,7 @@
             this.NgaySX,
             this.NoiSX,
             this.DonViTinh,
+            this.SoLuong,
             this.DonGia});
             this.dgDSSP.DataSource = this.duLieuDoAnDataSetBindingSource;
             this.dgDSSP.Location = new System.Drawing.Point(6, 21);
@@ -146,6 +150,12 @@
             this.DonViTinh.HeaderText = "Đơn Vị Tính";
             this.DonViTinh.Name = "DonViTinh";
             // 
+            // SoLuong
+            // 
+            this.SoLuong.DataPropertyName = "SoLuong";
+            this.SoLuong.HeaderText = "Số Lượng";
+            this.SoLuong.Name = "SoLuong";
+            // 
             // DonGia
             // 
             this.DonGia.DataPropertyName = "DonGia";
@@ -170,9 +180,11 @@
             this.groupBox1.Controls.Add(this.btnSua);
             this.groupBox1.Controls.Add(this.btnHuy);
             this.groupBox1.Controls.Add(this.btnThem);
+            this.groupBox1.Controls.Add(this.txtSoLuongTon);
             this.groupBox1.Controls.Add(this.txtDonGia);
             this.groupBox1.Controls.Add(this.btnLuu);
             this.groupBox1.Controls.Add(this.txtNoiSanXuat);
+            this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.txtDonViTinh);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.txtTenSP);
@@ -187,7 +199,7 @@
             this.groupBox1.Size = new System.Drawing.Size(845, 136);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Tìm Kiếm";
+            this.groupBox1.Text = "Chi tiết sản phẩm";
             // 
             // dateNgaySanXuat
             // 
@@ -257,11 +269,18 @@
             this.btnThem.Text = "Thêm";
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
+            // txtSoLuongTon
+            // 
+            this.txtSoLuongTon.Location = new System.Drawing.Point(278, 104);
+            this.txtSoLuongTon.Name = "txtSoLuongTon";
+            this.txtSoLuongTon.Size = new System.Drawing.Size(89, 20);
+            this.txtSoLuongTon.TabIndex = 5;
+            // 
             // txtDonGia
             // 
-            this.txtDonGia.Location = new System.Drawing.Point(322, 104);
+            this.txtDonGia.Location = new System.Drawing.Point(429, 104);
             this.txtDonGia.Name = "txtDonGia";
-            this.txtDonGia.Size = new System.Drawing.Size(197, 20);
+            this.txtDonGia.Size = new System.Drawing.Size(89, 20);
             this.txtDonGia.TabIndex = 5;
             // 
             // btnLuu
@@ -283,17 +302,26 @@
             this.txtNoiSanXuat.Size = new System.Drawing.Size(174, 20);
             this.txtNoiSanXuat.TabIndex = 5;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(194, 107);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(78, 13);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "Số Lượng Tồn:";
+            // 
             // txtDonViTinh
             // 
             this.txtDonViTinh.Location = new System.Drawing.Point(96, 104);
             this.txtDonViTinh.Name = "txtDonViTinh";
-            this.txtDonViTinh.Size = new System.Drawing.Size(146, 20);
+            this.txtDonViTinh.Size = new System.Drawing.Size(91, 20);
             this.txtDonViTinh.TabIndex = 5;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(270, 107);
+            this.label7.Location = new System.Drawing.Point(377, 107);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(49, 13);
             this.label7.TabIndex = 1;
@@ -444,12 +472,15 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.BindingSource duLieuDoAnDataSetBindingSource;
         private DuLieuDoAnDataSet duLieuDoAnDataSet;
+        private System.Windows.Forms.TextBox txtSoLuongTon;
+        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaSP;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenSP;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgaySX;
         private System.Windows.Forms.DataGridViewTextBoxColumn NoiSX;
         private System.Windows.Forms.DataGridViewTextBoxColumn DonViTinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
         private System.Windows.Forms.DataGridViewTextBoxColumn DonGia;
     }
 }

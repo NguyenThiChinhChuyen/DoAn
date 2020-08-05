@@ -21,15 +21,10 @@ namespace DACK_QLCH
         }
         XLPHIEUNHAP tblPhieuNhap;
         XLPHIEUNHAP_CT tblPhieuNhap_CT;
-        BindingManagerBase DSTKHN;
-
         private void frmTimKiemNhapHang_Load(object sender, EventArgs e)
         {
             tblPhieuNhap = new XLPHIEUNHAP();
             tblPhieuNhap_CT = new XLPHIEUNHAP_CT();
-            dgTimKiemHN.AutoGenerateColumns = false;
-            dgTimKiemHN.DataSource = tblPhieuNhap;
-            DSTKHN = this.BindingContext[tblPhieuNhap];
             LoadPhieuNhapCT();
         }
         private void LoadPhieuNhapCT()
@@ -45,55 +40,38 @@ namespace DACK_QLCH
             tblPhieuNhap.Columns.Add(cot_ThanhTien);
             DataColumn cot_MaSP = new DataColumn("MaSP", Type.GetType("System.String"), "Parent(FRK_PHIEUNHAP_CT_PHIEUNHAP).MaSP");
             tblPhieuNhap.Columns.Add(cot_MaSP);
+            DataColumn cot_MaNCC = new DataColumn("MaNCC", Type.GetType("System.String"), "Parent(FRK_PHIEUNHAP_CT_PHIEUNHAP).MaNCC");
+            tblPhieuNhap.Columns.Add(cot_MaNCC);
+            dgTimKiemHN.AutoGenerateColumns = false;
+            dgTimKiemHN.DataSource = tblPhieuNhap;
         }
-
-        private void btnTimKiem_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                DataRow r = tblPhieuNhap.Select("MaSP='" + txtSoPhieuNhap.Text + "' and TenSP='" + dateNhapHang.Text + "'")[0];
-                DSTKHN.Position = tblPhieuNhap.Rows.IndexOf(r);
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Không Tìm Thấy");
-            }
-        }
-
         private void btnThoat_Click(object sender, EventArgs e)
         {
             TabPage T = (TabPage)this.Parent;
             T.Dispose();
         }
 
-        private void dgTimKiemHN_SelectionChanged(object sender, EventArgs e)
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            if (radSoPN.Checked == true)
+            {
+                string std = string.Format("SoPhieuNhap like '%{0}%'", txtTimKiem.Text);
+                tblPhieuNhap.DefaultView.RowFilter = std;
+            }
+            else
+            {
+                string std = string.Format("MaNCC like '%{0}%'", txtTimKiem.Text);
+                tblPhieuNhap.DefaultView.RowFilter =  std;
+                
+            }
+
+        }
+
+        private void dgTimKiemHN_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             foreach (DataGridViewRow r in dgTimKiemHN.Rows)
             {
                 r.Cells[0].Value = r.Index + 1;
-            }
-        }
-
-        private void dateNhapHang_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            btnTimKiem_Click(sender, e);
-        }
-
-        private void dateNhapHang_MouseDown(object sender, MouseEventArgs e)
-        {
-            dateNhapHang.Text = "";
-        }
-
-        private void txtSoPhieuNhap_MouseDown(object sender, MouseEventArgs e)
-        {
-            txtSoPhieuNhap.Text = "";
-        }
-
-        private void txtSoPhieuNhap_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)Keys.Enter)
-            {
-                btnTimKiem_Click(sender, e);
             }
         }
     }

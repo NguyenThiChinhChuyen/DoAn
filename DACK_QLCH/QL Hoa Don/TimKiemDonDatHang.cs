@@ -19,52 +19,48 @@ namespace DACK_QLCH
         {
             InitializeComponent();
         }
-        XLHOADON tblHoaDon;
-        XLHOADON_CT tblHOADON_CT;
+        XLHOADONDH_CT tblHoaDonDH_CT;
+        XLSANPHAM tblSanPham;
         BindingManagerBase DGTKDH;
 
+        bool capNhat = false;
         private void frmTimKiemDonDatHang_Load(object sender, EventArgs e)
         {
-            tblHoaDon = new XLHOADON();
-            tblHOADON_CT = new XLHOADON_CT();
-            DGTKDH = this.BindingContext[tblHoaDon];
-            LoadHoaDon_CTdgDONDATHANG();
+            tblHoaDonDH_CT = new XLHOADONDH_CT();
+            tblSanPham = new XLSANPHAM();
+            tinhtien();
+            LoadHD();
+            enable();
         }
-        private void LoadHoaDon_CTdgDONDATHANG()
+        private void enable()
         {
-            var ds = new DataSet();
-            ds.Tables.AddRange(new DataTable[] { tblHOADON_CT, tblHoaDon });
-            ds.Relations.Add(new DataRelation("FRK_HOADON_CT_HOADON", tblHOADON_CT.Columns["SoHD"], tblHoaDon.Columns["SoHD"]));
-            DataColumn cot_SoLuong = new DataColumn("SoLuong", Type.GetType("System.String"), "Parent(FRK_HOADON_CT_HOADON).SoLuong");
-            tblHoaDon.Columns.Add(cot_SoLuong);
-            DataColumn cot_DonGia = new DataColumn("DonGia", Type.GetType("System.String"), "Parent(FRK_HOADON_CT_HOADON).DonGia");
-            tblHoaDon.Columns.Add(cot_DonGia);
-            DataColumn cot_ThanhTien = new DataColumn("ThanhTien", Type.GetType("System.String"), "Parent(FRK_HOADON_CT_HOADON).ThanhTien");
-            tblHoaDon.Columns.Add(cot_ThanhTien);
+            txtThanhTien.Enabled = capNhat;
+        }
+        private void tinhtien()
+        {
+
+            for (int r = 0; r < dgDSDDH.Rows.Count; r++)
+            {
+                dgDSDDH.Rows[r].Cells[12].Value = Convert.ToInt32(dgDSDDH.Rows[r].Cells[10].Value) * Convert.ToInt32(dgDSDDH.Rows[r].Cells[11].Value);
+               
+            }
+        }
+        private void LoadHD()
+        {
+            DataSet ds = new DataSet();
+            ds.Tables.AddRange(new DataTable[] { tblHoaDonDH_CT, tblSanPham });
+            DataRelation qh = new DataRelation("FPK_SANPHAM_HOADONDH_CT", tblSanPham.Columns["MaSP"], tblHoaDonDH_CT.Columns["MaSP"]);
+            ds.Relations.Add(qh);
+            DataColumn cot_TenSP = new DataColumn("TenSP", Type.GetType("System.String"), "Parent(FPK_SANPHAM_HOADONDH_CT).TenSP");
+            tblHoaDonDH_CT.Columns.Add(cot_TenSP);
+            DataColumn cot_DonGia = new DataColumn("DonGia", Type.GetType("System.String"), "Parent(FPK_SANPHAM_HOADONDH_CT).DonGia");
+            tblHoaDonDH_CT.Columns.Add(cot_DonGia);
+            txtThanhTien.DataBindings.Add("text", tblHoaDonDH_CT, "ThanhTien", true);
+            DGTKDH = this.BindingContext[tblHoaDonDH_CT];
             dgDSDDH.AutoGenerateColumns = false;
-            dgDSDDH.DataSource = tblHoaDon;
+            dgDSDDH.DataSource = tblHoaDonDH_CT;
         }
 
-        private void dgDSDDH_SelectionChanged(object sender, EventArgs e)
-        {
-            foreach (DataGridViewRow r in dgDSDDH.Rows)
-            {
-                r.Cells[0].Value = r.Index + 1;
-            }
-        }
-
-        private void btnTimKiem_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                DataRow r = tblHoaDon.Select("MaSP='" + txtSoHD.Text + "' and NgayGH='" + dateNgayLap.Text + "'")[0];
-                DGTKDH.Position = tblHoaDon.Rows.IndexOf(r);
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Không Tìm Thấy");
-            }
-        }
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
@@ -72,28 +68,29 @@ namespace DACK_QLCH
             T.Dispose();
 
         }
-
-        private void txtSoHD_MouseDown(object sender, MouseEventArgs e)
+        private void dgDSDDH_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
-            txtSoHD.Text = "";
-        }
-
-        private void txtSoHD_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)Keys.Enter)
+            foreach (DataGridViewRow r in dgDSDDH.Rows)
             {
-                btnTimKiem_Click(sender, e);
+                r.Cells[0].Value = r.Index + 1;
             }
         }
 
-        private void dateNgayLap_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
         {
-            btnTimKiem_Click(sender, e);
-        }
+            {
+                if (radSoHD.Checked == true)
+                {
+                    string std = string.Format("SoHDDH like '%{0}%'", txtTimKiem.Text);
+                    tblHoaDonDH_CT.DefaultView.RowFilter = std;
+                }
+                else
+                {
+                    string std = string.Format("TenKHGH like '%{0}%'", txtTimKiem.Text);
+                    tblHoaDonDH_CT.DefaultView.RowFilter = std;
+                }
 
-        private void dateNgayLap_MouseDown(object sender, MouseEventArgs e)
-        {
-            dateNgayLap.Text = "";
+            }
         }
     }
 }
