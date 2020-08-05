@@ -26,7 +26,7 @@ namespace DACK_QLCH.QL_Hoa_Don
         XLNHANVIEN tblNhanVien;
         BindingManagerBase DSHDDH;
         bool capNhat=false;
-        //ad
+        //ad112
         private void frmDonDatHang_Load(object sender, EventArgs e)
         {
           
