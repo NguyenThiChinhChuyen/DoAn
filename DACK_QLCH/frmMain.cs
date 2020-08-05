@@ -12,6 +12,7 @@ using DACK_QLCH.QL_Hoa_Don.Report.Hoa_Don_Dat;
 using DACK_QLCH.QL_Nha_Cung_Cap;
 using DACK_QLCH.QL_San_Pham;
 using DACK_QLCH.Report;
+using DACK_QLCH.QL_Nguoi_Dung;
 
 namespace DACK_QLCH
 {
@@ -21,6 +22,7 @@ namespace DACK_QLCH
         {
             InitializeComponent();
         }
+
         public string maNV;
 
         public void enableControl(int maLTK)
@@ -38,11 +40,13 @@ namespace DACK_QLCH
                     btnSanPham.Enabled = true;
                     btnNhapHang.Enabled = true;
                     btnXuatHang.Enabled = true;
-
+                    btnDSNV.Enabled = true;
+                    btnDSKH.Enabled = true;
+   
                     break;
                 case 3://Nhan vien ban hang
                     btnDangXuat.Enabled = true;
-                    btnDoiMatKhau.Enabled = false;
+                    btnDoiMatKhau.Enabled = true;
                     btnDonDatHang.Enabled = true;
                     btnHoaDonBan.Enabled = true;
                     btnNhaCungCap.Enabled = false;
@@ -51,11 +55,13 @@ namespace DACK_QLCH
                     btnInHoaDonBan.Enabled = true;
                     btnNhapHang.Enabled = false;
                     btnXuatHang.Enabled = false;
+                    btnDSNV.Enabled = false;
+                    btnDSKH.Enabled = true;
 
                     break;
                 case 2://Nhan viên quản lý kho
                     btnDangXuat.Enabled = true;
-                    btnDoiMatKhau.Enabled = false;
+                    btnDoiMatKhau.Enabled = true;
                     btnDonDatHang.Enabled = false;
                     btnHoaDonBan.Enabled = false;
                     btnNhaCungCap.Enabled = false;
@@ -64,6 +70,8 @@ namespace DACK_QLCH
                     btnInHoaDonBan.Enabled = false;
                     btnNhapHang.Enabled = true;
                     btnXuatHang.Enabled = true;
+                    btnDSNV.Enabled = false;
+                    btnDSKH.Enabled = false;
 
                     break;
                 default://Đăng Xuất
@@ -77,9 +85,12 @@ namespace DACK_QLCH
                     btnSanPham.Enabled = false;
                     btnNhapHang.Enabled = false;
                     btnXuatHang.Enabled = false;
+                    btnDSNV.Enabled = false;
+                    btnDSKH.Enabled = false;
                     break;
             }
         }
+
         private void btnDangXuat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             tabControlMain.TabPages.Clear();
@@ -116,6 +127,7 @@ namespace DACK_QLCH
             f.ShowDialog();
             //tabControl1.Hide();
         }
+
         private void btnSanPham_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             int index = tabControlMain.TabPages.IndexOfKey("tabPageSanPham");
@@ -123,7 +135,6 @@ namespace DACK_QLCH
                 tabControlMain.SelectedIndex = index;
             else
             {
-              
                 frmSanPham f= new frmSanPham();
                 TabPage p = new TabPage(f.Text);
                 p.Name = "tabPageSanPham";
@@ -136,6 +147,7 @@ namespace DACK_QLCH
                 f.Show();
             }
         }
+
         private void btnNhapHang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             int index = tabControlMain.TabPages.IndexOfKey("tabPageNhapHang");
@@ -175,6 +187,7 @@ namespace DACK_QLCH
                 f.Show();
             }
         }
+
         private void btnHoaDonBan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             int index = tabControlMain.TabPages.IndexOfKey("tabPageHoaDonBan");
@@ -364,6 +377,46 @@ namespace DACK_QLCH
                 frmInHDBH f = new frmInHDBH();
                 TabPage p = new TabPage(f.Text);
                 p.Name = "tabPageInHoaDonBan";
+                f.TopLevel = false;
+                p.Controls.Add(f);
+                f.Dock = DockStyle.Fill;
+                f.FormBorderStyle = FormBorderStyle.None;
+                tabControlMain.TabPages.Add(p);
+                tabControlMain.SelectedTab = p;
+                f.Show();
+            }
+        }
+
+        private void btnDSNV_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            int index = tabControlMain.TabPages.IndexOfKey("tabPageDanhSachNhanVien");
+            if (index > 0)
+                tabControlMain.SelectedIndex = index;
+            else
+            {
+                frmNhanVien f = new frmNhanVien();
+                TabPage p = new TabPage(f.Text);
+                p.Name = "tabPageDanhSachNhanVien";
+                f.TopLevel = false;
+                p.Controls.Add(f);
+                f.Dock = DockStyle.Fill;
+                f.FormBorderStyle = FormBorderStyle.None;
+                tabControlMain.TabPages.Add(p);
+                tabControlMain.SelectedTab = p;
+                f.Show();
+            }
+        }
+
+        private void btnDSKH_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            int index = tabControlMain.TabPages.IndexOfKey("tabPageDanhSachKhachHang");
+            if (index > 0)
+                tabControlMain.SelectedIndex = index;
+            else
+            {
+                frmKhachHang f = new frmKhachHang();           
+                TabPage p = new TabPage(f.Text);
+                p.Name = "tabPageDanhSachKhachHang";
                 f.TopLevel = false;
                 p.Controls.Add(f);
                 f.Dock = DockStyle.Fill;
