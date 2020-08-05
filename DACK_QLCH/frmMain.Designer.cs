@@ -74,6 +74,11 @@
             this.ribbonPage5 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.tabControlMain = new System.Windows.Forms.TabControl();
+            this.ribbonPage6 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup10 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.btnDSNV = new DevExpress.XtraBars.BarButtonItem();
+            this.btnDSKH = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -111,9 +116,11 @@
             this.btnTimKiemDDH,
             this.barButtonItem24,
             this.barButtonItem25,
-            this.btnTimKiemHDB});
+            this.btnTimKiemHDB,
+            this.btnDSNV,
+            this.btnDSKH});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 30;
+            this.ribbonControl1.MaxItemId = 32;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -121,7 +128,8 @@
             this.ribbonPage2,
             this.ribbonPage3,
             this.ribbonPage4,
-            this.ribbonPage5});
+            this.ribbonPage5,
+            this.ribbonPage6});
             this.ribbonControl1.Size = new System.Drawing.Size(928, 158);
             // 
             // btnDangXuat
@@ -480,11 +488,49 @@
             // 
             // tabControlMain
             // 
-            this.tabControlMain.Location = new System.Drawing.Point(1, 159);
+            this.tabControlMain.Location = new System.Drawing.Point(0, 160);
             this.tabControlMain.Name = "tabControlMain";
             this.tabControlMain.SelectedIndex = 0;
             this.tabControlMain.Size = new System.Drawing.Size(928, 588);
             this.tabControlMain.TabIndex = 1;
+            // 
+            // ribbonPage6
+            // 
+            this.ribbonPage6.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup6,
+            this.ribbonPageGroup10});
+            this.ribbonPage6.Name = "ribbonPage6";
+            this.ribbonPage6.Text = "NGƯỜI DÙNG";
+            // 
+            // ribbonPageGroup6
+            // 
+            this.ribbonPageGroup6.ItemLinks.Add(this.btnDSNV);
+            this.ribbonPageGroup6.Name = "ribbonPageGroup6";
+            this.ribbonPageGroup6.Text = "NHÂN VIÊN";
+            // 
+            // ribbonPageGroup10
+            // 
+            this.ribbonPageGroup10.ItemLinks.Add(this.btnDSKH);
+            this.ribbonPageGroup10.Name = "ribbonPageGroup10";
+            this.ribbonPageGroup10.Text = "KHÁCH HÀNG";
+            // 
+            // btnDSNV
+            // 
+            this.btnDSNV.Caption = "DANH SÁCH NHÂN VIÊN";
+            this.btnDSNV.Id = 30;
+            this.btnDSNV.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.btnDSNV.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.btnDSNV.Name = "btnDSNV";
+            this.btnDSNV.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDSNV_ItemClick);
+            // 
+            // btnDSKH
+            // 
+            this.btnDSKH.Caption = "DANH SÁCH KHÁCH HÀNG";
+            this.btnDSKH.Id = 31;
+            this.btnDSKH.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
+            this.btnDSKH.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
+            this.btnDSKH.Name = "btnDSKH";
+            this.btnDSKH.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDSKH_ItemClick);
             // 
             // frmMain
             // 
@@ -557,6 +603,11 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage5;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
         private System.Windows.Forms.TabControl tabControlMain;
+        private DevExpress.XtraBars.BarButtonItem btnDSNV;
+        private DevExpress.XtraBars.BarButtonItem btnDSKH;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage6;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup10;
     }
 }
 

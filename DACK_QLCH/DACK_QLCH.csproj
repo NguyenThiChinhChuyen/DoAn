@@ -141,6 +141,18 @@
     <Compile Include="QL Hoa Don\HoaDonBan.Designer.cs">
       <DependentUpon>HoaDonBan.cs</DependentUpon>
     </Compile>
+    <Compile Include="QL Nguoi Dung\KhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QL Nguoi Dung\KhachHang.Designer.cs">
+      <DependentUpon>KhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QL Nguoi Dung\NhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QL Nguoi Dung\NhanVien.Designer.cs">
+      <DependentUpon>NhanVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="QL Nha Cung Cap\NhaCungCap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -261,6 +273,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QL Kho\XuatHang.resx">
       <DependentUpon>XuatHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QL Nguoi Dung\KhachHang.resx">
+      <DependentUpon>KhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QL Nguoi Dung\NhanVien.resx">
+      <DependentUpon>NhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QL Nha Cung Cap\NhaCungCap.resx">
       <DependentUpon>NhaCungCap.cs</DependentUpon>

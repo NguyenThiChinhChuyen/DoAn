@@ -8,40 +8,48 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DACK_QLCH.Moduls;
-using DevExpress.Utils.Extensions;
 using System.Data.SqlClient;
-using System.IO;
-using DevExpress.Xpo.DB;
 
-namespace DACK_QLCH.QL_San_Pham
+namespace DACK_QLCH.QL_Nguoi_Dung
 {
-    public partial class frmSanPham : Form
+    public partial class frmKhachHang : Form
     {
-        public frmSanPham()
+        public frmKhachHang()
         {
             InitializeComponent();
         }
-        XLSANPHAM tblSanPham;
-        BindingManagerBase DSSP;
-        bool capNhat = false;
-        private void frmSanPham_Load(object sender, EventArgs e)
+
+        private void label4_Click(object sender, EventArgs e)
         {
-            tblSanPham = new XLSANPHAM();
-            LoadDSSP();
-            DSSP = this.BindingContext[tblSanPham];
-            ennableButton();   
+
         }
-        private void LoadDSSP()
+
+        private void label6_Click(object sender, EventArgs e)
         {
-            txtMaSP.DataBindings.Add("text", tblSanPham, "MaSP",true);
-            txtTenSP.DataBindings.Add("text", tblSanPham, "TenSP", true);
-            txtNoiSanXuat.DataBindings.Add("text", tblSanPham, "NoiSX", true);
-            txtDonGia.DataBindings.Add("text", tblSanPham, "DonGia", true);
-            txtDonViTinh.DataBindings.Add("text", tblSanPham, "DonViTinh", true);
-            dateNgaySanXuat.DataBindings.Add("text", tblSanPham, "NgaySX", true);
-            txtSoLuongTon.DataBindings.Add("text",tblSanPham,"SoLuong",true);
-            dgDSSP.AutoGenerateColumns = false;
-            dgDSSP.DataSource = tblSanPham;
+
+        }
+
+        XLKHACHHANG tblKhachHang;
+        BindingManagerBase DSKH;
+        bool capNhat = false;
+
+        private void frmKhachHang_Load(object sender, EventArgs e)
+        {
+            tblKhachHang = new XLKHACHHANG();
+            LoadDSKH();
+            DSKH = this.BindingContext[tblKhachHang];
+            ennableButton();
+        }
+
+        private void LoadDSKH()
+        {
+            txtMaKH.DataBindings.Add("text", tblKhachHang, "MaKH", true);
+            txtTenKH.DataBindings.Add("text", tblKhachHang, "TenKH", true);
+            txtDiaChi.DataBindings.Add("text", tblKhachHang, "DiaChi", true);         
+            txtSDT.DataBindings.Add("text", tblKhachHang, "SDT", true);
+            radNam.DataBindings.Add("checked", tblKhachHang, "GioiTinh", true);
+            dgDSKH.AutoGenerateColumns = false;
+            dgDSKH.DataSource = tblKhachHang;
         }
 
         private void ennableButton()
@@ -55,26 +63,31 @@ namespace DACK_QLCH.QL_San_Pham
             btnTimKiem.Enabled = !capNhat;
         }
 
-        private void dgDSSP_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        private void dgDSKH_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
-            foreach(DataGridViewRow r in dgDSSP.Rows)
+            foreach (DataGridViewRow r in dgDSKH.Rows)
             {
                 r.Cells[0].Value = r.Index + 1;
             }
+        }
+
+        private void radNam_CheckedChanged(object sender, EventArgs e)
+        {
+            radNu.Checked = !radNam.Checked;
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
             try
             {
-                DSSP.AddNew();
+                DSKH.AddNew();
                 capNhat = true;
                 ennableButton();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }       
+            }
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -83,34 +96,18 @@ namespace DACK_QLCH.QL_San_Pham
             ennableButton();
         }
 
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                DSSP.RemoveAt(DSSP.Position);
-                tblSanPham.ghi();
-                tblSanPham.AcceptChanges();
-                capNhat = true;
-                ennableButton();
-            }
-            catch (SqlException)
-            {
-                tblSanPham.RejectChanges();
-                MessageBox.Show("Xóa thất bại!!!");
-            }
-        }
-
         private void btnLuu_Click(object sender, EventArgs e)
         {
             try
             {
-                DSSP.EndCurrentEdit();
-                tblSanPham.ghi();
-                tblSanPham.AcceptChanges();
+                DSKH.EndCurrentEdit();
+                tblKhachHang.ghi();
+                tblKhachHang.AcceptChanges();
                 MessageBox.Show("Cập nhật thành công!!!");
                 capNhat = false;
                 ennableButton();
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -118,10 +115,27 @@ namespace DACK_QLCH.QL_San_Pham
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
-            DSSP.CancelCurrentEdit();
-            tblSanPham.RejectChanges();
+            DSKH.CancelCurrentEdit();
+            tblKhachHang.RejectChanges();
             capNhat = false;
             ennableButton();
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DSKH.RemoveAt(DSKH.Position);
+                tblKhachHang.ghi();
+                tblKhachHang.AcceptChanges();
+                capNhat = true;
+                ennableButton();
+            }
+            catch (SqlException)
+            {
+                tblKhachHang.RejectChanges();
+                MessageBox.Show("Xóa thất bại!!!");
+            }
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -145,8 +159,8 @@ namespace DACK_QLCH.QL_San_Pham
         {
             try
             {
-                DataRow r = tblSanPham.Select("MaSP ='" + txtTimKiem.Text + "'")[0];
-                DSSP.Position = tblSanPham.Rows.IndexOf(r);
+                DataRow r = tblKhachHang.Select("MaKH ='" + txtTimKiem.Text + "'")[0];
+                DSKH.Position = tblKhachHang.Rows.IndexOf(r);
             }
             catch (Exception)
             {
