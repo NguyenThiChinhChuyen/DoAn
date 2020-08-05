@@ -1,6 +1,6 @@
 ﻿namespace DACK_QLCH.Report
 {
-    partial class frmInHD
+    partial class frmInHDDAT
     {
         /// <summary>
         /// Required designer variable.
@@ -28,36 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.rptvInHD = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.rptvInHDDAT = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.SuspendLayout();
             // 
-            // rptvInHD
+            // rptvInHDDAT
             // 
-            this.rptvInHD.ActiveViewIndex = -1;
-            this.rptvInHD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.rptvInHD.Cursor = System.Windows.Forms.Cursors.Default;
-            this.rptvInHD.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rptvInHD.Location = new System.Drawing.Point(0, 0);
-            this.rptvInHD.Name = "rptvInHD";
-            this.rptvInHD.Size = new System.Drawing.Size(800, 450);
-            this.rptvInHD.TabIndex = 0;
-            this.rptvInHD.Load += new System.EventHandler(this.rptvInHD_Load);
+            this.rptvInHDDAT.ActiveViewIndex = -1;
+            this.rptvInHDDAT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rptvInHDDAT.Cursor = System.Windows.Forms.Cursors.Default;
+            this.rptvInHDDAT.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rptvInHDDAT.Location = new System.Drawing.Point(0, 0);
+            this.rptvInHDDAT.Name = "rptvInHDDAT";
+            this.rptvInHDDAT.Size = new System.Drawing.Size(800, 450);
+            this.rptvInHDDAT.TabIndex = 0;
+            this.rptvInHDDAT.Load += new System.EventHandler(this.rptvInHDDAT_Load);
             // 
-            // frmInHD
+            // frmInHDDAT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.rptvInHD);
-            this.Name = "frmInHD";
-            this.Text = "frmInHD";
-            this.Load += new System.EventHandler(this.frmInHD_Load);
+            this.Controls.Add(this.rptvInHDDAT);
+            this.Name = "frmInHDDAT";
+            this.Text = "In Hóa Đơn Đặt";
+            this.Load += new System.EventHandler(this.frmInHDDAT_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private CrystalDecisions.Windows.Forms.CrystalReportViewer rptvInHD;
+        private CrystalDecisions.Windows.Forms.CrystalReportViewer rptvInHDDAT;
     }
 }

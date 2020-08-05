@@ -93,30 +93,42 @@ namespace DACK_QLCH
                 DSPN.AddNew();
                 capNhat = true;
                 ennableButton();
-                MessageBox.Show("Thêm thành công, Bạn có muốn Lưu không!!!");
+                
             }
             catch (Exception ex)
             {
+                MessageBox.Show("Thêm thất bại!!!");
                 MessageBox.Show(ex.Message);
             }
         }
-  
-        private void btnSua_Click(object sender, EventArgs e)
-        {
-       
-            capNhat = true;
-            ennableButton();
-        }
 
-        private void btnXoa_Click(object sender, EventArgs e)
+        private void btnSua_Click(object sender, EventArgs e)
         {
             try
             {
-                DSPN.RemoveAt(DSPN.Position);
-                tblPhieuNhap_CT.ghi();
-                tblPhieuNhap_CT.AcceptChanges();
+
                 capNhat = true;
                 ennableButton();
+            }
+            catch
+            {
+                MessageBox.Show("Sửa thất bại!!!");
+            }
+        }
+
+    private void btnXoa_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (MessageBox.Show("Bạn có muốn xóa nhập hàng " + txtSoPN.Text + " không?", "DELETE", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                {
+                    DSPN.RemoveAt(DSPN.Position);
+                    tblPhieuNhap_CT.ghi();
+                    tblPhieuNhap_CT.AcceptChanges();
+                    capNhat = true;
+                    ennableButton();
+                    MessageBox.Show("Xóa thành công!");
+                }
 
             }
             catch (SqlException)

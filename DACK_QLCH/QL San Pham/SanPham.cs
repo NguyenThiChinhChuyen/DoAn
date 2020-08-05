@@ -90,11 +90,15 @@ namespace DACK_QLCH.QL_San_Pham
         {
             try
             {
-                DSSP.RemoveAt(DSSP.Position);
-                tblSanPham.ghi();
-                tblSanPham.AcceptChanges();
-                capNhat = true;
-                ennableButton();
+                if (MessageBox.Show("Bạn có muốn xóa sản phẩm " + txtMaSP.Text + " không?", "DELETE", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                {
+                    DSSP.RemoveAt(DSSP.Position);
+                    tblSanPham.ghi();
+                    tblSanPham.AcceptChanges();
+                    capNhat = true;
+                    ennableButton();
+                    MessageBox.Show("Xóa thành công!");
+                }
 
             }
             catch (SqlException)

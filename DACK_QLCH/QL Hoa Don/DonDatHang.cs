@@ -113,19 +113,31 @@ namespace DACK_QLCH.QL_Hoa_Don
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            capNhat = true;
-            ennableButton();
+            try
+            {
+                capNhat = true;
+                ennableButton();
+            }
+            catch
+            {
+                MessageBox.Show("Sửa thất bại!!!");
+            }
+
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
             try
             {
-                DSHDDH.RemoveAt(DSHDDH.Position);
-                tblHoaDonDH_CT.ghi();
-                tblHoaDonDH_CT.AcceptChanges();
-                capNhat = true;
-                ennableButton();
+                if (MessageBox.Show("Bạn có muốn xóa hóa đơn " + txtSoHDDH.Text + " không?", "DELETE", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                {
+                    DSHDDH.RemoveAt(DSHDDH.Position);
+                    tblHoaDonDH_CT.ghi();
+                    tblHoaDonDH_CT.AcceptChanges();
+                    capNhat = true;
+                    ennableButton();
+                    MessageBox.Show("Xóa thành công!");
+                }
 
             }
             catch (SqlException)
@@ -204,10 +216,12 @@ namespace DACK_QLCH.QL_Hoa_Don
                 //BdpDB_PositionChange(sender, e);
                 capNhat = true;
                 ennableButton();
-                MessageBox.Show("Bạn có muốn Thêm không!!!");
+          
             }
             catch (Exception ex)
             {
+                MessageBox.Show("Thêm thất bại!!!");
+
                 tblHoaDonDH_CT.RejectChanges();
                 MessageBox.Show(ex.Message);
             }

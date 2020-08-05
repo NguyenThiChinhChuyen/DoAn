@@ -10,40 +10,33 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using DACK_QLCH.Moduls;
 using DevExpress.Utils.Extensions;
+using DACK_QLCH.Report;
 
-namespace DACK_QLCH
+namespace DACK_QLCH.QL_Hoa_Don.Report.Hoa_Don_Dat
 {
-    public partial class frmTimKiemDonDatHang : Form
+    public partial class frmHDDat : Form
     {
-        public frmTimKiemDonDatHang()
+        public frmHDDat()
         {
             InitializeComponent();
         }
         XLHOADONDH_CT tblHoaDonDH_CT;
         XLSANPHAM tblSanPham;
         BindingManagerBase DGTKDH;
+       bool capNhat = false;
 
-        bool capNhat = false;
-        private void frmTimKiemDonDatHang_Load(object sender, EventArgs e)
+        private void frmHDDat_Load(object sender, EventArgs e)
         {
             tblHoaDonDH_CT = new XLHOADONDH_CT();
             tblSanPham = new XLSANPHAM();
-            tinhtien();
+            
             LoadHD();
             enable();
         }
         private void enable()
         {
-            txtThanhTien.Enabled = capNhat;
-        }
-        private void tinhtien()
-        {
-
-            for (int r = 0; r < dgDSDDH.Rows.Count; r++)
-            {
-                dgDSDDH.Rows[r].Cells[12].Value = Convert.ToInt32(dgDSDDH.Rows[r].Cells[10].Value) * Convert.ToInt32(dgDSDDH.Rows[r].Cells[11].Value);
-               
-            }
+            txtsohoadon.Enabled = capNhat;
+            txtTenKH.Enabled = capNhat;
         }
         private void LoadHD()
         {
@@ -55,40 +48,47 @@ namespace DACK_QLCH
             tblHoaDonDH_CT.Columns.Add(cot_TenSP);
             DataColumn cot_DonGia = new DataColumn("DonGia", Type.GetType("System.String"), "Parent(FPK_SANPHAM_HOADONDH_CT).DonGia");
             tblHoaDonDH_CT.Columns.Add(cot_DonGia);
-            txtThanhTien.DataBindings.Add("text", tblHoaDonDH_CT, "ThanhTien", true);
+            txtsohoadon.DataBindings.Add("text", tblHoaDonDH_CT, "SoHDDH", true);
+            txtTenKH.DataBindings.Add("text", tblHoaDonDH_CT, "TenKHGH", true);
             DGTKDH = this.BindingContext[tblHoaDonDH_CT];
             dgDSDDH.AutoGenerateColumns = false;
             dgDSDDH.DataSource = tblHoaDonDH_CT;
         }
 
-
         private void btnThoat_Click(object sender, EventArgs e)
         {
             TabPage T = (TabPage)this.Parent;
             T.Dispose();
-
         }
+
+        private void btnIn_Click(object sender, EventArgs e)
+        {
+            frmInHDDAT f = new frmInHDDAT();
+            f.SoHDDH = txtsohoadon.Text;
+            f.WindowState = FormWindowState.Maximized;
+            f.Show();
+        }
+
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            if (radSoHD.Checked == true)
+            {
+                string std = string.Format("SoHDDH like '%{0}%'", txtTimKiem.Text);
+                tblHoaDonDH_CT.DefaultView.RowFilter = std;
+            }
+            else
+            {
+                string std = string.Format("TenKHGH like '%{0}%'", txtTimKiem.Text);
+                tblHoaDonDH_CT.DefaultView.RowFilter = std;
+            }
+        }
+
         private void dgDSDDH_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             foreach (DataGridViewRow r in dgDSDDH.Rows)
             {
                 r.Cells[0].Value = r.Index + 1;
             }
-        }
-
-        private void txtTimKiem_TextChanged(object sender, EventArgs e)
-        {
-                if (radSoHD.Checked == true)
-                {
-                    string std = string.Format("SoHDDH like '%{0}%'", txtTimKiem.Text);
-                    tblHoaDonDH_CT.DefaultView.RowFilter = std;
-                }
-                else
-                {
-                    string std = string.Format("TenKHGH like '%{0}%'", txtTimKiem.Text);
-                    tblHoaDonDH_CT.DefaultView.RowFilter = std;
-                }
-
         }
     }
 }

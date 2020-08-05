@@ -23,6 +23,7 @@ namespace DACK_QLCH.Report
         XLHOADON_CT tblHoaDon_CT;
         XLSANPHAM tblSanPham;
         BindingManagerBase DSHD;
+        bool capNhat = false;
 
         private void frmInHDBH_Load(object sender, EventArgs e)
         {
@@ -30,6 +31,12 @@ namespace DACK_QLCH.Report
             tblHoaDon = new XLHOADON();
             tblSanPham = new XLSANPHAM();
             LoadHD();
+            enable();
+        }
+        private void enable()
+        {
+            txtsohoadon.Enabled = capNhat;
+            txtsohoadonct.Enabled = capNhat;
         }
         private void LoadHD()
         {

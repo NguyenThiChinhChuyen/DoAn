@@ -141,6 +141,29 @@
     <Compile Include="QL Hoa Don\HoaDonBan.Designer.cs">
       <DependentUpon>HoaDonBan.cs</DependentUpon>
     </Compile>
+    <Compile Include="Report\DataInHDDat.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataInHDDat.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frmHDDat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\frmHDDat.Designer.cs">
+      <DependentUpon>frmHDDat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frmInHDDat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\frmInHDDat.Designer.cs">
+      <DependentUpon>frmInHDDat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\rptInHDDat.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptInHDDat.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="QL Nha Cung Cap\NhaCungCap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -256,6 +279,16 @@
     <EmbeddedResource Include="QL Hoa Don\HoaDonBan.resx">
       <DependentUpon>HoaDonBan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report\frmHDDat.resx">
+      <DependentUpon>frmHDDat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\frmInHDDat.resx">
+      <DependentUpon>frmInHDDat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptInHDDat.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptInHDDat.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="QL Kho\NhapHang.resx">
       <DependentUpon>NhapHang.cs</DependentUpon>
     </EmbeddedResource>
@@ -350,6 +383,17 @@
     </None>
     <None Include="Report\DataInHD.xss">
       <DependentUpon>DataInHD.xsd</DependentUpon>
+    </None>
+    <None Include="Report\DataInHDDat.xsc">
+      <DependentUpon>DataInHDDat.xsd</DependentUpon>
+    </None>
+    <None Include="Report\DataInHDDat.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataInHDDat.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Report\DataInHDDat.xss">
+      <DependentUpon>DataInHDDat.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

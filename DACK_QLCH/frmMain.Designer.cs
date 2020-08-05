@@ -53,7 +53,7 @@
             this.btnTimKiemDNH = new DevExpress.XtraBars.BarButtonItem();
             this.btnTimKiemDXH = new DevExpress.XtraBars.BarButtonItem();
             this.btnHoaDonBan = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem21 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnInHoaDonBan = new DevExpress.XtraBars.BarButtonItem();
             this.btnDonDatHang = new DevExpress.XtraBars.BarButtonItem();
             this.btnTimKiemDDH = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem24 = new DevExpress.XtraBars.BarButtonItem();
@@ -74,6 +74,7 @@
             this.ribbonPage5 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.tabControlMain = new System.Windows.Forms.TabControl();
+            this.btnInHDDAT = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -106,14 +107,15 @@
             this.btnTimKiemDNH,
             this.btnTimKiemDXH,
             this.btnHoaDonBan,
-            this.barButtonItem21,
+            this.btnInHoaDonBan,
             this.btnDonDatHang,
             this.btnTimKiemDDH,
             this.barButtonItem24,
             this.barButtonItem25,
-            this.btnTimKiemHDB});
+            this.btnTimKiemHDB,
+            this.btnInHDDAT});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 30;
+            this.ribbonControl1.MaxItemId = 31;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -314,14 +316,14 @@
             this.btnHoaDonBan.Name = "btnHoaDonBan";
             this.btnHoaDonBan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHoaDonBan_ItemClick);
             // 
-            // barButtonItem21
+            // btnInHoaDonBan
             // 
-            this.barButtonItem21.Caption = "In Hóa Đơn";
-            this.barButtonItem21.Id = 24;
-            this.barButtonItem21.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem21.ImageOptions.Image")));
-            this.barButtonItem21.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem21.ImageOptions.LargeImage")));
-            this.barButtonItem21.Name = "barButtonItem21";
-            this.barButtonItem21.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem21_ItemClick);
+            this.btnInHoaDonBan.Caption = "In Hóa Đơn";
+            this.btnInHoaDonBan.Id = 24;
+            this.btnInHoaDonBan.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem21.ImageOptions.Image")));
+            this.btnInHoaDonBan.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem21.ImageOptions.LargeImage")));
+            this.btnInHoaDonBan.Name = "btnInHoaDonBan";
+            this.btnInHoaDonBan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnInHoaDonBan_ItemClick);
             // 
             // btnDonDatHang
             // 
@@ -394,7 +396,7 @@
             // ribbonPageGroup9
             // 
             this.ribbonPageGroup9.ItemLinks.Add(this.btnHoaDonBan, "H");
-            this.ribbonPageGroup9.ItemLinks.Add(this.barButtonItem21, "I");
+            this.ribbonPageGroup9.ItemLinks.Add(this.btnInHoaDonBan, "I");
             this.ribbonPageGroup9.ItemLinks.Add(this.btnTimKiemHDB, "TÌ");
             this.ribbonPageGroup9.KeyTip = "B";
             this.ribbonPageGroup9.Name = "ribbonPageGroup9";
@@ -403,6 +405,7 @@
             // ribbonPageGroup2
             // 
             this.ribbonPageGroup2.ItemLinks.Add(this.btnDonDatHang, "Đ");
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnInHDDAT);
             this.ribbonPageGroup2.ItemLinks.Add(this.btnTimKiemDDH, "TM");
             this.ribbonPageGroup2.KeyTip = "Q";
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
@@ -486,6 +489,15 @@
             this.tabControlMain.Size = new System.Drawing.Size(928, 588);
             this.tabControlMain.TabIndex = 1;
             // 
+            // btnInHDDAT
+            // 
+            this.btnInHDDAT.Caption = "In Hóa Đơn Đặt";
+            this.btnInHDDAT.Id = 30;
+            this.btnInHDDAT.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.btnInHDDAT.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.btnInHDDAT.Name = "btnInHDDAT";
+            this.btnInHDDAT.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnInHDDAT_ItemClick);
+            // 
             // frmMain
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.True;
@@ -538,7 +550,7 @@
         private DevExpress.XtraBars.BarButtonItem btnTimKiemDNH;
         private DevExpress.XtraBars.BarButtonItem btnTimKiemDXH;
         private DevExpress.XtraBars.BarButtonItem btnHoaDonBan;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem21;
+        private DevExpress.XtraBars.BarButtonItem btnInHoaDonBan;
         private DevExpress.XtraBars.BarButtonItem btnDonDatHang;
         private DevExpress.XtraBars.BarButtonItem btnTimKiemDDH;
         private DevExpress.XtraBars.BarButtonItem barButtonItem24;
@@ -557,6 +569,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage5;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
         private System.Windows.Forms.TabControl tabControlMain;
+        private DevExpress.XtraBars.BarButtonItem btnInHDDAT;
     }
 }
 
