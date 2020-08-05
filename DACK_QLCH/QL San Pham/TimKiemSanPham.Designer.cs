@@ -170,7 +170,7 @@
             // radTenSP
             // 
             this.radTenSP.AutoSize = true;
-            this.radTenSP.Location = new System.Drawing.Point(421, 42);
+            this.radTenSP.Location = new System.Drawing.Point(471, 42);
             this.radTenSP.Name = "radTenSP";
             this.radTenSP.Size = new System.Drawing.Size(96, 17);
             this.radTenSP.TabIndex = 8;
@@ -181,7 +181,7 @@
             // 
             this.radMaSP.AutoSize = true;
             this.radMaSP.Checked = true;
-            this.radMaSP.Location = new System.Drawing.Point(302, 41);
+            this.radMaSP.Location = new System.Drawing.Point(352, 41);
             this.radMaSP.Name = "radMaSP";
             this.radMaSP.Size = new System.Drawing.Size(92, 17);
             this.radMaSP.TabIndex = 8;
@@ -203,7 +203,7 @@
             // 
             // txtTimKiem
             // 
-            this.txtTimKiem.Location = new System.Drawing.Point(102, 39);
+            this.txtTimKiem.Location = new System.Drawing.Point(152, 39);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(182, 20);
             this.txtTimKiem.TabIndex = 5;
@@ -212,7 +212,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(39, 42);
+            this.label1.Location = new System.Drawing.Point(89, 42);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 13);
             this.label1.TabIndex = 0;

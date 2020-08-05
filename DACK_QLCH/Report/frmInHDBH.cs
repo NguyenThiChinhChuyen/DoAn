@@ -10,11 +10,12 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using DACK_QLCH.Moduls;
 
-namespace DACK_QLCH
+namespace DACK_QLCH.Report
 {
-    public partial class frmTimKiemDonDaLap : Form
+    public partial class frmInHDBH : Form
     {
-        public frmTimKiemDonDaLap()
+
+        public frmInHDBH()
         {
             InitializeComponent();
         }
@@ -22,22 +23,15 @@ namespace DACK_QLCH
         XLHOADON_CT tblHoaDon_CT;
         XLSANPHAM tblSanPham;
         BindingManagerBase DSHD;
-        bool capNhat = false;
-        private void TimKiemDonDaLap_Load(object sender, EventArgs e)
+
+        private void frmInHDBH_Load(object sender, EventArgs e)
         {
             tblHoaDon_CT = new XLHOADON_CT();
             tblHoaDon = new XLHOADON();
             tblSanPham = new XLSANPHAM();
-            tinhtien();
-            LoadHoaDoncoi();
-            enable();
-
+            LoadHD();
         }
-        private void enable()
-        {
-            txtThanhTien.Enabled = capNhat;
-        }
-        private void LoadHoaDoncoi()
+        private void LoadHD()
         {
             DataSet ds = new DataSet();
             ds.Tables.AddRange(new DataTable[] { tblHoaDon_CT, tblSanPham, tblHoaDon });
@@ -55,23 +49,11 @@ namespace DACK_QLCH
             tblHoaDon_CT.Columns.Add(cot_MaNV);
             DataColumn cot_NgayHD = new DataColumn("NgayHD", Type.GetType("System.String"), "Parent(FPK_HOADON_HOADON_CT).NgayHD");
             tblHoaDon_CT.Columns.Add(cot_NgayHD);
-            txtThanhTien.DataBindings.Add("text", tblHoaDon_CT, "ThanhTien", true);
+            txtsohoadon.DataBindings.Add("text", tblHoaDon_CT, "SoHD", true);
+            txtsohoadonct.DataBindings.Add("text", tblHoaDon_CT, "SoHDCT", true);
             DSHD = this.BindingContext[tblHoaDon_CT];
             dgTimKiemDDL.AutoGenerateColumns = false;
             dgTimKiemDDL.DataSource = tblHoaDon_CT;
-        }
-        private void tinhtien()
-        {
-            for (int r = 0; r < dgTimKiemDDL.Rows.Count; r++)
-            {
-                dgTimKiemDDL.Rows[r].Cells[10].Value = Convert.ToInt32(dgTimKiemDDL.Rows[r].Cells[8].Value) * Convert.ToInt32(dgTimKiemDDL.Rows[r].Cells[9].Value); 
-            }
-           
-        }
-        private void btnThoat_Click(object sender, EventArgs e)
-        {
-            TabPage T = (TabPage)this.Parent;
-            T.Dispose();
         }
 
         private void dgTimKiemDDL_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
@@ -80,13 +62,6 @@ namespace DACK_QLCH
             {
                 r.Cells[0].Value = r.Index + 1;
             }
-        }
-
-
-
-        private void dgTimKiemDDL_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-           
         }
 
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
@@ -104,6 +79,20 @@ namespace DACK_QLCH
                 }
 
             }
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            TabPage T = (TabPage)this.Parent;
+            T.Dispose();
+        }
+
+        private void btnIn_Click(object sender, EventArgs e)
+        {
+            frmInHD f = new frmInHD();
+            f.SoHDCT = txtsohoadonct.Text;
+            f.WindowState = FormWindowState.Maximized;
+            f.Show();
         }
     }
 }

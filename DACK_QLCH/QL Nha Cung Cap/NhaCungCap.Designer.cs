@@ -170,7 +170,7 @@
             this.groupBox1.Size = new System.Drawing.Size(845, 136);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Tìm Kiếm";
+            this.groupBox1.Text = "Chi tiết Nhà Cung Cấp";
             // 
             // btnThoat
             // 

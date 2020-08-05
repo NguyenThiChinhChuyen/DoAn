@@ -72,8 +72,8 @@
             this.txtDonGia = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.txtSoHDCT = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgDSDBH)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.duLieuDoAnDataSetBindingSource)).BeginInit();
@@ -303,7 +303,7 @@
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(98, 40);
             this.btnThoat.TabIndex = 7;
-            this.btnThoat.Text = "Thoat";
+            this.btnThoat.Text = "Thoát";
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // label1
@@ -473,6 +473,13 @@
             this.label9.TabIndex = 14;
             this.label9.Text = "VNĐ";
             // 
+            // txtSoHDCT
+            // 
+            this.txtSoHDCT.Location = new System.Drawing.Point(129, 25);
+            this.txtSoHDCT.Name = "txtSoHDCT";
+            this.txtSoHDCT.Size = new System.Drawing.Size(120, 20);
+            this.txtSoHDCT.TabIndex = 20;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -481,13 +488,6 @@
             this.label4.Size = new System.Drawing.Size(108, 13);
             this.label4.TabIndex = 9;
             this.label4.Text = "Số Hóa Đơn Chi Tiết:";
-            // 
-            // txtSoHDCT
-            // 
-            this.txtSoHDCT.Location = new System.Drawing.Point(129, 25);
-            this.txtSoHDCT.Name = "txtSoHDCT";
-            this.txtSoHDCT.Size = new System.Drawing.Size(120, 20);
-            this.txtSoHDCT.TabIndex = 20;
             // 
             // frmHoaDonBan
             // 

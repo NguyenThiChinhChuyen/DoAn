@@ -10,6 +10,7 @@ using DACK_QLCH.Moduls;
 using DACK_QLCH.QL_Hoa_Don;
 using DACK_QLCH.QL_Nha_Cung_Cap;
 using DACK_QLCH.QL_San_Pham;
+using DACK_QLCH.Report;
 
 namespace DACK_QLCH
 {
@@ -29,16 +30,16 @@ namespace DACK_QLCH
                     btnDangXuat.Enabled = true;
                     btnDoiMatKhau.Enabled = true;
                     btnDonDatHang.Enabled = true;
-                    btnHoaDonBan.Enabled = false;
+                    btnHoaDonBan.Enabled = true;
                     btnNhaCungCap.Enabled = true;
                     btnSanPham.Enabled = true;
-                    btnNhapHang.Enabled = false;
-                    btnXuatHang.Enabled = false;
+                    btnNhapHang.Enabled = true;
+                    btnXuatHang.Enabled = true;
 
                     break;
                 case 3://Nhan vien ban hang
                     btnDangXuat.Enabled = true;
-                    btnDoiMatKhau.Enabled = true;
+                    btnDoiMatKhau.Enabled = false;
                     btnDonDatHang.Enabled = true;
                     btnHoaDonBan.Enabled = true;
                     btnNhaCungCap.Enabled = false;
@@ -49,7 +50,7 @@ namespace DACK_QLCH
                     break;
                 case 2://Nhan viên quản lý kho
                     btnDangXuat.Enabled = true;
-                    btnDoiMatKhau.Enabled = true;
+                    btnDoiMatKhau.Enabled = false;
                     btnDonDatHang.Enabled = false;
                     btnHoaDonBan.Enabled = false;
                     btnNhaCungCap.Enabled = false;
@@ -91,7 +92,7 @@ namespace DACK_QLCH
                 f.Dock = DockStyle.Fill;
                 f.FormBorderStyle = FormBorderStyle.None;
                 tabControlMain.TabPages.Add(p);
-                //tabControlMain.SelectedTab = p;
+                tabControlMain.SelectedTab = p;
                 f.Show();
             }
         }
@@ -300,7 +301,7 @@ namespace DACK_QLCH
                 f.Dock = DockStyle.Fill;
                 f.FormBorderStyle = FormBorderStyle.None;
                 tabControlMain.TabPages.Add(p);
-                //tabControlMain.SelectedTab = p;
+                tabControlMain.SelectedTab = p;
                 f.Show();
             }
         }
@@ -320,7 +321,27 @@ namespace DACK_QLCH
                 f.Dock = DockStyle.Fill;
                 f.FormBorderStyle = FormBorderStyle.None;
                 tabControlMain.TabPages.Add(p);
-                //tabControlMain.SelectedTab = p;
+                tabControlMain.SelectedTab = p;
+                f.Show();
+            }
+        }
+
+        private void barButtonItem21_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            int index = tabControlMain.TabPages.IndexOfKey("tabPageInHoaDon");
+            if (index > 0)
+                tabControlMain.SelectedIndex = index;
+            else
+            {
+                frmInHDBH f = new frmInHDBH();
+                TabPage p = new TabPage(f.Text);
+                p.Name = "tabPageInHoaDon";
+                f.TopLevel = false;
+                p.Controls.Add(f);
+                f.Dock = DockStyle.Fill;
+                f.FormBorderStyle = FormBorderStyle.None;
+                tabControlMain.TabPages.Add(p);
+                tabControlMain.SelectedTab = p;
                 f.Show();
             }
         }

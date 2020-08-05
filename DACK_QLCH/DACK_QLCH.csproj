@@ -55,6 +55,11 @@
     </StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.BonusSkins.v19.2" />
     <Reference Include="DevExpress.Data.v19.2" />
     <Reference Include="DevExpress.Utils.v19.2" />
@@ -68,6 +73,8 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -145,6 +152,29 @@
     </Compile>
     <Compile Include="QL San Pham\SanPham.Designer.cs">
       <DependentUpon>SanPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\DataInHD.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataInHD.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frmInHD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\frmInHD.Designer.cs">
+      <DependentUpon>frmInHD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frmInHDBH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\frmInHDBH.Designer.cs">
+      <DependentUpon>frmInHDBH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\rptInHD.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptInHD.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Tai Khoan\DangNhap.cs">
       <SubType>Form</SubType>
@@ -238,7 +268,16 @@
     <EmbeddedResource Include="QL San Pham\SanPham.resx">
       <DependentUpon>SanPham.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Report\InHoaDon.rdlc" />
+    <EmbeddedResource Include="Report\frmInHD.resx">
+      <DependentUpon>frmInHD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\frmInHDBH.resx">
+      <DependentUpon>frmInHDBH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptInHD.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptInHD.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Tai Khoan\DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </EmbeddedResource>
@@ -301,6 +340,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Report\DataInHD.xsc">
+      <DependentUpon>DataInHD.xsd</DependentUpon>
+    </None>
+    <None Include="Report\DataInHD.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataInHD.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Report\DataInHD.xss">
+      <DependentUpon>DataInHD.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
@@ -314,7 +364,9 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

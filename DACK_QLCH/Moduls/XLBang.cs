@@ -11,7 +11,7 @@ namespace DACK_QLCH.Moduls
     class XLBANG : DataTable
     {
         #region Fields
-        public static string cnnStr = @"Data Source=DESKTOP-A8DD8VN\SQLEXPRESS;Initial Catalog=DuLieuDoAn;Integrated Security=True";
+        public static string cnnStr = @"Data Source=LAPTOP-ME3QPJ97\SQLEXPRESS;Initial Catalog=DuLieuDoAn;Integrated Security=True";
         private static SqlConnection _cnn;
         private SqlDataAdapter _da = new SqlDataAdapter();
         private string _query; // Cau truy van
