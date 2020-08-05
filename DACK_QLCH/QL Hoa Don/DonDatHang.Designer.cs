@@ -33,6 +33,20 @@
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgDSDDH = new System.Windows.Forms.DataGridView();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoHDDH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenKHGH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiaChiGH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SDTGH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayGH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TinhTrang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.duLieuDoAnDataSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.duLieuDoAnDataSet = new DACK_QLCH.DuLieuDoAnDataSet();
             this.duLieuDoAnDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -71,20 +85,6 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.btnTimKiem = new DevExpress.XtraEditors.SimpleButton();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoHDDH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenKHGH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiaChiGH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SDTGH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayGH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TinhTrang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgDSDDH)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.duLieuDoAnDataSetBindingSource1)).BeginInit();
@@ -139,6 +139,98 @@
             this.dgDSDDH.Size = new System.Drawing.Size(890, 238);
             this.dgDSDDH.TabIndex = 0;
             this.dgDSDDH.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgDSDDH_DataBindingComplete);
+            // 
+            // STT
+            // 
+            this.STT.HeaderText = "STT";
+            this.STT.Name = "STT";
+            this.STT.Width = 50;
+            // 
+            // SoHDDH
+            // 
+            this.SoHDDH.DataPropertyName = "SoHDDH";
+            this.SoHDDH.HeaderText = "Số Hóa Đơn";
+            this.SoHDDH.Name = "SoHDDH";
+            this.SoHDDH.Width = 80;
+            // 
+            // MaNV
+            // 
+            this.MaNV.DataPropertyName = "MaNV";
+            this.MaNV.HeaderText = "Mã Nhân Viên";
+            this.MaNV.Name = "MaNV";
+            this.MaNV.Width = 80;
+            // 
+            // MaSP
+            // 
+            this.MaSP.DataPropertyName = "MaSP";
+            this.MaSP.HeaderText = "Mã Sản Phẩm";
+            this.MaSP.Name = "MaSP";
+            this.MaSP.Width = 80;
+            // 
+            // TenSP
+            // 
+            this.TenSP.DataPropertyName = "TenSP";
+            this.TenSP.HeaderText = "Tên Sản Phẩm";
+            this.TenSP.Name = "TenSP";
+            // 
+            // TenKHGH
+            // 
+            this.TenKHGH.DataPropertyName = "TenKHGH";
+            this.TenKHGH.HeaderText = "Tên Khách Hàng";
+            this.TenKHGH.Name = "TenKHGH";
+            // 
+            // DiaChiGH
+            // 
+            this.DiaChiGH.DataPropertyName = "DiaChiGH";
+            this.DiaChiGH.HeaderText = "Địa Chỉ";
+            this.DiaChiGH.Name = "DiaChiGH";
+            // 
+            // SDTGH
+            // 
+            this.SDTGH.DataPropertyName = "SDTGH";
+            this.SDTGH.HeaderText = "SĐT";
+            this.SDTGH.Name = "SDTGH";
+            // 
+            // NgayHD
+            // 
+            this.NgayHD.DataPropertyName = "NgayHDDH";
+            this.NgayHD.HeaderText = "Ngày Lập";
+            this.NgayHD.Name = "NgayHD";
+            this.NgayHD.Width = 80;
+            // 
+            // NgayGH
+            // 
+            this.NgayGH.DataPropertyName = "NgayGH";
+            this.NgayGH.HeaderText = "Ngày Giao Hàng";
+            this.NgayGH.Name = "NgayGH";
+            // 
+            // SoLuong
+            // 
+            this.SoLuong.DataPropertyName = "SoLuong";
+            this.SoLuong.HeaderText = "Số Lượng";
+            this.SoLuong.Name = "SoLuong";
+            this.SoLuong.Width = 60;
+            // 
+            // DonGia
+            // 
+            this.DonGia.DataPropertyName = "DonGia";
+            this.DonGia.HeaderText = "Đơn Giá";
+            this.DonGia.Name = "DonGia";
+            this.DonGia.ReadOnly = true;
+            // 
+            // ThanhTien
+            // 
+            this.ThanhTien.DataPropertyName = "ThanhTien";
+            this.ThanhTien.HeaderText = "Thành Tiền";
+            this.ThanhTien.Name = "ThanhTien";
+            this.ThanhTien.ReadOnly = true;
+            // 
+            // TinhTrang
+            // 
+            this.TinhTrang.DataPropertyName = "TinhTrang";
+            this.TinhTrang.HeaderText = "Tình Trạng";
+            this.TinhTrang.Name = "TinhTrang";
+            this.TinhTrang.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // duLieuDoAnDataSetBindingSource1
             // 
@@ -512,98 +604,6 @@
             this.btnTimKiem.Text = "Tìm Kiếm";
             this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
-            // STT
-            // 
-            this.STT.HeaderText = "STT";
-            this.STT.Name = "STT";
-            this.STT.Width = 50;
-            // 
-            // SoHDDH
-            // 
-            this.SoHDDH.DataPropertyName = "SoHDDH";
-            this.SoHDDH.HeaderText = "Số Hóa Đơn";
-            this.SoHDDH.Name = "SoHDDH";
-            this.SoHDDH.Width = 80;
-            // 
-            // MaNV
-            // 
-            this.MaNV.DataPropertyName = "MaNV";
-            this.MaNV.HeaderText = "Mã Nhân Viên";
-            this.MaNV.Name = "MaNV";
-            this.MaNV.Width = 80;
-            // 
-            // MaSP
-            // 
-            this.MaSP.DataPropertyName = "MaSP";
-            this.MaSP.HeaderText = "Mã Sản Phẩm";
-            this.MaSP.Name = "MaSP";
-            this.MaSP.Width = 80;
-            // 
-            // TenSP
-            // 
-            this.TenSP.DataPropertyName = "TenSP";
-            this.TenSP.HeaderText = "Tên Sản Phẩm";
-            this.TenSP.Name = "TenSP";
-            // 
-            // TenKHGH
-            // 
-            this.TenKHGH.DataPropertyName = "TenKHGH";
-            this.TenKHGH.HeaderText = "Tên Khách Hàng";
-            this.TenKHGH.Name = "TenKHGH";
-            // 
-            // DiaChiGH
-            // 
-            this.DiaChiGH.DataPropertyName = "DiaChiGH";
-            this.DiaChiGH.HeaderText = "Địa Chỉ";
-            this.DiaChiGH.Name = "DiaChiGH";
-            // 
-            // SDTGH
-            // 
-            this.SDTGH.DataPropertyName = "SDTGH";
-            this.SDTGH.HeaderText = "SĐT";
-            this.SDTGH.Name = "SDTGH";
-            // 
-            // NgayHD
-            // 
-            this.NgayHD.DataPropertyName = "NgayHDDH";
-            this.NgayHD.HeaderText = "Ngày Lập";
-            this.NgayHD.Name = "NgayHD";
-            this.NgayHD.Width = 80;
-            // 
-            // NgayGH
-            // 
-            this.NgayGH.DataPropertyName = "NgayGH";
-            this.NgayGH.HeaderText = "Ngày Giao Hàng";
-            this.NgayGH.Name = "NgayGH";
-            // 
-            // SoLuong
-            // 
-            this.SoLuong.DataPropertyName = "SoLuong";
-            this.SoLuong.HeaderText = "Số Lượng";
-            this.SoLuong.Name = "SoLuong";
-            this.SoLuong.Width = 60;
-            // 
-            // DonGia
-            // 
-            this.DonGia.DataPropertyName = "DonGia";
-            this.DonGia.HeaderText = "Đơn Giá";
-            this.DonGia.Name = "DonGia";
-            this.DonGia.ReadOnly = true;
-            // 
-            // ThanhTien
-            // 
-            this.ThanhTien.DataPropertyName = "ThanhTien";
-            this.ThanhTien.HeaderText = "Thành Tiền";
-            this.ThanhTien.Name = "ThanhTien";
-            this.ThanhTien.ReadOnly = true;
-            // 
-            // TinhTrang
-            // 
-            this.TinhTrang.DataPropertyName = "TinhTrang";
-            this.TinhTrang.HeaderText = "Tình Trạng";
-            this.TinhTrang.Name = "TinhTrang";
-            this.TinhTrang.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
             // frmDonDatHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -614,7 +614,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmDonDatHang";
-            this.Text = " ";
+            this.Text = "DANH SÁCH ĐƠN ĐẶT HÀNG";
             this.Load += new System.EventHandler(this.frmDonDatHang_Load);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgDSDDH)).EndInit();

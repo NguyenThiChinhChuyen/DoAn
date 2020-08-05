@@ -34,6 +34,9 @@
             this.duLieuDoAnDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.duLieuDoAnDataSet = new DACK_QLCH.DuLieuDoAnDataSet();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtThanhTien = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.radMaNCC = new System.Windows.Forms.RadioButton();
             this.radSoHD = new System.Windows.Forms.RadioButton();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
@@ -55,9 +58,6 @@
             this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TinhTrang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtThanhTien = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.duLieuDoAnDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.duLieuDoAnDataSet)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -101,6 +101,31 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tìm Kiếm";
+            // 
+            // txtThanhTien
+            // 
+            this.txtThanhTien.Location = new System.Drawing.Point(201, 63);
+            this.txtThanhTien.Name = "txtThanhTien";
+            this.txtThanhTien.Size = new System.Drawing.Size(137, 20);
+            this.txtThanhTien.TabIndex = 32;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(130, 66);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(65, 13);
+            this.label10.TabIndex = 30;
+            this.label10.Text = "Thành Tiền:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(344, 66);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(30, 13);
+            this.label8.TabIndex = 31;
+            this.label8.Text = "VNĐ";
             // 
             // radMaNCC
             // 
@@ -281,31 +306,6 @@
             this.TinhTrang.Name = "TinhTrang";
             this.TinhTrang.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
-            // txtThanhTien
-            // 
-            this.txtThanhTien.Location = new System.Drawing.Point(201, 63);
-            this.txtThanhTien.Name = "txtThanhTien";
-            this.txtThanhTien.Size = new System.Drawing.Size(137, 20);
-            this.txtThanhTien.TabIndex = 32;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(130, 66);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(65, 13);
-            this.label10.TabIndex = 30;
-            this.label10.Text = "Thành Tiền:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(344, 66);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(30, 13);
-            this.label8.TabIndex = 31;
-            this.label8.Text = "VNĐ";
-            // 
             // frmTimKiemDonDatHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -315,7 +315,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmTimKiemDonDatHang";
-            this.Text = "Tìm Kiếm Đơn Đặt Hàng";
+            this.Text = "TÌM KIẾM ĐƠN ĐẶT HÀNG";
             this.Load += new System.EventHandler(this.frmTimKiemDonDatHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.duLieuDoAnDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.duLieuDoAnDataSet)).EndInit();

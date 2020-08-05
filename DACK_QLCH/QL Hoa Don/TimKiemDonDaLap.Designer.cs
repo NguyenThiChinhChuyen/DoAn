@@ -31,6 +31,10 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTimKiemDonDaLap));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radMaNCC = new System.Windows.Forms.RadioButton();
+            this.radSoHD = new System.Windows.Forms.RadioButton();
+            this.txtTimKiem = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.txtThanhTien = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -51,10 +55,6 @@
             this.duLieuDoAnDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.duLieuDoAnDataSet = new DACK_QLCH.DuLieuDoAnDataSet();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.radMaNCC = new System.Windows.Forms.RadioButton();
-            this.radSoHD = new System.Windows.Forms.RadioButton();
-            this.txtTimKiem = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgTimKiemDDL)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.duLieuDoAnDataSetBindingSource)).BeginInit();
@@ -78,6 +78,45 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tìm Kiếm";
+            // 
+            // radMaNCC
+            // 
+            this.radMaNCC.AutoSize = true;
+            this.radMaNCC.Location = new System.Drawing.Point(464, 40);
+            this.radMaNCC.Name = "radMaNCC";
+            this.radMaNCC.Size = new System.Drawing.Size(84, 17);
+            this.radMaNCC.TabIndex = 32;
+            this.radMaNCC.Text = "Số Hóa Đơn";
+            this.radMaNCC.UseVisualStyleBackColor = true;
+            // 
+            // radSoHD
+            // 
+            this.radSoHD.AutoSize = true;
+            this.radSoHD.Checked = true;
+            this.radSoHD.Location = new System.Drawing.Point(345, 39);
+            this.radSoHD.Name = "radSoHD";
+            this.radSoHD.Size = new System.Drawing.Size(96, 17);
+            this.radSoHD.TabIndex = 33;
+            this.radSoHD.TabStop = true;
+            this.radSoHD.Text = "Số HD Chi Tiết";
+            this.radSoHD.UseVisualStyleBackColor = true;
+            // 
+            // txtTimKiem
+            // 
+            this.txtTimKiem.Location = new System.Drawing.Point(145, 37);
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.Size = new System.Drawing.Size(182, 20);
+            this.txtTimKiem.TabIndex = 31;
+            this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(82, 40);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 13);
+            this.label1.TabIndex = 30;
+            this.label1.Text = "Tìm Kiếm:";
             // 
             // txtThanhTien
             // 
@@ -235,45 +274,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Kết Quả";
             // 
-            // radMaNCC
-            // 
-            this.radMaNCC.AutoSize = true;
-            this.radMaNCC.Location = new System.Drawing.Point(464, 40);
-            this.radMaNCC.Name = "radMaNCC";
-            this.radMaNCC.Size = new System.Drawing.Size(84, 17);
-            this.radMaNCC.TabIndex = 32;
-            this.radMaNCC.Text = "Số Hóa Đơn";
-            this.radMaNCC.UseVisualStyleBackColor = true;
-            // 
-            // radSoHD
-            // 
-            this.radSoHD.AutoSize = true;
-            this.radSoHD.Checked = true;
-            this.radSoHD.Location = new System.Drawing.Point(345, 39);
-            this.radSoHD.Name = "radSoHD";
-            this.radSoHD.Size = new System.Drawing.Size(96, 17);
-            this.radSoHD.TabIndex = 33;
-            this.radSoHD.TabStop = true;
-            this.radSoHD.Text = "Số HD Chi Tiết";
-            this.radSoHD.UseVisualStyleBackColor = true;
-            // 
-            // txtTimKiem
-            // 
-            this.txtTimKiem.Location = new System.Drawing.Point(145, 37);
-            this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(182, 20);
-            this.txtTimKiem.TabIndex = 31;
-            this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(82, 40);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 13);
-            this.label1.TabIndex = 30;
-            this.label1.Text = "Tìm Kiếm:";
-            // 
             // frmTimKiemDonDaLap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -283,7 +283,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmTimKiemDonDaLap";
-            this.Text = "TÌM KIẾM ĐƠN ĐÃ LẬP";
+            this.Text = "TÌM KIẾM ĐƠN BÁN HÀNG";
             this.Load += new System.EventHandler(this.TimKiemDonDaLap_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
