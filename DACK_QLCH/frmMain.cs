@@ -382,25 +382,7 @@ namespace DACK_QLCH
                }
            }*/
 
-        private void btnInHoaDonBan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            int index = tabControlMain.TabPages.IndexOfKey("tabPageInHoaDonBan");
-            if (index > 0)
-                tabControlMain.SelectedIndex = index;
-            else
-            {
-                frmInHDBH f = new frmInHDBH();
-                TabPage p = new TabPage(f.Text);
-                p.Name = "tabPageInHoaDonBan";
-                f.TopLevel = false;
-                p.Controls.Add(f);
-                f.Dock = DockStyle.Fill;
-                f.FormBorderStyle = FormBorderStyle.None;
-                tabControlMain.TabPages.Add(p);
-                tabControlMain.SelectedTab = p;
-                f.Show();
-            }
-        }
+
 
         private void btnDSNV_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -432,6 +414,26 @@ namespace DACK_QLCH
                 frmKhachHang f = new frmKhachHang();           
                 TabPage p = new TabPage(f.Text);
                 p.Name = "tabPageDanhSachKhachHang";
+                f.TopLevel = false;
+                p.Controls.Add(f);
+                f.Dock = DockStyle.Fill;
+                f.FormBorderStyle = FormBorderStyle.None;
+                tabControlMain.TabPages.Add(p);
+                tabControlMain.SelectedTab = p;
+                f.Show();
+            }
+        }
+
+        private void btnInHoaDonBan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            int index = tabControlMain.TabPages.IndexOfKey("tabPageInHoaDonBan");
+            if (index > 0)
+                tabControlMain.SelectedIndex = index;
+            else
+            {
+                frmInHDBH f = new frmInHDBH();
+                TabPage p = new TabPage(f.Text);
+                p.Name = "tabPageInHoaDonBan";
                 f.TopLevel = false;
                 p.Controls.Add(f);
                 f.Dock = DockStyle.Fill;
